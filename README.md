@@ -8,11 +8,12 @@ The data layer is plain JSON. Any linter, agent skill, or detector can load it. 
 
 ```
 data/
-  slop-words.json       85 overused words, severity-rated
-  slop-phrases.json     70+ multi-word constructions with examples and fixes
-  slop-openers.json     80+ sentence openers with fixes
-  slop-structures.json  28 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-words.json       95 overused words, severity-rated
+  slop-phrases.json     67 multi-word constructions with examples and fixes
+  slop-openers.json     83 sentence openers with fixes
+  slop-structures.json  27 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
+  claude-watermarks.json  the Claude detection layer: technical watermark + 7 fingerprint patterns
 reference/
   writing.md           the human-readable guide to writing slop
   visual.md            the visual/design tells (purple gradients, blob heroes, ...)
@@ -52,6 +53,10 @@ Full explainers in `reference/writing.md`.
 ## Evidence
 
 The tells are measured, not vibes: "realm", "intricate", "showcasing", "pivotal" were flat for a decade then surged post-2023 (Nature Human Behaviour 2025); "delve" rose ~1,500% in biomedical abstracts (Science Advances 2025); EQ-Bench scores models on slop constructions. Citations in `research.md`.
+
+## Claude watermark layer
+
+`data/claude-watermarks.json` documents both layers of Claude detection: the invisible technical watermark Anthropic embeds in Claude output (confirmed in Anthropic's support documentation), and the seven writing-fingerprint patterns detectors are calibrated to find: first-person avoidance, systematic scope acknowledgement, balanced counterargument inclusion, triadic list compulsion, conclusion recycling, paragraph architecture regularity, and the Claude vocabulary cluster. De-slopping the fingerprint does not remove the technical watermark; the layers are independent.
 
 ## How to use it
 

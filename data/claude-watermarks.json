@@ -1,0 +1,77 @@
+{
+  "category": "claude-watermarks",
+  "description": "The Claude detection layer: the invisible technical watermark Anthropic embeds in Claude output, and the five writing-fingerprint patterns detectors are calibrated to find. Confirmed by Anthropic support documentation (2026) and detection research.",
+  "technical_watermark": {
+    "what": "Anthropic embeds an invisible statistical mark in Claude-generated text. It is detectable by systems, not visible to readers.",
+    "status": "confirmed",
+    "source": "Anthropic support article: How Claude marks AI-generated content",
+    "detection": "A detected mark is a signal content was processed by Claude, but is not fully conclusive. Absence of a mark does not prove human authorship.",
+    "implication": "De-slopping text changes the fingerprint patterns below but does not remove the technical watermark. The two layers are independent."
+  },
+  "fingerprint": [
+    {
+      "name": "First-person avoidance",
+      "pattern": "Impersonal constructions where a human would use I",
+      "example": "One might argue that the situation is ironic. It could be suggested that priorities reflect cultural assumptions worth interrogating.",
+      "tell": "Claude defaults to 'one might', 'it could be suggested', 'the reader may notice' even when the task invites personal voice. A trained safety behavior that leaves an impersonality signature. Personal essays without 'I' flag detectors.",
+      "fix": "Write in first person where the genre calls for it. 'The irony here is hard to miss. I believed in working harder than everyone until my first burnout at 26.'",
+      "severity": "high",
+      "family": "impersonality"
+    },
+    {
+      "name": "Systematic scope acknowledgement",
+      "pattern": "Pre-emptive limitation statements at fixed structural positions",
+      "example": "It's worth noting that this analysis has certain limitations. While this is not an exhaustive treatment of the subject, there are important caveats to consider.",
+      "tell": "Claude acknowledges limits before the reader questions them, at near-mechanical regularity: the close of analytical sections. Humans acknowledge limits when the argument needs defending, not as ritual.",
+      "fix": "Delete limitation sentences that are structural, not argumentative. Keep one only if the preceding point genuinely invites challenge.",
+      "severity": "high",
+      "family": "hedging"
+    },
+    {
+      "name": "Balanced counterargument inclusion",
+      "pattern": "Every claim paired with its opposite to appear fair",
+      "example": "While X offers clear benefits, it also presents challenges that deserve consideration.",
+      "tell": "Constitutional AI trains Claude to present balanced perspectives. Applied uniformly, it produces the hedging seesaw: claim, counterclaim, hedge, every paragraph. Detectors weight this heavily.",
+      "fix": "Commit to the claim. Name the real boundary condition once, then stop balancing.",
+      "severity": "high",
+      "family": "hedging"
+    },
+    {
+      "name": "Triadic list compulsion",
+      "pattern": "Everything organized in threes",
+      "example": "There are three key factors to consider. This can be understood through three lenses. The consequences fall into three broad categories.",
+      "tell": "An RLHF artifact: human evaluators rewarded tidy triads, so Claude structures analysis in threes with statistical abnormality. Humans write two points, or five, or one explored at length.",
+      "fix": "Break triads where the count is invented. Two points stay two. One point gets a paragraph.",
+      "severity": "medium",
+      "family": "structure"
+    },
+    {
+      "name": "Conclusion recycling",
+      "pattern": "Restate thesis, summarize body, gesture at future implications, in that order",
+      "example": "In conclusion, this analysis demonstrates that X matters. We examined Y and Z. Future work should explore further implications.",
+      "tell": "The exact formula teachers and RLHF trainers reward. Human conclusions are messy: new angles, provocative questions, or simply stopping when the argument is complete.",
+      "fix": "Close on the decision, the number, or the next step. Skip the summary round-up entirely.",
+      "severity": "medium",
+      "family": "structure"
+    },
+    {
+      "name": "Paragraph architecture regularity",
+      "pattern": "Every paragraph: topic sentence, support, transition",
+      "example": "Each paragraph opens with the point, develops it for three sentences, and ends on a lead-in to the next section.",
+      "tell": "Claude's paragraphs share internal shape. Human writing varies: some paragraphs front-load the conclusion, others bury the point, some end without a transition.",
+      "fix": "Vary paragraph openings. Bury the point occasionally. Let some paragraphs end hard.",
+      "severity": "medium",
+      "family": "structure"
+    },
+    {
+      "name": "Claude vocabulary cluster",
+      "pattern": "High-frequency Claude indicator words",
+      "example": "delve, nuanced, multifaceted, underscore, encompasses, key takeaway, pivotal, realm, vibrant, tapestry, it's important to note, in conclusion",
+      "tell": "Claude's preferred terms appear at frequencies dramatically above human writing. Detectors trained on Claude output weight these heavily. A single instance is nothing; six per thousand words is a signal.",
+      "fix": "Replace with concrete, register-appropriate alternatives. 'Nuanced' becomes the actual distinction; 'encompasses' becomes 'covers' or the thing itself.",
+      "severity": "high",
+      "family": "vocabulary"
+    }
+  ],
+  "notes": "These fingerprint patterns describe Claude across Opus, Sonnet, and Haiku tiers. The fingerprint is statistical: presence of one pattern is not evidence; the cluster is the signal."
+}

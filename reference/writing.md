@@ -61,6 +61,24 @@ The same thing renamed at every appearance because AI fears lexical repetition.
 Example: "The agent handles your email. The assistant drafts replies. The copilot manages your inbox."
 Fix: Repeat the actual word. Repetition of the precise term reads human; synonym cycling reads AI.
 
+## The Claude layer
+
+Claude-specific tells live in `data/claude-watermarks.json`. Two independent layers:
+
+**The technical watermark.** Anthropic embeds an invisible statistical mark in Claude output. It is detectable by systems and cannot be removed by rewriting the fingerprint. Absence of a mark does not prove human authorship.
+
+**The writing fingerprint.** Seven patterns detectors are calibrated to find:
+
+1. **First-person avoidance** - "One might argue", "It could be suggested" in place of "I", even when the genre invites a personal voice. A personal essay with zero first-person pronouns flags detectors.
+2. **Systematic scope acknowledgement** - "While this is not an exhaustive treatment..." at the close of every analytical section. Human writers acknowledge limits only when the argument needs defending.
+3. **Balanced counterargument inclusion** - every claim paired with its opposite. Constitutional AI trains Claude to balance; applied uniformly it reads as hedging.
+4. **Triadic list compulsion** - "There are three key factors to consider" on reflex. An RLHF artifact.
+5. **Conclusion recycling** - restate, summarize, gesture at implications, always in that order. Human conclusions are messier.
+6. **Paragraph architecture regularity** - uniform topic-sentence-support-transition shape in every paragraph.
+7. **Claude vocabulary cluster** - nuanced, multifaceted, encompasses, underscore, key takeaway, pivotal, realm, vibrant, tapestry.
+
+The fingerprint is statistical: one instance is not evidence; the cluster is the signal.
+
 ## The rhythm tells
 
 - **Uniform sentence length**: AI token prediction prefers same-length sentences. Human writing breathes: long, short, long.
