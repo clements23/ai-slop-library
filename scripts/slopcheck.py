@@ -23,6 +23,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 SEVERITY_RANK = {"critical": 0, "high": 1, "medium": 2, "low": 3}
 
+__version__ = (ROOT / "VERSION").read_text().strip()
+
 
 def load_patterns():
     patterns = []  # (kind, match_text, severity, example, fix, family)
@@ -144,6 +146,9 @@ def main():
         elif a == "--min-count":
             min_count = int(args[i + 1])
             i += 2
+        elif a in ("-v", "--version"):
+            print(f"slopcheck {__version__}")
+            return 0
         elif a in ("-h", "--help"):
             print(__doc__)
             return 0
