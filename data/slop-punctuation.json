@@ -1,0 +1,112 @@
+{
+  "category": "punctuation",
+  "description": "Punctuation and formatting tics that cluster in AI output. The em dash is the most documented single tell in AI detection literature.",
+  "punctuation": [
+    {
+      "mark": "Em dash",
+      "pattern": "The long dash used as a parenthesis or dramatic pause, multiple times per paragraph",
+      "tell": "Flat for a decade, then surged in LLM-era text. Most detectors weight it heavily. Overuse is the tell - one or two per document is normal human usage.",
+      "fix": "Replace with commas, parentheses, or split sentences. If you keep any, keep one per page at most.",
+      "severity": "critical"
+    },
+    {
+      "mark": "Colon overload",
+      "pattern": "Colon used to reveal a payoff at least once per paragraph",
+      "tell": "AI uses the colon setup-reveal construction as a default dramatic device.",
+      "fix": "Write the payoff as the sentence.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Semicolon dependence",
+      "pattern": "Semicolons joining clauses that should be separate sentences",
+      "tell": "AI overuses semicolons to vary rhythm. Heavy semicolon use reads academic-AI.",
+      "fix": "Split into two sentences. Keep a semicolon only where the two halves genuinely interlock.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Ellipsis abuse",
+      "pattern": "Trailing ... at the end of thoughts, or multiple in one paragraph",
+      "tell": "AI fakes contemplative hesitation with ellipses.",
+      "fix": "Use a period. If quoting someone trailing off, keep one.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Exclamation escalation",
+      "pattern": "Two or more exclamation marks, or exclamations on neutral statements",
+      "tell": "AI adds exclamation marks to inject energy into flat content.",
+      "fix": "Zero exclamations in professional writing; one per 500 words in casual writing.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Question mark pairing",
+      "pattern": "Rhetorical question immediately followed by the answer",
+      "tell": "AI simulates dialogue with question-answer pairs.",
+      "fix": "Answer directly without the question.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Quotation mark flourish",
+      "pattern": "Scare quotes around ordinary words",
+      "example": "The 'revolutionary' new feature.",
+      "tell": "AI adds scare quotes to sound ironic or critical without committing.",
+      "fix": "Drop the quotes; make the judgment in the sentence.",
+      "severity": "low"
+    },
+    {
+      "mark": "Bullet point everything",
+      "pattern": "Paragraph content reformatted as bullets",
+      "tell": "AI converts every explanation into a list because lists are lower-risk to generate.",
+      "fix": "Write continuous prose; use lists only for parallel enumerations.",
+      "severity": "low"
+    },
+    {
+      "mark": "Emoji bullets",
+      "pattern": "Emoji as list markers or section dividers",
+      "tell": "AI uses emoji bullets to make template content look designed.",
+      "fix": "Real bullets or real sections.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Hashtag stack",
+      "pattern": "Five or more hashtags at the end of a post",
+      "tell": "AI generates hashtag clouds when asked for social posts.",
+      "fix": "Two or three specific hashtags.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Markdown leakage",
+      "pattern": "Visible asterisks, underscores, or brackets in chat/email text",
+      "tell": "AI composes in markdown and forgets to render it.",
+      "fix": "Strip markdown markers; use plain text formatting.",
+      "severity": "high"
+    },
+    {
+      "mark": "All-caps emphasis",
+      "pattern": "Words in ALL CAPS for emphasis instead of sentence-level clarity",
+      "tell": "AI uses caps to simulate shouting-energy.",
+      "fix": "Rewrite the sentence so the emphasis is structural.",
+      "severity": "low"
+    },
+    {
+      "mark": "Bold overload",
+      "pattern": "Bold applied to whole sentences or phrases repeatedly",
+      "tell": "AI bolds key phrases to create the illusion of structure.",
+      "fix": "Bold at most one phrase per section.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Numbered list for non-sequential items",
+      "pattern": "Ordinal numbering where order carries no meaning",
+      "tell": "AI numbers points to look organized even when order is arbitrary.",
+      "fix": "Use bullets for non-sequential items.",
+      "severity": "low"
+    },
+    {
+      "mark": "Parenthetical density",
+      "pattern": "Two or more parentheticals per sentence",
+      "tell": "AI stuffs asides into parentheses to keep a single flowing sentence.",
+      "fix": "Split the aside into its own sentence.",
+      "severity": "medium"
+    }
+  ]
+}

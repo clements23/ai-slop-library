@@ -1,0 +1,421 @@
+{
+  "category": "openers",
+  "description": "Sentence openers that signal AI generation. Drawn from detection studies and community pattern lists (Wikipedia's Signs of AI writing, CMU 2025, Buffer's 52M post analysis).",
+  "openers": [
+    {
+      "opener": "Certainly,",
+      "severity": "high",
+      "fix": "Cut or state the claim."
+    },
+    {
+      "opener": "Moreover,",
+      "severity": "medium",
+      "fix": "Cut; start with the new point."
+    },
+    {
+      "opener": "Furthermore,",
+      "severity": "medium",
+      "fix": "Cut; start with the new point."
+    },
+    {
+      "opener": "Additionally,",
+      "severity": "medium",
+      "fix": "Cut; start with the new point."
+    },
+    {
+      "opener": "In addition,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "However,",
+      "severity": "low",
+      "fix": "Fine in moderation; AI overuses it as the only contrast marker."
+    },
+    {
+      "opener": "Nevertheless,",
+      "severity": "medium",
+      "fix": "Cut or replace with a stronger contrast."
+    },
+    {
+      "opener": "Nonetheless,",
+      "severity": "medium",
+      "fix": "Cut or replace."
+    },
+    {
+      "opener": "Therefore,",
+      "severity": "medium",
+      "fix": "Fine in technical writing; elsewhere cut."
+    },
+    {
+      "opener": "Thus,",
+      "severity": "low",
+      "fix": "Fine in academic/technical registers."
+    },
+    {
+      "opener": "Consequently,",
+      "severity": "medium",
+      "fix": "Cut or use 'so'."
+    },
+    {
+      "opener": "In summary,",
+      "severity": "medium",
+      "fix": "Give the summary without the flag."
+    },
+    {
+      "opener": "In conclusion,",
+      "severity": "medium",
+      "fix": "Give the conclusion without the flag."
+    },
+    {
+      "opener": "To summarize,",
+      "severity": "medium",
+      "fix": "Cut the flag."
+    },
+    {
+      "opener": "To conclude,",
+      "severity": "medium",
+      "fix": "Cut the flag."
+    },
+    {
+      "opener": "Overall,",
+      "severity": "low",
+      "fix": "Cut when it only marks a summary."
+    },
+    {
+      "opener": "Ultimately,",
+      "severity": "medium",
+      "fix": "Cut; make the final point directly."
+    },
+    {
+      "opener": "Essentially,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Importantly,",
+      "severity": "medium",
+      "fix": "Let importance be shown, not announced."
+    },
+    {
+      "opener": "Notably,",
+      "severity": "medium",
+      "fix": "Cut or integrate into the sentence."
+    },
+    {
+      "opener": "Interestingly,",
+      "severity": "medium",
+      "fix": "Cut; the fact carries the interest."
+    },
+    {
+      "opener": "Historically,",
+      "severity": "low",
+      "fix": "Fine when the history is real."
+    },
+    {
+      "opener": "Traditionally,",
+      "severity": "low",
+      "fix": "Fine when true."
+    },
+    {
+      "opener": "Nowadays,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Today,",
+      "severity": "low",
+      "fix": "Fine when anchored to a date or fact."
+    },
+    {
+      "opener": "In today's world,",
+      "severity": "critical",
+      "fix": "Cut. Pure filler."
+    },
+    {
+      "opener": "In today's fast-paced world,",
+      "severity": "critical",
+      "fix": "Cut. Pure filler."
+    },
+    {
+      "opener": "It is important to note that",
+      "severity": "high",
+      "fix": "State the fact."
+    },
+    {
+      "opener": "It should be noted that",
+      "severity": "high",
+      "fix": "State the fact."
+    },
+    {
+      "opener": "It is worth mentioning that",
+      "severity": "high",
+      "fix": "State the fact."
+    },
+    {
+      "opener": "It goes without saying that",
+      "severity": "high",
+      "fix": "Then don't say it."
+    },
+    {
+      "opener": "It is no secret that",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "There is no denying that",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "When it comes to",
+      "severity": "medium",
+      "fix": "Start at the subject."
+    },
+    {
+      "opener": "As for",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Speaking of which,",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "That being said,",
+      "severity": "medium",
+      "fix": "Cut; start with the concession."
+    },
+    {
+      "opener": "With that being said,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Having said that,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "All things considered,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "In light of this,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Given this,",
+      "severity": "low",
+      "fix": "Fine in short supply."
+    },
+    {
+      "opener": "As a result,",
+      "severity": "low",
+      "fix": "Fine when cause-effect is real."
+    },
+    {
+      "opener": "On the other hand,",
+      "severity": "low",
+      "fix": "Fine in moderation; AI uses it as default contrast."
+    },
+    {
+      "opener": "On the flip side,",
+      "severity": "medium",
+      "fix": "Casual version; cut."
+    },
+    {
+      "opener": "At first glance,",
+      "severity": "medium",
+      "fix": "Cut unless the contrast is real."
+    },
+    {
+      "opener": "At its core,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "At the end of the day,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Let's dive into",
+      "severity": "medium",
+      "fix": "Start with the content."
+    },
+    {
+      "opener": "In this article,",
+      "severity": "medium",
+      "fix": "Cut the meta."
+    },
+    {
+      "opener": "In this blog post,",
+      "severity": "medium",
+      "fix": "Cut the meta."
+    },
+    {
+      "opener": "In this guide,",
+      "severity": "low",
+      "fix": "Cut the meta."
+    },
+    {
+      "opener": "In this essay,",
+      "severity": "low",
+      "fix": "Cut the meta."
+    },
+    {
+      "opener": "Welcome to the world of",
+      "severity": "high",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Have you ever wondered",
+      "severity": "medium",
+      "fix": "Ask the real question or state it."
+    },
+    {
+      "opener": "Imagine a world where",
+      "severity": "high",
+      "fix": "Cut; start with the real situation."
+    },
+    {
+      "opener": "Picture this:",
+      "severity": "medium",
+      "fix": "Only if the scene is genuinely concrete."
+    },
+    {
+      "opener": "The truth is,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "The reality is,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "The fact is,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Here's the truth:",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Here's the thing:",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Here's the deal:",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Believe it or not,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Surprisingly,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Unsurprisingly,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Thankfully,",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Fortunately,",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Unfortunately,",
+      "severity": "low",
+      "fix": "Cut; say what happened."
+    },
+    {
+      "opener": "Regrettably,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "As previously mentioned,",
+      "severity": "medium",
+      "fix": "Cut; reference it or restate briefly."
+    },
+    {
+      "opener": "As mentioned earlier,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "As discussed above,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "To put it simply,",
+      "severity": "medium",
+      "fix": "Cut; say it simply."
+    },
+    {
+      "opener": "To put it bluntly,",
+      "severity": "medium",
+      "fix": "Cut; say it bluntly."
+    },
+    {
+      "opener": "To be honest,",
+      "severity": "medium",
+      "fix": "Cut; honesty is assumed."
+    },
+    {
+      "opener": "To be fair,",
+      "severity": "low",
+      "fix": "Fine in spoken register, in moderation."
+    },
+    {
+      "opener": "Needless to say,",
+      "severity": "medium",
+      "fix": "Cut."
+    },
+    {
+      "opener": "Last but not least,",
+      "severity": "medium",
+      "fix": "Cut; just list the last item."
+    },
+    {
+      "opener": "First and foremost,",
+      "severity": "medium",
+      "fix": "Cut; just start."
+    },
+    {
+      "opener": "On that note,",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "With that in mind,",
+      "severity": "low",
+      "fix": "Cut."
+    },
+    {
+      "opener": "In the grand scheme of things,",
+      "severity": "low",
+      "fix": "Cut."
+    }
+  ]
+}

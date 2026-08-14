@@ -1,0 +1,222 @@
+{
+  "category": "structures",
+  "description": "Structural and rhetorical patterns that mark machine-generated text. These are harder to detect than words because they live in the shape of the writing.",
+  "structures": [
+    {
+      "name": "Binary contrast",
+      "pattern": "\"It's not X. It's Y.\" / \"Not X, but Y\" / \"X, not Y\"",
+      "example": "The boom is priced on capex, not cash flow.",
+      "tell": "AI reaches for the X-not-Y construction constantly because it produces the illusion of insight with zero content. It is the single most documented AI tell in detection studies.",
+      "fix": "State the positive alone. If the negation matters, split it into its own sentence and name the actor: 'Cash flow will decide who survives.'",
+      "severity": "critical"
+    },
+    {
+      "name": "Rule of three",
+      "pattern": "Three parallel items or adjectives",
+      "example": "Fast, reliable, and secure.",
+      "tell": "Human writers use it too, but AI uses it as a default rhythm in every paragraph. Three consecutive rule-of-three constructions is a strong tell.",
+      "fix": "Keep at most one per section. Vary sentence length deliberately.",
+      "severity": "medium"
+    },
+    {
+      "name": "Uniform sentence length",
+      "pattern": "Every sentence roughly the same length",
+      "example": "The system tracks orders. It updates stock levels. It notifies customers.",
+      "tell": "LLM token prediction prefers similar-length sentences. Human writing has rhythmic variation: long, short, long.",
+      "fix": "Deliberately write one short sentence and one long sentence per paragraph.",
+      "severity": "high"
+    },
+    {
+      "name": "Hedging seesaw",
+      "pattern": "Claim + hedge + counterclaim + hedge",
+      "example": "AI will transform marketing. However, adoption varies. That said, early movers benefit.",
+      "tell": "AI balances every claim against its opposite to sound fair. The result is writing that never commits.",
+      "fix": "Commit to the claim, then name the real boundary condition once.",
+      "severity": "high"
+    },
+    {
+      "name": "Throat-clearing opener",
+      "pattern": "First paragraph says nothing, promises something",
+      "example": "In today's fast-paced world, businesses must adapt. In this article, we explore the key strategies that can help.",
+      "tell": "The first 1-2 sentences contain zero information. AI generates these as 'warm-up' tokens.",
+      "fix": "Open with a fact, a number, or a claim. Never open with a promise of content.",
+      "severity": "critical"
+    },
+    {
+      "name": "Colon reveal",
+      "pattern": "Setup sentence + colon + payoff",
+      "example": "The answer is simpler than you think: consistency.",
+      "tell": "AI loves the colon setup because it delays the payoff for dramatic effect. Repeated colons are a tell.",
+      "fix": "Put the payoff first.",
+      "severity": "medium"
+    },
+    {
+      "name": "Dramatic fragment",
+      "pattern": "Sentence fragment used for emphasis",
+      "example": "That's it. That's the whole thing.",
+      "tell": "AI fragments for dramatic rhythm. One is fine; a fragment in every paragraph is a tell.",
+      "fix": "Use fragments rarely and only where the drama is earned.",
+      "severity": "medium"
+    },
+    {
+      "name": "Synonym cycling",
+      "pattern": "Repeating the same idea with different words to avoid repetition",
+      "example": "The agent handles your email. The assistant drafts replies. The copilot manages your inbox.",
+      "tell": "AI fears lexical repetition, so it cycles synonyms. Human writers repeat the same noun when it's the same thing.",
+      "fix": "Repeat the actual word. Repetition of the precise term reads human; synonym cycling reads AI.",
+      "severity": "high"
+    },
+    {
+      "name": "Superficial analysis",
+      "pattern": "Abstractions that name a quality without evidence",
+      "example": "Highlighting the team's commitment to innovation.",
+      "tell": "AI summarizes with abstract nouns instead of concrete actions. 'Commitment to innovation' carries no information.",
+      "fix": "Describe what was done. 'The team rewrote the parser twice to cut latency by 40%.'",
+      "severity": "high"
+    },
+    {
+      "name": "Importance puffery",
+      "pattern": "Claims of importance without evidence",
+      "example": "This marks a pivotal moment in the industry.",
+      "tell": "AI asserts significance instead of showing it. 'Pivotal', 'testament', 'marks a milestone' all belong here.",
+      "fix": "State the consequence. 'This changed the pricing model for every competitor within a quarter.'",
+      "severity": "high"
+    },
+    {
+      "name": "Fake-profound ending",
+      "pattern": "Closing line with cosmic significance, no content",
+      "example": "The future isn't coming. It's already here.",
+      "tell": "AI ends on a note that sounds meaningful but commits to nothing.",
+      "fix": "End with the decision, the number, or the next step.",
+      "severity": "critical"
+    },
+    {
+      "name": "Weasel attribution",
+      "pattern": "Claims of consensus without sources",
+      "example": "Experts agree, studies show, research suggests, many believe.",
+      "tell": "AI fabricates authority by citing anonymous groups.",
+      "fix": "Name the source or drop the claim.",
+      "severity": "critical"
+    },
+    {
+      "name": "Passive voice default",
+      "pattern": "Actions described without actors",
+      "example": "Mistakes were made. Decisions were taken. Improvements were implemented.",
+      "tell": "AI defaults to passive when unsure of the subject. Humans write active sentences because they know who did what.",
+      "fix": "Name the actor: 'We made mistakes. The board took the decision.'",
+      "severity": "medium"
+    },
+    {
+      "name": "Corporate pep talk",
+      "pattern": "Motivational register in business text",
+      "example": "Together, we will unlock our full potential and drive value for all stakeholders.",
+      "tell": "AI generates the speech register when asked for 'professional' tone.",
+      "fix": "Write the sentence a smart colleague would actually say.",
+      "severity": "high"
+    },
+    {
+      "name": "Faux-inquiry setup",
+      "pattern": "Rhetorical question before the answer",
+      "example": "So, what does this mean for you? It means you need to act now.",
+      "tell": "AI uses the question-answer pair to simulate dialogue.",
+      "fix": "Answer directly. Let the reader ask the question.",
+      "severity": "medium"
+    },
+    {
+      "name": "Enumeration overkill",
+      "pattern": "Every point numbered or bulleted",
+      "example": "1. First... 2. Second... 3. Third...",
+      "tell": "AI structures everything as a list because it reduces generation risk. Prose needs variety.",
+      "fix": "Write in paragraphs; reserve lists for true enumerations.",
+      "severity": "low"
+    },
+    {
+      "name": "Anaphora stacking",
+      "pattern": "Repeated sentence-initial words",
+      "example": "We build. We ship. We iterate.",
+      "tell": "AI loves anaphora (repeated openers) for rhythm. Two or more in a row is a tell.",
+      "fix": "Vary the openers.",
+      "severity": "medium"
+    },
+    {
+      "name": "Transition overdose",
+      "pattern": "A connective at the start of most sentences",
+      "example": "However... Additionally... Moreover... Finally...",
+      "tell": "AI cannot stop connecting sentences explicitly. Humans let sentences stand alone.",
+      "fix": "Delete most transitions. Let the content imply the relation.",
+      "severity": "high"
+    },
+    {
+      "name": "Jargon pile-up",
+      "pattern": "Three or more buzzwords in one sentence",
+      "example": "Leveraging synergistic ecosystems to drive holistic digital transformation.",
+      "tell": "AI responds to 'professional' prompts with buzzword soup.",
+      "fix": "Translate to plain language. If you cannot translate it, you don't know what it means.",
+      "severity": "high"
+    },
+    {
+      "name": "Emoji as structure",
+      "pattern": "Emoji used as bullet points or section dividers",
+      "example": "✅ Fast setup\n🚀 Scale on demand\n🔒 Enterprise security",
+      "tell": "AI uses emoji bullets to make bland content look organized.",
+      "fix": "Use real bullets or real sections. Emoji only for actual status meaning.",
+      "severity": "medium"
+    },
+    {
+      "name": "Hashtag stacks",
+      "pattern": "Five or more hashtags at the end of a post",
+      "example": "#innovation #growth #marketing #AI #future",
+      "tell": "AI generates hashtag clouds. Humans pick 2-3 specific ones.",
+      "fix": "Cut to 2-3 hashtags that name the actual audience.",
+      "severity": "medium"
+    },
+    {
+      "name": "Markdown in plain text",
+      "pattern": "Asterisks or markdown syntax visible in a chat or email",
+      "example": "**This is important** and so is *this*.",
+      "tell": "AI composes in markdown and forgets to render it.",
+      "fix": "Render the formatting or strip the markers.",
+      "severity": "high"
+    },
+    {
+      "name": "Invented precision",
+      "pattern": "Statistics and quotes that do not exist",
+      "example": "Studies show 87% of teams report higher morale.",
+      "tell": "AI fabricates plausible numbers. The confidence is the tell.",
+      "fix": "Never include a number you cannot source. Write 'some teams' or find the real data.",
+      "severity": "critical"
+    },
+    {
+      "name": "Universal sweep",
+      "pattern": "Claims that apply to everyone",
+      "example": "Every business needs this. No one can afford to ignore it.",
+      "tell": "AI generalizes because it lacks your specific context.",
+      "fix": "Name the specific segment: 'Teams with 10-200 employees and no ops layer.'",
+      "severity": "high"
+    },
+    {
+      "name": "Exclamation escalation",
+      "pattern": "More exclamation marks than the content earns",
+      "example": "This is amazing!! You won't believe it!!!",
+      "tell": "AI amps energy synthetically when asked for enthusiasm.",
+      "fix": "Write the energy with facts, not punctuation.",
+      "severity": "medium"
+    },
+    {
+      "name": "Ellipsis trail",
+      "pattern": "Ending thoughts with ... to sound contemplative",
+      "example": "The answer, it turns out, is simpler than we thought...",
+      "tell": "AI uses the trailing ellipsis to fake human hesitation.",
+      "fix": "End the sentence with a period.",
+      "severity": "medium"
+    },
+    {
+      "name": "Em dash sprinkle",
+      "pattern": "Em dashes (the long dash, written as -- in this dataset) as the default parenthesis",
+      "example": "The system -- which runs in production -- handles every request.",
+      "tell": "AI overuses em dashes because they are the easiest way to insert an aside. Multiple per paragraph is a tell.",
+      "fix": "Replace most em dashes with commas, parentheses, or separate sentences.",
+      "severity": "high"
+    }
+  ]
+}

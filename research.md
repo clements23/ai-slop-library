@@ -1,0 +1,55 @@
+# Research: What We Know About AI Slop
+
+The evidence base for the patterns in this library. Every claim in `data/` and `reference/` traces to published research or large-scale measurement.
+
+## Academic research
+
+### Quantifying LLM usage in scientific papers
+Liang et al., *Nature Human Behaviour* (2025).
+Over a million papers. Words like "realm", "intricate", "showcasing", and "pivotal" were flat for a decade, then surged from 2023 as LLM-assisted writing entered scientific publishing. This is the strongest evidence that specific words are LLM fingerprints: the words did not change meaning, the generation distribution did.
+
+### Delving into LLM-assisted writing through excess vocabulary
+*Science Advances* (2025).
+15 million biomedical abstracts. "Delve" rose about 1,500% between 2022 and 2024. The paper measures excess-vocabulary markers as a signature of LLM assistance.
+
+### Measuring AI "Slop" in Text
+Shaib et al. (2025), arXiv:2509.19163.
+Builds a taxonomy of slop from expert interviews and span-level annotation. Finds slop judgments track dimensions like coherence and relevance, and that slop is a measurable property of text spans, not a vibe.
+
+### EQ-Bench Slop Score
+eqbench.com/slop-score.html
+Public leaderboard scoring language models on slop words, "not x, but y" constructions, and over-represented trigrams. Confirms the construction-level tells (binary contrasts, specific trigram patterns) as measurable across models.
+
+### Antislop framework
+Antislop (2025), arXiv:2510.15061, accepted at ICLR 2026.
+Documents thousands of slop phrases and proposes a sampling-time suppression method. The phrase list itself is public and is one of the largest collected datasets of slop constructions.
+
+## Community field guides
+
+### Wikipedia: Signs of AI writing
+Wikipedia's field guide built from flagged articles during the AI cleanup project. Catalogs vocabulary, punctuation, and formatting tells with real examples. One of the longest-running community collections.
+
+### WikiProject AI Cleanup
+The Wikipedia editor project that reviews suspected AI-generated content and maintains the signs guide. Its flagged-article corpus is a practical dataset of real-world AI slop.
+
+### Buffer's 52M post analysis
+Social-post corpus analysis that fed several community detection lists. Contributed the social-media register tells (emoji structure, hashtag stacks, exclamation escalation).
+
+### Peter Yang's No AI Slop (petergyang/no-ai-slop)
+20+ pattern list including binary contrasts, throat-clearing openers, faux-insight setups, colon reveals, dramatic fragments, synonym cycling, and fake-profound endings. 5k stars.
+
+### Kill AI Slop (yetone/kill-ai-slop)
+Field guide to the visual and copy tics of AI-generated products, shipped as an agent skill.
+
+## What the research agrees on
+
+1. **Slop is measurable, not subjective.** The word-level and construction-level tells replicate across corpora (papers, abstracts, social posts).
+2. **The tells are over-representation, not presence.** "Crucial" or "however" are not wrong words; their *frequency* in AI output is the signal. Tools should treat severity as frequency-weighted.
+3. **Structure tells beat word tells.** Constructions (binary contrast, throat-clearing, fake-profound endings) are harder for models to stop producing than single words, because they are generation-level habits.
+4. **Detectors are unreliable as classifiers.** False-positive rates on human writing are high. Use the pattern library as a *linting* layer for your own text, not as an accusation tool for others'.
+
+## Open questions
+
+- Which tells survive as models are fine-tuned against them? (The slop arms race.)
+- Per-language fingerprints beyond English are under-researched; community lists (Korean byeong-yeoktu, Russian kantselyarit, Chinese gongwen qiang) are ahead of academia.
+- Do visual tells have the same measurement base as writing tells? The visual list in `reference/visual.md` is community-derived, not yet corpus-measured.
