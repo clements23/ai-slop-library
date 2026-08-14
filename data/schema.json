@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/clements23/ai-slop-library/main/data/schema.json",
+  "title": "AI Slop Library data file",
+  "description": "Common shape of every data file in the AI Slop Library. Each file adds one category-specific array.",
+  "type": "object",
+  "required": ["category", "description"],
+  "properties": {
+    "category": { "type": "string", "description": "The category key: words, phrases, openers, structures, punctuation, or a model watermark name." },
+    "description": { "type": "string" },
+    "words": { "$ref": "#/definitions/itemArray" },
+    "phrases": { "$ref": "#/definitions/itemArray" },
+    "openers": { "$ref": "#/definitions/itemArray" },
+    "structures": { "$ref": "#/definitions/itemArray" },
+    "punctuation": { "$ref": "#/definitions/itemArray" },
+    "fingerprint": { "$ref": "#/definitions/itemArray" },
+    "technical_watermark": { "type": "object" }
+  },
+  "definitions": {
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"]
+    },
+    "itemArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity"],
+        "properties": {
+          "severity": { "$ref": "#/definitions/severity" },
+          "fix": { "type": "string", "description": "The recommended replacement or rewrite." },
+          "family": { "type": "string", "description": "Grouping key for tools (binary-contrast, throat-clearing, weasel-attribution, etc.)." }
+        }
+      }
+    }
+  }
+}

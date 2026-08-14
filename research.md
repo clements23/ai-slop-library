@@ -57,6 +57,25 @@ Independent of the technical watermark, Claude carries a writing fingerprint tha
 
 The fingerprint is statistical: one pattern in a document is not evidence; the cluster is the signal. The fingerprint and the technical watermark are independent layers - removing one does not affect the other.
 
+## The GPT fingerprint
+
+GPT carries the chat-assistant register: the compliance and service-script behaviors trained by RLHF on conversational data, documented in `data/gpt-watermarks.json`:
+
+1. **Assistant identity leak** - "As an AI language model" is the archetypal tell; newer models drop the literal phrase but keep the register ("As an AI,", "I'm here to help,").
+2. **Assistantese closers** - "I hope this helps!", "Let me know if you have any questions."
+3. **Deferential openers** - "Certainly!", "Absolutely!" before the actual answer.
+4. **Apologetic preamble** - "I apologize for the confusion" when nothing went wrong.
+5. **Listicle default** - numbered steps for content that is not sequential.
+6. **Coverage phrasing** - "Whether you're a beginner or an expert..."
+7. **The intersection frame** - "The intersection of technology and humanity."
+8. **GPT vocabulary cluster** - delve, seamless, unlock, elevate, comprehensive, tailored, navigate, landscape.
+9. **Formulaic emphasis** - "Remember that...", "Keep in mind...", "It's essential to..."
+10. **Clean-slate summary** - restating the question before answering it.
+11. **Bold-and-emoji formatting** - marketing-page formatting inside chat replies.
+12. **Possibility hedge stack** - "may potentially possibly help."
+
+Sources: GPTZero/Turnitin/Winston AI detection documentation, university detection guides (Maynooth), RTE's detection reporting, and community pattern lists. The assistant-register patterns distinguish GPT from Claude, whose fingerprint is the balanced-analyst register.
+
 ## What the research agrees on
 
 1. **Slop is measurable, not subjective.** The word-level and construction-level tells replicate across corpora (papers, abstracts, social posts).

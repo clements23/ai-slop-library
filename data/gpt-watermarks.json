@@ -1,0 +1,115 @@
+{
+  "category": "gpt-watermarks",
+  "description": "The GPT/ChatGPT detection layer: the assistant-register tells and vocabulary cluster detectors associate with OpenAI models. Documented from detector research (GPTZero, Turnitin, Winston AI), university detection guides, and community pattern lists.",
+  "fingerprint": [
+    {
+      "name": "Assistant identity leak",
+      "pattern": "Lines that reveal the model's assistant training register",
+      "example": "As an AI language model, I cannot provide personal opinions. I'm here to help with any questions you may have.",
+      "tell": "'As an AI language model' is the most famous ChatGPT tell in history. Newer models are trained out of the literal phrase, but the register survives in variants: 'As an AI,', 'I'm here to help,', 'I don't have personal opinions.'",
+      "fix": "Delete the identity line entirely. If an opinion is needed, the writer supplies it.",
+      "severity": "critical",
+      "family": "assistantese"
+    },
+    {
+      "name": "Assistantese closers",
+      "pattern": "Service-script endings",
+      "example": "I hope this helps! Let me know if you have any questions. Feel free to reach out if you need further assistance.",
+      "tell": "The customer-support register leaks into every genre: essays, reports, and blog posts end with service scripts.",
+      "fix": "Cut the closer. End on the substance.",
+      "severity": "high",
+      "family": "assistantese"
+    },
+    {
+      "name": "Deferential opener",
+      "pattern": "Compliance-before-answer openers",
+      "example": "Certainly! Absolutely. Of course, I'd be happy to help.",
+      "tell": "GPT opens with a compliance phrase before the actual answer, a reward-model artifact of chat training.",
+      "fix": "Start with the answer.",
+      "severity": "high",
+      "family": "assistantese"
+    },
+    {
+      "name": "Apologetic preamble",
+      "pattern": "I apologize / I understand your concern before the real response",
+      "example": "I apologize for the confusion. I understand this can be frustrating. Let me clarify.",
+      "tell": "GPT pre-empts with apology even when nothing went wrong. The sympathy script is a tell.",
+      "fix": "Give the correction or the clarification directly. Apologize only when a mistake was made.",
+      "severity": "high",
+      "family": "assistantese"
+    },
+    {
+      "name": "Listicle default",
+      "pattern": "Numbered steps or bullet lists for content that is not sequential",
+      "example": "Here are 5 tips to improve your writing: 1. Read more. 2. Write daily. 3. ...",
+      "tell": "GPT restructures any request into a numbered list. Listicle framing ('Here are X tips', 'Here are some ways') is its default answer shape.",
+      "fix": "Write prose unless the enumeration is genuinely sequential.",
+      "severity": "medium",
+      "family": "structure"
+    },
+    {
+      "name": "Coverage phrasing",
+      "pattern": "Spraying both sides of every dichotomy",
+      "example": "Whether you're a beginner or an expert, whether you're a startup or an enterprise, this applies to you.",
+      "tell": "GPT covers every audience in one sentence because it does not know who is reading.",
+      "fix": "Pick the reader. Name one audience.",
+      "severity": "medium",
+      "family": "coverage"
+    },
+    {
+      "name": "The 'intersection' frame",
+      "pattern": "Naming the topic as an intersection of abstractions",
+      "example": "The intersection of technology and humanity. The crossroads of marketing and psychology.",
+      "tell": "GPT frames topics as abstract intersections to sound analytical.",
+      "fix": "Name the concrete subject.",
+      "severity": "medium",
+      "family": "abstraction"
+    },
+    {
+      "name": "GPT vocabulary cluster",
+      "pattern": "High-frequency GPT indicator words",
+      "example": "delve, seamless, unlock, elevate, comprehensive, tailored, navigate, landscape, transform, revolutionize, tap into, empowers, it's important to note, in today's fast-paced world, remember that, keep in mind",
+      "tell": "GPT's preferred vocabulary overlaps Claude's at the top (delve, pivotal, landscape) but skews more promotional: unlock, elevate, seamless, tailored, comprehensive. Detectors weight the cluster, not single instances.",
+      "fix": "Replace with concrete terms. 'Unlock the power of X' becomes 'X does Y'. 'Seamless' becomes what actually works.",
+      "severity": "high",
+      "family": "vocabulary"
+    },
+    {
+      "name": "Formulaic emphasis",
+      "pattern": "Imperative reminders addressed to the reader",
+      "example": "Remember that consistency is key. Keep in mind that results take time. It's essential to track your progress.",
+      "tell": "GPT addresses the reader with imperative reminders it learned from self-improvement content.",
+      "fix": "State the fact without commanding the reader.",
+      "severity": "medium",
+      "family": "imperative"
+    },
+    {
+      "name": "Clean-slate summary",
+      "pattern": "Restating the question before answering it",
+      "example": "To summarize, you asked about X. The answer involves Y and Z.",
+      "tell": "GPT restates the prompt to buy generation time and appear thorough.",
+      "fix": "Answer. Do not restate the question.",
+      "severity": "medium",
+      "family": "structure"
+    },
+    {
+      "name": "Bold-and-emoji formatting",
+      "pattern": "Bold lead-ins plus emoji in chat and social output",
+      "example": "**Key benefits:**\n- Fast setup ✅\n- Easy to use ✅\n- Scales with you ✅",
+      "tell": "GPT formats chat replies like marketing pages: bold labels, emoji bullets, checkmark rows.",
+      "fix": "Plain text. Emoji only for real status meaning.",
+      "severity": "medium",
+      "family": "formatting"
+    },
+    {
+      "name": "Possibility hedge stack",
+      "pattern": "Multiple epistemic hedges in one sentence",
+      "example": "This may potentially help you possibly improve your results.",
+      "tell": "GPT hedges because it cannot verify the claim. Stacked hedges (may, might, could, potentially, possibly) are its signature.",
+      "fix": "Cut every hedge. State the claim or drop it.",
+      "severity": "high",
+      "family": "hedging"
+    }
+  ],
+  "notes": "The GPT fingerprint is the chat-assistant register: compliance openers, service closers, and promotional vocabulary. It overlaps the general slop library at the vocabulary layer and diverges in the assistantese patterns. As with Claude, the fingerprint is statistical: the cluster is the signal, not single instances."
+}

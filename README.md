@@ -8,12 +8,19 @@ The data layer is plain JSON. Any linter, agent skill, or detector can load it. 
 
 ```
 data/
+  schema.json           JSON schema for all data files
   slop-words.json       95 overused words, severity-rated
   slop-phrases.json     67 multi-word constructions with examples and fixes
   slop-openers.json     83 sentence openers with fixes
   slop-structures.json  27 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
   claude-watermarks.json  the Claude detection layer: technical watermark + 7 fingerprint patterns
+  gpt-watermarks.json     the GPT detection layer: 12 assistant-register fingerprint patterns
+scripts/
+  slopcheck.py          zero-dependency CLI linter (Python 3 stdlib only)
+examples/
+  sloppy.txt            a text packed with tells (fixture for testing)
+  clean.txt             the same content de-slopped (fixture for testing)
 reference/
   writing.md           the human-readable guide to writing slop
   visual.md            the visual/design tells (purple gradients, blob heroes, ...)
@@ -26,7 +33,20 @@ ecosystem.md           curated index of the AI-slop ecosystem (40+ repos/tools)
 
 ```sh
 git clone https://github.com/clements23/ai-slop-library
+cd ai-slop-library
+
+# scan a file
+python3 scripts/slopcheck.py draft.txt
+
+# scan with a severity floor, or machine-readable output
+python3 scripts/slopcheck.py --severity high draft.txt
+python3 scripts/slopcheck.py --json draft.txt
+
+# scan stdin
+cat draft.txt | python3 scripts/slopcheck.py -
 ```
+
+Exit code 1 means tells found, 0 means clean - usable in pre-commit hooks and CI. See `python3 scripts/slopcheck.py --help`.
 
 Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) so tools can decide whether to warn or block. Phrase entries carry a `family` field (binary-contrast, throat-clearing, weasel-attribution, etc.) so tools can group and explain hits.
 
@@ -60,10 +80,19 @@ The tells are measured, not vibes: "realm", "intricate", "showcasing", "pivotal"
 
 ## How to use it
 
-- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`.
+- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`. `scripts/slopcheck.py` is the reference implementation.
 - **Agent skills**: point a de-slop skill at `data/slop-phrases.json` + `data/slop-structures.json` for its pattern list.
 - **Detectors**: combine word and structure frequencies as features (with the caveat that detectors false-positive on human text - use as lint, not accusation).
-- **Writers**: read `reference/writing.md`, then run your own text against the data.
+- **Writers**: read `reference/writing.md`, then run your own text against the data with `scripts/slopcheck.py`.
+
+## Model fingerprints
+
+Beyond the general layers, the library documents the detectable registers of specific model families:
+
+- `data/claude-watermarks.json` - the invisible technical watermark Anthropic embeds in Claude output (confirmed, not removable by rewriting) plus seven fingerprint patterns: first-person avoidance, scope acknowledgement, balanced counterarguments, triadic lists, conclusion recycling, paragraph regularity, vocabulary cluster.
+- `data/gpt-watermarks.json` - the GPT assistant register: identity leaks ("As an AI language model"), compliance openers, service closers, possibility-hedge stacks, listicle defaults, promotional vocabulary cluster.
+
+Fingerprints are statistical: the cluster is the signal, not single instances.
 
 ## Related
 
