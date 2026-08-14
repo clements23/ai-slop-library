@@ -1,0 +1,46 @@
+# Changelog
+
+All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
+
+## [1.0.0] - 2026-08-14
+
+First tagged release. The library is complete: pattern data, reference guides, model fingerprints, tooling, and CI.
+
+### Added
+
+- `data/schema.json` - JSON schema for all data files
+- `data/slop-words.json` - 95 overused words, severity-rated (critical/high/medium/low)
+- `data/slop-phrases.json` - 67 multi-word constructions with examples and fixes, grouped by family (binary-contrast, throat-clearing, weasel-attribution, ...)
+- `data/slop-openers.json` - 83 sentence openers with fixes
+- `data/slop-structures.json` - 27 rhetorical shapes (binary contrast, rule of three, synonym cycling, fake-profound endings, ...)
+- `data/slop-punctuation.json` - 15 punctuation and formatting tics (em dash, colon reveal, exclamation escalation, ...)
+- `data/claude-watermarks.json` - Claude detection layer: the invisible technical watermark (confirmed by Anthropic) plus 7 writing-fingerprint patterns
+- `data/gpt-watermarks.json` - GPT detection layer: 12 chat-assistant register patterns
+- `scripts/slopcheck.py` - zero-dependency CLI linter (Python 3 stdlib only), exit code 1 on tells for CI use
+- `examples/sloppy.txt`, `examples/clean.txt` - linter fixtures: a text packed with tells and the same content de-slopped
+- `reference/writing.md`, `reference/visual.md`, `reference/code.md` - human-readable guides to the three slop domains
+- `research.md` - the evidence base: Nature Human Behaviour (2025), Science Advances (2025), Shaib et al. (arXiv:2509.19163), EQ-Bench Slop Score, Antislop (ICLR 2026), Anthropic watermark documentation
+- `ecosystem.md` - curated index of 40+ existing AI-slop repositories and tools
+- `CONTRIBUTING.md` - pattern entry rules and validation instructions
+- `.github/workflows/validate.yml` - CI: validates all data files and runs the linter self-test
+
+## Unreleased history
+
+The following entries document the build sequence before the first tag.
+
+### 2026-08-14 - Tooling layer
+
+- Added `scripts/slopcheck.py` (zero-dependency CLI)
+- Added `examples/` fixtures, `CONTRIBUTING.md`, CI workflow
+- Added `data/gpt-watermarks.json` (GPT fingerprint, 12 patterns)
+- Added `data/schema.json` (fixes the broken `$schema` reference in slop-words.json)
+
+### 2026-08-14 - Claude watermark layer
+
+- Added `data/claude-watermarks.json`: technical watermark + 7 fingerprint patterns
+- Added 10 Claude-cluster words to `slop-words.json` (nuanced, multifaceted, encompasses, ...)
+- Documented the Claude layer in `reference/writing.md` and `research.md`
+
+### 2026-08-14 - Initial release
+
+- Added core data files, reference guides, research, and ecosystem index
