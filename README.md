@@ -12,9 +12,9 @@ The data layer is plain JSON. Any linter, agent skill, or detector can load it. 
 data/
   schema.json           JSON schema for all data files
   slop-words.json       95 overused words, severity-rated
-  slop-phrases.json     67 multi-word constructions with examples and fixes
+  slop-phrases.json     71 multi-word constructions with examples and fixes
   slop-openers.json     83 sentence openers with fixes
-  slop-structures.json  27 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-structures.json  28 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
   claude-watermarks.json  the Claude detection layer: technical watermark + 7 fingerprint patterns
   gpt-watermarks.json     the GPT detection layer: 12 assistant-register fingerprint patterns

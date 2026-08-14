@@ -91,6 +91,69 @@ PUNCT_MATCHERS = [
     (re.compile(r"\b[A-Z][a-z]+[;][a-z]"), "punctuation", "semicolon dependence"),
 ]
 
+# Structural formulas that substring matching cannot catch because the
+# pattern uses placeholders (X, Y, Z). Each is a compiled regex with
+# (regex, category, name, severity, example, fix, family).
+STRUCTURE_MATCHERS = [
+    (
+        # "X is not Y. It is Z."  /  "X is not Y, but Z"
+        re.compile(
+            r"\bis\s+not\s+(?:just\s+|merely\s+|simply\s+|strictly\s+)?"
+            r"[A-Za-z][A-Za-z\s,]{2,60}[.!?]\s+(?:it|this|that|what)\s+is\s+"
+            r"(?:not\s+)?(?:just\s+)?[A-Za-z]",
+            re.IGNORECASE,
+        ),
+        "structures",
+        "Binary contrast (declarative)",
+        "critical",
+        "The gap is not labor arbitrage. It is a trillion-parameter model.",
+        "State the positive alone: 'The gap is architecture.'",
+        "binary-contrast",
+    ),
+    (
+        # "It's not X. It's Y."  /  "It's not X, it's Y."
+        re.compile(
+            r"\bit['’]?s\s+not\s+(?:just\s+|merely\s+|simply\s+)?"
+            r"[A-Za-z][A-Za-z\s,]{2,60}[.!?,]\s*(?:and\s+)?"
+            r"it['’]?s\s+(?:just\s+)?[A-Za-z]",
+            re.IGNORECASE,
+        ),
+        "structures",
+        "Binary contrast (contracted)",
+        "critical",
+        "It's not about the tool. It's about the system.",
+        "State Y alone.",
+        "binary-contrast",
+    ),
+    (
+        # ", not X." / ", not just X."  - negation tail on a clause
+        re.compile(
+            r",\s+not\s+(?:just\s+|merely\s+|simply\s+|only\s+)?"
+            r"(?:a\s+|an\s+|the\s+)?[a-z][a-z\s,-]{1,40}\.",
+            re.IGNORECASE,
+        ),
+        "structures",
+        "Negation tail (, not X)",
+        "high",
+        "a monthly operating cost, not a one-time choice.",
+        "Cut the negation tail: 'Routing is now a monthly operating cost.'",
+        "binary-contrast",
+    ),
+    (
+        # "X, Y, and Z, and [the point]." - trailing appended insight
+        re.compile(
+            r",\s+and\s+[a-z][a-z\s,]{2,40},\s*and\s+[a-z][a-z\s,]{1,40}\.",
+            re.IGNORECASE,
+        ),
+        "structures",
+        "Trailing appended insight",
+        "critical",
+        "architecture, subsidies, and strategy, and most buyers are reading the wrong number.",
+        "Promote the trailing clause to its own sentence at the front.",
+        "trailing-appendage",
+    ),
+]
+
 
 def scan(text, matchers, min_severity_idx, min_count):
     hits = []
@@ -122,6 +185,20 @@ def scan(text, matchers, min_severity_idx, min_count):
                     "example": "",
                     "fix": "",
                     "family": "punctuation",
+                }
+            )
+    for regex, kind, name, severity, example, fix, family in STRUCTURE_MATCHERS:
+        matches = regex.findall(text)
+        if len(matches) >= min_count and SEVERITY_RANK.get(severity, 3) <= min_severity_idx:
+            hits.append(
+                {
+                    "category": kind,
+                    "pattern": name,
+                    "count": len(matches),
+                    "severity": severity,
+                    "example": example,
+                    "fix": fix,
+                    "family": family,
                 }
             )
     hits.sort(key=lambda h: (SEVERITY_RANK.get(h["severity"], 3), -h["count"]))

@@ -24,37 +24,51 @@ The core mechanism: LLMs are trained on the average of human writing, so they pr
 - **medium** - stylistic tics. Overused connectors, rhetorical questions, emoji bullets.
 - **low** - mild infrequency markers. Fine in small doses, tells in clusters.
 
-## The five patterns that matter most
+## The six patterns that matter most
 
 ### 1. The binary contrast ("It's not X. It's Y.")
 
 The most documented single construction. AI reaches for it because it produces the illusion of insight with zero content. Every AI writing detection study that measures constructions flags it.
 
-Example: "The boom is priced on capex, not cash flow."
-Fix: State the positive alone, or split the negation into its own sentence naming the actor: "Cash flow will decide who survives."
+The family has four faces, all banned:
+- "It's not X. It's Y." - contracted
+- "X is not Y. It is Z." - declarative
+- "Not X, but Y" - concession
+- "X, not Y" - negation tail (e.g., "a monthly operating cost, not a one-time choice")
 
-### 2. The throat-clearing opener
+Example: "The boom is priced on capex, not cash flow. The gap is not labor arbitrage. It is a trillion-parameter model."
+Fix: State the positive alone, or split the negation into its own sentence naming the actor: "Cash flow will decide who survives. The gap is architecture."
+
+### 2. The trailing appended insight (wire-style writers put the point first)
+
+A sentence that appears complete, then appends the actual thesis after a final "and": "The AI cost gap is architecture, subsidies, and strategy, and most buyers are reading the wrong number." The point that matters most is smuggled into the weakest grammatical slot, as an afterthought.
+
+This reads as AI because wire-style writers (AP, Reuters) front-load the point. The lede answers "what happened" in the first sentence; the reason lands in the second. AI does the inverse: it builds context, then tags the insight on at the end where it is least likely to be read.
+
+Fix: Promote the appended clause to its own sentence at the front. "Most buyers are reading the wrong number. The gap is architecture, subsidies, and strategy."
+
+### 3. The throat-clearing opener
 
 The first two sentences carry no information. They promise content instead of delivering it.
 
 Example: "In today's fast-paced world, businesses must adapt. In this article, we explore the key strategies that can help."
 Fix: Open with a fact, a number, or a claim.
 
-### 3. The fake-profound ending
+### 4. The fake-profound ending
 
 The closing line gestures at cosmic significance and commits to nothing.
 
 Example: "The future isn't coming. It's already here."
 Fix: End with the decision, the number, or the next step.
 
-### 4. Weasel attribution
+### 5. Weasel attribution
 
 Anonymous authorities manufactured on demand.
 
 Example: "Experts agree that hybrid work is here to stay."
 Fix: Name the source or drop the claim.
 
-### 5. Synonym cycling
+### 6. Synonym cycling
 
 The same thing renamed at every appearance because AI fears lexical repetition.
 

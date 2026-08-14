@@ -10,6 +10,34 @@
       "family": "binary-contrast"
     },
     {
+      "phrase": "X is not Y. It is Z.",
+      "example": "The gap is not labor arbitrage. It is a trillion-parameter model that wakes only 32 billion parameters per token.",
+      "fix": "State Z alone: 'The gap is architecture. A trillion-parameter model wakes only 32 billion parameters per token.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "X, Y, and Z, and [the point]",
+      "example": "The AI cost gap is architecture, subsidies, and strategy, and most buyers are reading the wrong number.",
+      "fix": "The real point was smuggled into a trailing 'and' clause. Promote it: 'Most buyers are reading the wrong number. The gap is architecture, subsidies, and strategy.'",
+      "severity": "critical",
+      "family": "trailing-appendage"
+    },
+    {
+      "phrase": "X, not Y",
+      "example": "The routing decision is now a monthly operating cost, not a one-time choice.",
+      "fix": "Cut the negation tail: 'Routing is now a monthly operating cost. Teams make the decision every invoice cycle.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "X, not just Y",
+      "example": "The gap is structural, not just financial.",
+      "fix": "State the claim alone: 'The gap is structural. The price difference is a symptom.'",
+      "severity": "high",
+      "family": "binary-contrast"
+    },
+    {
       "phrase": "Not X, but Y",
       "example": "Not just growth, but sustainable growth.",
       "fix": "Write the positive: 'Growth that compounds requires a system.'",
