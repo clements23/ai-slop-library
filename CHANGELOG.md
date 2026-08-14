@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.1.0] - 2026-08-14
+
+Structural detection layer. The library previously documented binary contrast but its linter could not catch it - the substring matcher cannot match formula patterns with placeholders. Found in a live AI Sift Founder's Voice draft.
+
+### Added
+
+- `scripts/slopcheck.py`: `STRUCTURE_MATCHERS` - regex detection for four structural formulas that substring matching could never catch: declarative binary contrast ("X is not Y. It is Z."), contracted binary contrast ("It's not X. It's Y."), negation tail (", not X"), and trailing appended insight ("X, Y, and Z, and [the point]").
+- `data/slop-phrases.json`: 4 new phrases - "X is not Y. It is Z.", "X, Y, and Z, and [the point]" (new `trailing-appendage` family), "X, not Y", "X, not just Y". 67 to 71.
+- `data/slop-structures.json`: "Trailing appended insight" structure; expanded "Binary contrast" to cover all four forms. 27 to 28.
+- `reference/writing.md`: binary contrast family expanded to four banned faces; new "trailing appended insight" explainer with the wire-style rationale (AP/Reuters front-load the point; AI tags it on at the end). "Five patterns" section is now six.
+- `examples/sloppy.txt`: added the three live slop sentences so CI self-tests exercise the new structural matchers.
+- `examples/clean.txt`: removed a hidden negation tail ("repeat purchase rate, not engagement") that was itself the banned pattern.
+
+### Changed
+
+- `README.md`: counts updated (71 phrases, 28 structures).
+
 ## [1.0.0] - 2026-08-14
 
 First tagged release. The library is complete: pattern data, reference guides, model fingerprints, tooling, and CI.

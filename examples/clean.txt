@@ -1,6 +1,6 @@
 Marketing teams that wait for perfect data lose the quarter. We measured it.
 
-The customer behavior signal that matters most is repeat purchase rate, not engagement. A 5% lift in repeat rate changed one client's revenue forecast by 22% in a single quarter. Personalization works, but only when it changes what a customer sees next week. Most personalization efforts stop at first-name tokens, which is why they fail.
+The customer behavior signal that matters most is repeat purchase rate. A 5% lift in repeat rate changed one client's revenue forecast by 22% in a single quarter. Personalization works, but only when it changes what a customer sees next week. Most personalization efforts stop at first-name tokens, which is why they fail.
 
 The pattern we see in every engagement: teams overinvest in acquisition while retention data sits unread. Acquisition spend is easy to measure, so it gets the budget. Retention is harder to attribute, so it gets the leftovers. The math inverts within two quarters.
 

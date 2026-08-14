@@ -4,10 +4,18 @@
   "structures": [
     {
       "name": "Binary contrast",
-      "pattern": "\"It's not X. It's Y.\" / \"Not X, but Y\" / \"X, not Y\"",
-      "example": "The boom is priced on capex, not cash flow.",
-      "tell": "AI reaches for the X-not-Y construction constantly because it produces the illusion of insight with zero content. It is the single most documented AI tell in detection studies.",
+      "pattern": "\"It's not X. It's Y.\" / \"X is not Y. It is Z.\" / \"Not X, but Y\" / \"X, not Y\"",
+      "example": "The boom is priced on capex, not cash flow. The gap is not labor arbitrage. It is a trillion-parameter model.",
+      "tell": "AI reaches for the X-not-Y construction constantly because it produces the illusion of insight with zero content. It is the single most documented AI tell in detection studies. The declarative form ('X is not Y. It is Z.') is a contract-era tell on top of the classic negative-then-positive.",
       "fix": "State the positive alone. If the negation matters, split it into its own sentence and name the actor: 'Cash flow will decide who survives.'",
+      "severity": "critical"
+    },
+    {
+      "name": "Trailing appended insight",
+      "pattern": "List or setup clause, then 'and [the real point]' tacked onto the end of the sentence",
+      "example": "The AI cost gap is architecture, subsidies, and strategy, and most buyers are reading the wrong number.",
+      "tell": "AI builds a sentence that appears complete, then appends the actual thesis after a final 'and' as if the point were an afterthought. Wire-style writers put the point first. The trailing-appendage version is a hallmark of LLM-generated business prose.",
+      "fix": "Promote the appended clause to its own sentence at the front: 'Most buyers are reading the wrong number. The gap is architecture, subsidies, and strategy.'",
       "severity": "critical"
     },
     {
