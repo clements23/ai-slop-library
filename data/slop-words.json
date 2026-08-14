@@ -427,6 +427,56 @@
       "word": "cost-effective",
       "severity": "medium",
       "note": "Vague. Say what it costs and what it returns."
+    },
+    {
+      "word": "nuanced",
+      "severity": "medium",
+      "note": "Claude vocabulary cluster. Fine when the nuance is named; padding when it is not."
+    },
+    {
+      "word": "multifaceted",
+      "severity": "high",
+      "note": "Claude vocabulary cluster. Means 'complex' with extra syllables."
+    },
+    {
+      "word": "encompasses",
+      "severity": "medium",
+      "note": "Claude vocabulary cluster. Use 'covers' or name the parts."
+    },
+    {
+      "word": "key takeaway",
+      "severity": "medium",
+      "note": "Claude vocabulary cluster. Give the takeaway, not the label."
+    },
+    {
+      "word": "one might argue",
+      "severity": "high",
+      "note": "Claude first-person avoidance tell. Name who argues."
+    },
+    {
+      "word": "it could be suggested",
+      "severity": "high",
+      "note": "Claude first-person avoidance tell. Impersonal hedge."
+    },
+    {
+      "word": "the reader may notice",
+      "severity": "high",
+      "note": "Claude first-person avoidance tell. Says what the reader does instead of what the writer claims."
+    },
+    {
+      "word": "worth interrogating",
+      "severity": "medium",
+      "note": "Claude intellectualizing tell. 'Interrogate' ideas instead of examining them."
+    },
+    {
+      "word": "not an exhaustive treatment",
+      "severity": "high",
+      "note": "Claude scope-acknowledgement tell. Cut the ritual disclaimer."
+    },
+    {
+      "word": "important caveats to consider",
+      "severity": "high",
+      "note": "Claude scope-acknowledgement tell. State the caveat or cut it."
     }
   ]
 }

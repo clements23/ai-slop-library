@@ -41,6 +41,22 @@ Social-post corpus analysis that fed several community detection lists. Contribu
 ### Kill AI Slop (yetone/kill-ai-slop)
 Field guide to the visual and copy tics of AI-generated products, shipped as an agent skill.
 
+## The Claude watermark
+
+Anthropic confirmed that Claude models embed an invisible statistical mark in generated text (support.claude.com, "How Claude marks AI-generated content", 2026). It is detectable by systems, invisible to readers, and was introduced in response to EU AI Act obligations. A detected mark is evidence content was processed by Claude but is not fully conclusive; absence of a mark does not prove human authorship. Nature covered the rollout in "Can Anthropic's invisible watermarks curb 'AI slop'?" (Nature, 2026).
+
+Independent of the technical watermark, Claude carries a writing fingerprint that detectors (GPTZero, Turnitin, Winston AI) are specifically calibrated to find, documented in `data/claude-watermarks.json`:
+
+1. **First-person avoidance** - "One might argue", "It could be suggested" in place of "I".
+2. **Systematic scope acknowledgement** - limitation disclaimers appearing at fixed structural positions, a Constitutional AI training artifact.
+3. **Balanced counterargument inclusion** - every claim paired with its opposite, applied uniformly rather than selectively.
+4. **Triadic list compulsion** - an RLHF artifact; human evaluators rewarded tidy three-point structures.
+5. **Conclusion recycling** - restate, summarize, gesture at implications, in that order, almost every time.
+6. **Paragraph architecture regularity** - uniform internal paragraph shape.
+7. **Claude vocabulary cluster** - delve, nuanced, multifaceted, underscore, encompasses, pivotal, realm, vibrant, tapestry, "key takeaway".
+
+The fingerprint is statistical: one pattern in a document is not evidence; the cluster is the signal. The fingerprint and the technical watermark are independent layers - removing one does not affect the other.
+
 ## What the research agrees on
 
 1. **Slop is measurable, not subjective.** The word-level and construction-level tells replicate across corpora (papers, abstracts, social posts).
