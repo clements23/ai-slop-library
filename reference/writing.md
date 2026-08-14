@@ -79,6 +79,19 @@ Claude-specific tells live in `data/claude-watermarks.json`. Two independent lay
 
 The fingerprint is statistical: one instance is not evidence; the cluster is the signal.
 
+## The GPT layer
+
+GPT-specific tells live in `data/gpt-watermarks.json`. Where Claude's fingerprint is the balanced-analyst register (hedging, scope notes, triads), GPT's is the chat-assistant register:
+
+1. **Assistant identity leaks** - "As an AI language model", "I'm here to help". The archetypal tells; newer models drop the literal phrases but keep the register.
+2. **Assistantese** - compliance openers ("Certainly!"), service closers ("I hope this helps!"), apologetic preambles ("I apologize for the confusion") when nothing went wrong.
+3. **Possibility hedge stacks** - "may potentially possibly help". GPT hedges because it cannot verify.
+4. **Listicle default** - numbered steps for non-sequential content, "Here are 5 tips...".
+5. **Coverage phrasing** - "Whether you're a beginner or an expert..." sprayed at every audience.
+6. **GPT vocabulary cluster** - unlock, elevate, seamless, tailored, comprehensive, navigate, landscape - more promotional than Claude's cluster.
+
+The assistant-register patterns are what distinguish GPT output from Claude's; the vocabulary layers overlap at the top (delve, pivotal, landscape are shared).
+
 ## The rhythm tells
 
 - **Uniform sentence length**: AI token prediction prefers same-length sentences. Human writing breathes: long, short, long.
