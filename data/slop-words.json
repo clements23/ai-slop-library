@@ -1,0 +1,432 @@
+{
+  "$schema": "https://raw.githubusercontent.com/clements23/ai-slop-library/main/data/schema.json",
+  "category": "words",
+  "description": "Overused words that spike in LLM output. Measured in Nature Human Behaviour (2025) and Science Advances (2025): realm, intricate, showcasing, pivotal surged from 2023; delve rose ~1500% 2022-2024.",
+  "words": [
+    {
+      "word": "delve",
+      "severity": "critical",
+      "note": "Most famous AI tell. Flat for decades, then +1500% in biomedical abstracts. Never use."
+    },
+    {
+      "word": "tapestry",
+      "severity": "critical",
+      "note": "Faux-poetic abstraction. People do not write about tapestries unless discussing textiles."
+    },
+    {
+      "word": "landscape",
+      "severity": "high",
+      "note": "The 'competitive landscape' crutch. AI reaches for it in any market analysis."
+    },
+    {
+      "word": "realm",
+      "severity": "high",
+      "note": "Surged 4x in scientific papers since 2023."
+    },
+    {
+      "word": "intricate",
+      "severity": "high",
+      "note": "See realm. Academic papers peaked on it."
+    },
+    {
+      "word": "showcase",
+      "severity": "high",
+      "note": "Verb form ('showcases the') is the AI habit. Humans say 'shows' or 'demonstrates'."
+    },
+    {
+      "word": "pivotal",
+      "severity": "high",
+      "note": "'Pivotal moment', 'pivotal role'. Importance puffery."
+    },
+    {
+      "word": "robust",
+      "severity": "high",
+      "note": "Can be precise in engineering; usually padding elsewhere."
+    },
+    {
+      "word": "leverage",
+      "severity": "high",
+      "note": "Noun-as-verb jargon. YDN brand guide bans it explicitly."
+    },
+    {
+      "word": "synergy",
+      "severity": "critical",
+      "note": "Corp-speak, universally mocked."
+    },
+    {
+      "word": "holistic",
+      "severity": "high",
+      "note": "YDN brand guide bans it. Vague hand-wave pretending to be a method."
+    },
+    {
+      "word": "vibrant",
+      "severity": "high",
+      "note": "Banned by multiple AI detection studies. Especially 'vibrant community'."
+    },
+    {
+      "word": "testament",
+      "severity": "high",
+      "note": "'A testament to...' - importance puffery."
+    },
+    {
+      "word": "elevate",
+      "severity": "high",
+      "note": "'Elevate your...' marketing filler."
+    },
+    {
+      "word": "unlock",
+      "severity": "medium",
+      "note": "'Unlock the power of...' - marketing AI tell."
+    },
+    {
+      "word": "seamless",
+      "severity": "high",
+      "note": "'Seamless integration', 'seamless experience'. Nothing is seamless; say what works."
+    },
+    {
+      "word": "game-changing",
+      "severity": "critical",
+      "note": "YDN brand guide bans it. Hype superlative."
+    },
+    {
+      "word": "revolutionary",
+      "severity": "critical",
+      "note": "YDN brand guide bans it. Nothing is revolutionary in a memo."
+    },
+    {
+      "word": "cutting-edge",
+      "severity": "critical",
+      "note": "YDN brand guide bans it. Dated and meaningless."
+    },
+    {
+      "word": "stakeholder",
+      "severity": "medium",
+      "note": "Corp-speak. Say 'team', 'client', 'partner', or name them."
+    },
+    {
+      "word": "foster",
+      "severity": "medium",
+      "note": "'Fostering innovation/collaboration'. Corporate filler."
+    },
+    {
+      "word": "empower",
+      "severity": "medium",
+      "note": "'Empowering users/teams'. Overused management-speak."
+    },
+    {
+      "word": "harness",
+      "severity": "medium",
+      "note": "'Harness the power of'. Marketing AI tell."
+    },
+    {
+      "word": "seamlessly",
+      "severity": "high",
+      "note": "Adverb version of seamless. Worse."
+    },
+    {
+      "word": "effortlessly",
+      "severity": "medium",
+      "note": "AI's favorite adverb after 'seamlessly'."
+    },
+    {
+      "word": "transformative",
+      "severity": "high",
+      "note": "Importance puffery disguised as adjective."
+    },
+    {
+      "word": "innovation",
+      "severity": "medium",
+      "note": "Abstract noun. Say what was actually invented."
+    },
+    {
+      "word": "journey",
+      "severity": "medium",
+      "note": "'Customer journey', 'our journey'. AI loves journeys."
+    },
+    {
+      "word": "explore",
+      "severity": "medium",
+      "note": "'Let's explore...' as a framing verb. Weaker than 'let's check' or just doing it."
+    },
+    {
+      "word": "navigate",
+      "severity": "medium",
+      "note": "'Navigate the complex landscape of...' - two tells stacked."
+    },
+    {
+      "word": "underscore",
+      "severity": "medium",
+      "note": "'This underscores...' - AI preference over 'shows'."
+    },
+    {
+      "word": "highlight",
+      "severity": "medium",
+      "note": "Verb form ('highlights the importance of'). Human writers overuse it far less."
+    },
+    {
+      "word": "crucial",
+      "severity": "medium",
+      "note": "'Crucial role', 'crucial step'. Works sometimes; AI uses it constantly."
+    },
+    {
+      "word": "essential",
+      "severity": "medium",
+      "note": "See crucial. Frequency is the tell."
+    },
+    {
+      "word": "moreover",
+      "severity": "medium",
+      "note": "Formal connector. Fine in academic writing, a tell everywhere else."
+    },
+    {
+      "word": "furthermore",
+      "severity": "medium",
+      "note": "See moreover."
+    },
+    {
+      "word": "additionally",
+      "severity": "medium",
+      "note": "Listy connector. AI default transition."
+    },
+    {
+      "word": "utilize",
+      "severity": "high",
+      "note": "'Utilize' when 'use' works. Pure padding."
+    },
+    {
+      "word": "facilitate",
+      "severity": "medium",
+      "note": "See utilize."
+    },
+    {
+      "word": "commence",
+      "severity": "low",
+      "note": "Formal 'start'. Occasional period flavor, otherwise tell."
+    },
+    {
+      "word": "endeavor",
+      "severity": "high",
+      "note": "Pretentious 'try/attempt'."
+    },
+    {
+      "word": "nurture",
+      "severity": "medium",
+      "note": "'Nurturing talent/ideas'. Org-speak."
+    },
+    {
+      "word": "cultivate",
+      "severity": "medium",
+      "note": "See nurture. Gardening metaphors are AI's comfort zone."
+    },
+    {
+      "word": "siloed",
+      "severity": "medium",
+      "note": "Consulting jargon, instantly dated."
+    },
+    {
+      "word": "bandwidth",
+      "severity": "medium",
+      "note": "Office-speak. Say 'capacity' or 'time'."
+    },
+    {
+      "word": "circle back",
+      "severity": "medium",
+      "note": "Office-speak phrase."
+    },
+    {
+      "word": "touch base",
+      "severity": "medium",
+      "note": "Office-speak phrase."
+    },
+    {
+      "word": "deep dive",
+      "severity": "medium",
+      "note": "Office-speak phrase."
+    },
+    {
+      "word": "game plan",
+      "severity": "low",
+      "note": "Sports metaphor, mild."
+    },
+    {
+      "word": "win-win",
+      "severity": "low",
+      "note": "Negotiation cliche."
+    },
+    {
+      "word": "low-hanging fruit",
+      "severity": "medium",
+      "note": "Overused idiom in business writing."
+    },
+    {
+      "word": "thinking outside the box",
+      "severity": "high",
+      "note": "Dead on arrival."
+    },
+    {
+      "word": "paradigm shift",
+      "severity": "high",
+      "note": "Screams AI/consultant."
+    },
+    {
+      "word": "moving forward",
+      "severity": "medium",
+      "note": "Filler transition."
+    },
+    {
+      "word": "at the end of the day",
+      "severity": "medium",
+      "note": "Filler idiom."
+    },
+    {
+      "word": "in today's fast-paced world",
+      "severity": "critical",
+      "note": "Openers category, but the phrase itself is a tell."
+    },
+    {
+      "word": "it's worth noting",
+      "severity": "high",
+      "note": "Throat-clearing."
+    },
+    {
+      "word": "it's important to note",
+      "severity": "high",
+      "note": "Throat-clearing."
+    },
+    {
+      "word": "it should be noted",
+      "severity": "high",
+      "note": "Passive throat-clearing. Worst variant."
+    },
+    {
+      "word": "in conclusion",
+      "severity": "medium",
+      "note": "Summary marker; skip the marker, give the point."
+    },
+    {
+      "word": "in summary",
+      "severity": "medium",
+      "note": "See in conclusion."
+    },
+    {
+      "word": "to sum up",
+      "severity": "low",
+      "note": "See in conclusion."
+    },
+    {
+      "word": "lastly",
+      "severity": "low",
+      "note": "Listy connector."
+    },
+    {
+      "word": "firstly",
+      "severity": "low",
+      "note": "See lastly."
+    },
+    {
+      "word": "secondly",
+      "severity": "low",
+      "note": "See lastly."
+    },
+    {
+      "word": "overall",
+      "severity": "low",
+      "note": "Frequent AI sentence starter for summaries."
+    },
+    {
+      "word": "ultimately",
+      "severity": "medium",
+      "note": "Fake-profound connector."
+    },
+    {
+      "word": "essentially",
+      "severity": "medium",
+      "note": "Hedge that adds nothing."
+    },
+    {
+      "word": "basically",
+      "severity": "low",
+      "note": "Casual hedge, sometimes fine in speech."
+    },
+    {
+      "word": "simply",
+      "severity": "low",
+      "note": "'Simply put'. Often used to hide complexity."
+    },
+    {
+      "word": "unfortunately",
+      "severity": "low",
+      "note": "AI softener before bad news. Often fine to cut."
+    },
+    {
+      "word": "notably",
+      "severity": "medium",
+      "note": "AI's favorite emphasis adverb."
+    },
+    {
+      "word": "significantly",
+      "severity": "medium",
+      "note": "Statistical meaning in papers; padding elsewhere."
+    },
+    {
+      "word": "innovatively",
+      "severity": "high",
+      "note": "Adverb of the worst adjective."
+    },
+    {
+      "word": "unprecedented",
+      "severity": "high",
+      "note": "Almost never true."
+    },
+    {
+      "word": "groundbreaking",
+      "severity": "high",
+      "note": "See unprecedented."
+    },
+    {
+      "word": "state-of-the-art",
+      "severity": "medium",
+      "note": "Fine in technical papers when true; marketing tell otherwise."
+    },
+    {
+      "word": "world-class",
+      "severity": "high",
+      "note": "Claims rank without evidence."
+    },
+    {
+      "word": "best-in-class",
+      "severity": "high",
+      "note": "See world-class."
+    },
+    {
+      "word": "industry-leading",
+      "severity": "high",
+      "note": "See world-class."
+    },
+    {
+      "word": "game-changer",
+      "severity": "critical",
+      "note": "Noun form, same as game-changing."
+    },
+    {
+      "word": "magic",
+      "severity": "low",
+      "note": "'The magic of...' marketing warm-fuzzies."
+    },
+    {
+      "word": "powerful",
+      "severity": "medium",
+      "note": "'Powerful tool/platform'. Vague strength claim."
+    },
+    {
+      "word": "user-friendly",
+      "severity": "medium",
+      "note": "Vague. Say what's easy."
+    },
+    {
+      "word": "cost-effective",
+      "severity": "medium",
+      "note": "Vague. Say what it costs and what it returns."
+    }
+  ]
+}

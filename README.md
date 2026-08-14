@@ -1,0 +1,69 @@
+# AI Slop Library
+
+A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
+
+The data layer is plain JSON. Any linter, agent skill, or detector can load it. The reference layer explains the tells. The research layer cites the evidence.
+
+## What's inside
+
+```
+data/
+  slop-words.json       85 overused words, severity-rated
+  slop-phrases.json     70+ multi-word constructions with examples and fixes
+  slop-openers.json     80+ sentence openers with fixes
+  slop-structures.json  28 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
+reference/
+  writing.md           the human-readable guide to writing slop
+  visual.md            the visual/design tells (purple gradients, blob heroes, ...)
+  code.md              the code tells (empty functions, fake docs, ...)
+research.md            the evidence base (Nature, Science Advances, arXiv, ...)
+ecosystem.md           curated index of the AI-slop ecosystem (40+ repos/tools)
+```
+
+## Quick start
+
+```sh
+git clone https://github.com/clements23/ai-slop-library
+```
+
+Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) so tools can decide whether to warn or block. Phrase entries carry a `family` field (binary-contrast, throat-clearing, weasel-attribution, etc.) so tools can group and explain hits.
+
+```json
+{
+  "phrase": "It's not X. It's Y.",
+  "example": "It's not about the tool. It's about the system.",
+  "fix": "State Y alone, or name the actor.",
+  "severity": "critical",
+  "family": "binary-contrast"
+}
+```
+
+## The five tells that matter most
+
+1. **Binary contrast** - "It's not X. It's Y." The most documented single construction in detection research.
+2. **Throat-clearing openers** - "In today's fast-paced world..." The first two sentences carry no information.
+3. **Fake-profound endings** - "The future isn't coming. It's already here."
+4. **Weasel attribution** - "Experts agree", "Studies show" with no source.
+5. **Synonym cycling** - Renaming the same thing at every appearance to dodge repetition.
+
+Full explainers in `reference/writing.md`.
+
+## Evidence
+
+The tells are measured, not vibes: "realm", "intricate", "showcasing", "pivotal" were flat for a decade then surged post-2023 (Nature Human Behaviour 2025); "delve" rose ~1,500% in biomedical abstracts (Science Advances 2025); EQ-Bench scores models on slop constructions. Citations in `research.md`.
+
+## How to use it
+
+- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`.
+- **Agent skills**: point a de-slop skill at `data/slop-phrases.json` + `data/slop-structures.json` for its pattern list.
+- **Detectors**: combine word and structure frequencies as features (with the caveat that detectors false-positive on human text - use as lint, not accusation).
+- **Writers**: read `reference/writing.md`, then run your own text against the data.
+
+## Related
+
+The ecosystem of skills, lists, detectors, and CI tools already out there is indexed in `ecosystem.md`. This library is the pattern-data layer underneath all of them: structured, standalone, machine-readable.
+
+## License
+
+MIT

@@ -1,0 +1,475 @@
+{
+  "category": "phrases",
+  "description": "Multi-word patterns and constructions that mark text as machine-generated. Each entry lists the phrase, a real-style example, and the fix.",
+  "phrases": [
+    {
+      "phrase": "It's not X. It's Y.",
+      "example": "It's not about the tool. It's about the system.",
+      "fix": "State Y alone, or name the actor: 'The system decides outcomes, not the tool.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "Not X, but Y",
+      "example": "Not just growth, but sustainable growth.",
+      "fix": "Write the positive: 'Growth that compounds requires a system.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "The future isn't coming. It's already here.",
+      "example": "The future of work isn't coming. It's already here.",
+      "fix": "Give a concrete signal of change instead of a fortune-cookie line.",
+      "severity": "critical",
+      "family": "fake-profound"
+    },
+    {
+      "phrase": "In today's competitive landscape",
+      "example": "In today's competitive landscape, companies must adapt or die.",
+      "fix": "Start with the actual situation: 'Margins are compressing across the industry.'",
+      "severity": "critical",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "In today's fast-paced world",
+      "example": "In today's fast-paced world, attention is scarce.",
+      "fix": "Cut it. Make the claim: 'Attention is scarce.'",
+      "severity": "critical",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "It's worth noting that",
+      "example": "It's worth noting that costs rose 12%.",
+      "fix": "Just state it: 'Costs rose 12%.'",
+      "severity": "high",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "It's important to note that",
+      "example": "It's important to note that the team shipped on time.",
+      "fix": "State the fact. If it's important, the fact carries itself.",
+      "severity": "high",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "It should be noted that",
+      "example": "It should be noted that the API rate limit changed.",
+      "fix": "Active voice: 'The API rate limit changed.'",
+      "severity": "high",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Here's the thing",
+      "example": "Here's the thing: most teams don't measure this.",
+      "fix": "State the thing.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Let me be clear",
+      "example": "Let me be clear: this is not sustainable.",
+      "fix": "Say it plainly. The preface signals the opposite of clarity.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "The best part:",
+      "example": "The best part: it costs nothing.",
+      "fix": "Colon reveal. Say: 'It costs nothing.'",
+      "severity": "medium",
+      "family": "colon-reveal"
+    },
+    {
+      "phrase": "The catch:",
+      "example": "The catch: it only works in production.",
+      "fix": "Name the constraint directly.",
+      "severity": "medium",
+      "family": "colon-reveal"
+    },
+    {
+      "phrase": "The key takeaway is",
+      "example": "The key takeaway is that retention drives revenue.",
+      "fix": "Say the takeaway.",
+      "severity": "medium",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "What nobody tells you about X",
+      "example": "What nobody tells you about fundraising is the time cost.",
+      "fix": "Just deliver the insight: 'Fundraising is a full-time job on top of the company.'",
+      "severity": "high",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "The part everyone misses",
+      "example": "The part everyone misses is the onboarding flow.",
+      "fix": "Say the part: 'Onboarding decides retention.'",
+      "severity": "high",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "The truth is",
+      "example": "The truth is, most dashboards go unread.",
+      "fix": "Cut the setup. State the fact.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "When it comes to X",
+      "example": "When it comes to pricing, clarity wins.",
+      "fix": "Start at the subject: 'Pricing rewards clarity.'",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "In the world of X",
+      "example": "In the world of SaaS, retention is king.",
+      "fix": "Cut the frame: 'Retention is king in SaaS.' Or just 'Retention decides SaaS outcomes.'",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Whether you like it or not",
+      "example": "Whether you like it or not, AI is here to stay.",
+      "fix": "Drop the challenge frame; state the fact or drop it.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "At the end of the day",
+      "example": "At the end of the day, execution matters.",
+      "fix": "Cut it.",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "In conclusion",
+      "example": "In conclusion, we recommend waiting.",
+      "fix": "Give the recommendation. The marker is scaffolding.",
+      "severity": "medium",
+      "family": "marker"
+    },
+    {
+      "phrase": "It goes without saying",
+      "example": "It goes without saying that security comes first.",
+      "fix": "If it goes without saying, don't say it.",
+      "severity": "high",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Needless to say",
+      "example": "Needless to say, the launch was delayed.",
+      "fix": "Say it or don't. The phrase wastes words.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "With that in mind",
+      "example": "With that in mind, let's look at the numbers.",
+      "fix": "Transition filler. Cut or move forward.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "In other words",
+      "example": "In other words, the system is broken.",
+      "fix": "Often signals repetition; say it once, better.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "Let's dive into",
+      "example": "Let's dive into the details.",
+      "fix": "Start with the details.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Without further ado",
+      "example": "Without further ado, here's the plan.",
+      "fix": "Cut it.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "In today's digital age",
+      "example": "In today's digital age, data is king.",
+      "fix": "Cut. State the claim.",
+      "severity": "critical",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "X is the new Y",
+      "example": "Data is the new oil.",
+      "fix": "Clich\u00e9 formula. Say what X actually does.",
+      "severity": "medium",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "The only thing standing between X and Y",
+      "example": "The only thing standing between you and success is consistency.",
+      "fix": "Cut the dramatic frame.",
+      "severity": "low",
+      "family": "dramatic"
+    },
+    {
+      "phrase": "X is more than just Y",
+      "example": "This is more than just a tool.",
+      "fix": "Say what it is, then why it matters.",
+      "severity": "medium",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "Whether you're a X or a Y",
+      "example": "Whether you're a founder or a marketer, this applies.",
+      "fix": "Pick the reader; don't spray both sides of every dichotomy.",
+      "severity": "medium",
+      "family": "coverage"
+    },
+    {
+      "phrase": "From X to Y",
+      "example": "From startups to enterprises, teams use this.",
+      "fix": "Coverage claim; name who you mean.",
+      "severity": "medium",
+      "family": "coverage"
+    },
+    {
+      "phrase": "Not just X, but also Y",
+      "example": "Not just faster, but also more accurate.",
+      "fix": "Split into two sentences or state the stronger claim.",
+      "severity": "high",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "Experts agree",
+      "example": "Experts agree that hybrid work is here to stay.",
+      "fix": "Name the experts or drop the appeal.",
+      "severity": "high",
+      "family": "weasel-attribution"
+    },
+    {
+      "phrase": "Studies show",
+      "example": "Studies show that remote teams are more productive.",
+      "fix": "Cite the study or drop the claim.",
+      "severity": "high",
+      "family": "weasel-attribution"
+    },
+    {
+      "phrase": "Research suggests",
+      "example": "Research suggests that AI adoption is accelerating.",
+      "fix": "Cite or cut.",
+      "severity": "high",
+      "family": "weasel-attribution"
+    },
+    {
+      "phrase": "It is widely believed",
+      "example": "It is widely believed that the market will recover.",
+      "fix": "Who believes it? Say who.",
+      "severity": "high",
+      "family": "weasel-attribution"
+    },
+    {
+      "phrase": "Some may argue",
+      "example": "Some may argue that this is too aggressive.",
+      "fix": "Name the position and engage with it, or cut.",
+      "severity": "medium",
+      "family": "weasel-attribution"
+    },
+    {
+      "phrase": "In a world where",
+      "example": "In a world where attention is scarce, clarity wins.",
+      "fix": "Start with the fact: 'Attention is scarce. Clarity wins.'",
+      "severity": "high",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "The bottom line",
+      "example": "The bottom line is we need to move faster.",
+      "fix": "Say the bottom line.",
+      "severity": "low",
+      "family": "marker"
+    },
+    {
+      "phrase": "At its core",
+      "example": "At its core, this is a trust problem.",
+      "fix": "Say it without the intro: 'This is a trust problem.'",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "By its very nature",
+      "example": "By its very nature, automation removes judgment.",
+      "fix": "Cut 'by its very nature'.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "It is what it is",
+      "example": "It is what it is.",
+      "fix": "It's a cop-out. Say what you'll do about it.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "Easier said than done",
+      "example": "Easier said than done, but essential.",
+      "fix": "Cut the clich\u00e9; give the first step.",
+      "severity": "low",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "Through the lens of",
+      "example": "Through the lens of growth, this matters.",
+      "fix": "Cut the lens metaphor.",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "In the grand scheme of things",
+      "example": "In the grand scheme of things, this is small.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "A game-changer for",
+      "example": "This is a game-changer for small businesses.",
+      "fix": "Describe the actual change.",
+      "severity": "critical",
+      "family": "hype"
+    },
+    {
+      "phrase": "The future of X",
+      "example": "The future of marketing is personalization.",
+      "fix": "Make a claim with evidence, not a horizon statement.",
+      "severity": "medium",
+      "family": "fake-profound"
+    },
+    {
+      "phrase": "X doesn't have to be hard",
+      "example": "Productivity doesn't have to be hard.",
+      "fix": "Show the easy path instead of promising one.",
+      "severity": "medium",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "There's a better way",
+      "example": "There's a better way to onboard customers.",
+      "fix": "Show it.",
+      "severity": "low",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "X is about to change",
+      "example": "The way we work is about to change.",
+      "fix": "Give the specific change.",
+      "severity": "medium",
+      "family": "fake-profound"
+    },
+    {
+      "phrase": "Let's be honest",
+      "example": "Let's be honest, most meetings could be emails.",
+      "fix": "Cut. The honesty preface reads as performance.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Fasten your seatbelts",
+      "example": "Fasten your seatbelts, this is a wild ride.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "dramatic"
+    },
+    {
+      "phrase": "Without further delay",
+      "example": "Without further delay, here is the report.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Noteworthy to mention",
+      "example": "Noteworthy to mention, the deal closed early.",
+      "fix": "State the fact.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "When push comes to shove",
+      "example": "When push comes to shove, results matter.",
+      "fix": "Cut the idiom.",
+      "severity": "low",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "The elephant in the room",
+      "example": "Let's address the elephant in the room.",
+      "fix": "Name it directly.",
+      "severity": "medium",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "At scale",
+      "example": "This works at scale.",
+      "fix": "Precise when true; usually padding. Say what scale.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "In today's economy",
+      "example": "In today's economy, every dollar counts.",
+      "fix": "Cut.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "The writing is on the wall",
+      "example": "The writing is on the wall for legacy systems.",
+      "fix": "State the evidence.",
+      "severity": "low",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "It's only a matter of time",
+      "example": "It's only a matter of time before this becomes standard.",
+      "fix": "Give the trendline, not the prophecy.",
+      "severity": "medium",
+      "family": "fake-profound"
+    },
+    {
+      "phrase": "As we look ahead",
+      "example": "As we look ahead, priorities shift.",
+      "fix": "Cut the time-travel frame.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Looking forward",
+      "example": "Looking forward, we expect growth.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "When all is said and done",
+      "example": "When all is said and done, quality wins.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "cliche-formula"
+    },
+    {
+      "phrase": "In today's hyper-competitive market",
+      "example": "In today's hyper-competitive market, speed wins.",
+      "fix": "Cut. 'Hyper-competitive' is a tell on its own.",
+      "severity": "critical",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "The world of tomorrow",
+      "example": "The world of tomorrow runs on AI.",
+      "fix": "Cut.",
+      "severity": "low",
+      "family": "fake-profound"
+    }
+  ]
+}
