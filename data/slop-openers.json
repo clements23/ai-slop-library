@@ -1,5 +1,5 @@
 {
-  "copyright": "© 2026 Clements Emerson. All rights reserved.",
+  "copyright": "AI Slop Library - © 2026 Clements Emerson. MIT License.",
   "category": "openers",
   "description": "Sentence openers that signal AI generation. Drawn from detection studies and community pattern lists (Wikipedia's Signs of AI writing, CMU 2025, Buffer's 52M post analysis).",
   "openers": [
