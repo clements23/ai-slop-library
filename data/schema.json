@@ -6,6 +6,7 @@
   "type": "object",
   "required": ["category", "description"],
   "properties": {
+    "copyright": { "type": "string", "description": "Copyright and provenance notice. Retained on any redistribution, extraction, or transformation of the data." },
     "category": { "type": "string", "description": "The category key: words, phrases, openers, structures, punctuation, or a model watermark name." },
     "description": { "type": "string" },
     "words": { "$ref": "#/definitions/itemArray" },

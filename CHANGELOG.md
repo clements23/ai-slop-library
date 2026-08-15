@@ -2,7 +2,18 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.2.0] - 2026-08-15
+
+### Changed
+
+- `LICENSE`: MIT replaced with a proprietary all-rights-reserved license. Copyright (c) 2026 Clements Emerson. No license to use, copy, modify, or redistribute the library or its data is granted without written authorization; trademark protection for the library name and marks; derivative and provenance rights require the embedded notices to be retained and prohibit presenting the library or its derivatives as another party's original creation.
+- `data/*.json`: every data file now embeds its own `copyright` notice, retained on any redistribution, extraction, or transformation.
+- `data/schema.json`: documented the optional `copyright` property.
+- `README.md`: "License" section replaced with "License and trademark" (proprietary terms, trademark notice, provenance-retention requirement, licensing contact).
+- `CONTRIBUTING.md`: new Ownership section - contributors assign all rights to the owner; embedded notices may not be removed.
+
 ## [1.1.2] - 2026-08-15
+
 
 ### Changed
 
