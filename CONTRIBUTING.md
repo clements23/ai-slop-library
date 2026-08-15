@@ -2,6 +2,10 @@
 
 The library is pattern data plus the tooling that consumes it. Contributions that add patterns, improve fixes, or extend the tooling are welcome.
 
+## Ownership
+
+The library is proprietary, all rights reserved, and owned by Clements Emerson. By contributing, you assign all rights in your contribution to Clements Emerson and agree that the contribution becomes part of the proprietary library. The embedded copyright notices in the data files may not be removed or altered.
+
 ## Adding a pattern
 
 1. Pick the right data file: `slop-words.json` for single words, `slop-phrases.json` for multi-word constructions, `slop-openers.json` for sentence-initial tells, `slop-structures.json` for rhetorical shapes, `slop-punctuation.json` for punctuation, model files (`claude-watermarks.json`, `gpt-watermarks.json`) for model-specific fingerprints.

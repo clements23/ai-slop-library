@@ -101,6 +101,10 @@ Fingerprints are statistical: the cluster is the signal, not single instances.
 
 The ecosystem of skills, lists, detectors, and CI tools already out there is indexed in `ecosystem.md`. This library is the pattern-data layer underneath all of them: structured, standalone, machine-readable.
 
-## License
+## License and trademark
 
-MIT
+**Proprietary. All rights reserved.** Copyright (c) 2026 Clements Emerson. The library is not open source; no license to use, copy, modify, or redistribute it or its data is granted without written authorization. See [LICENSE](LICENSE).
+
+**"AI Slop Library"** and related marks are trademarks of Clements Emerson and may not be used in connection with any product, service, or publication without prior written permission.
+
+Every data file embeds its own copyright and provenance notice. The notice is retained on any redistribution, extraction, or transformation of the data, and may not be removed or altered. For licensing inquiries: clements.emerson at you-do-nothing.com

@@ -1,21 +1,52 @@
-MIT License
+AI SLOP LIBRARY — PROPRIETARY LICENSE
+Copyright (c) 2026 Clements Emerson. All rights reserved.
 
-Copyright (c) 2026 Clements Emerson
+The AI Slop Library (the "Library"), including all pattern data, reference
+documentation, scripts, and supporting files, is the proprietary and original
+work of Clements Emerson.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. OWNERSHIP
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The Library, its content, and all associated intellectual property rights,
+including copyrights and trademarks, are owned exclusively by Clements
+Emerson. "AI Slop Library" and any related names and marks are trademarks of
+Clements Emerson and may not be used in connection with any product, service,
+or publication without prior written permission.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. LICENSE GRANT
+
+No license, express or implied, is granted to any person or entity to use,
+copy, modify, distribute, sublicense, publish, or sell the Library or any
+portion of it, except as expressly authorized in writing by Clements Emerson.
+
+3. DERIVATIVE AND PROVENANCE RIGHTS
+
+Any portion of the Library incorporated into another work retains its
+copyright in favor of Clements Emerson. No person or entity may remove,
+alter, or obscure the copyright and provenance notices embedded in the
+Library's data files, whether the data is used in place, extracted, or
+transformed into other formats. Nothing in this License permits any party
+to present the Library, or any work derived from it, as that party's own
+original creation.
+
+4. NO WARRANTY
+
+THE LIBRARY IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+5. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL CLEMENTS EMERSON BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM OR IN CONNECTION WITH THE LIBRARY, WHETHER IN
+CONTRACT, TORT, OR OTHERWISE.
+
+6. AUTHORIZED USE
+
+Use of the Library in personal, non-commercial settings for private
+research is permitted only to the extent it does not reproduce or
+redistribute the Library or its data to third parties. All commercial use,
+redistribution, or publication of the Library or its contents requires
+written authorization from Clements Emerson.
+
+For licensing inquiries: clements.emerson at you-do-nothing.com
