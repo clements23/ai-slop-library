@@ -83,6 +83,13 @@ Curated index of the existing AI-slop repositories and tools, researched August 
 - [drunkrhin0/antislop](https://github.com/drunkrhin0/antislop) - self-described "by slop for slop".
 - [the-vibe-company/vibe-drift-tracker](https://github.com/The-Vibe-Company/vibe-drift-tracker) - VS Code extension tracking vibe-coding drift in real time.
 
+## Watermark and provenance evasion
+
+| Repo | Stars | What it is |
+|---|---|---|
+| [wiltodelta/remove-ai-watermarks](https://github.com/wiltodelta/remove-ai-watermarks) | ~4.7k | Python library + CLI removing visible and invisible AI watermarks and provenance metadata (SynthID, C2PA, EXIF, IPTC, XMP) from images and video you generated yourself. Apache 2.0; hosted service at raiw.cc; companion ComfyUI node pack. |
+| [guillaumemeyer/watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover) | ~8.4k | Agent skill + stdlib Python service stripping multi-vendor provenance marks from text and files: Unicode text hygiene (ZWSP, bidi, exotic spaces), statistical token-sampling watermark rewrites (best-effort), and C2PA/EXIF/XMP/props from PNG, JPEG, WebP, SVG, PDF, DOCX, ODT, HTML, and Markdown. Covers Claude, Gemini/SynthID-Text, OpenAI, and open-LLM Kirchenbauer-style marks. MIT. |
+
 ## Where this library fits
 
 The ecosystem is divided into skills (instructions for agents), lists (links), detectors (classifiers), and automation (CI). None of them publish the *pattern data itself* as a standalone, structured, machine-readable dataset. This library is that layer: `data/*.json` is the shared substrate a linter, a skill, or a detector can load, with the research and reference documentation alongside.
