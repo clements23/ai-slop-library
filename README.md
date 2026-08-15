@@ -2,7 +2,7 @@
 
 A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
 
-**Current stable version: v1.0.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
+**Current stable version: v1.1.1** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
 
 The data layer is plain JSON. Any linter, agent skill, or detector can load it. The reference layer explains the tells. The research layer cites the evidence.
 
@@ -28,7 +28,7 @@ reference/
   visual.md            the visual/design tells (purple gradients, blob heroes, ...)
   code.md              the code tells (empty functions, fake docs, ...)
 research.md            the evidence base (Nature, Science Advances, arXiv, ...)
-ecosystem.md           curated index of the AI-slop ecosystem (40+ repos/tools)
+ecosystem.md           curated index of the AI-slop ecosystem (45 repos/tools)
 ```
 
 ## Quick start
@@ -62,13 +62,14 @@ Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) 
 }
 ```
 
-## The five tells that matter most
+## The six patterns that matter most
 
-1. **Binary contrast** - "It's not X. It's Y." The most documented single construction in detection research.
-2. **Throat-clearing openers** - "In today's fast-paced world..." The first two sentences carry no information.
-3. **Fake-profound endings** - "The future isn't coming. It's already here."
-4. **Weasel attribution** - "Experts agree", "Studies show" with no source.
-5. **Synonym cycling** - Renaming the same thing at every appearance to dodge repetition.
+1. **Binary contrast** - "It's not X. It's Y." The most documented single construction in detection research. Four banned faces: contracted, declarative ("X is not Y. It is Z."), concession, negation tail (", not Y").
+2. **Trailing appended insight** - "X, Y, and Z, and [the real point]." The thesis smuggled into a trailing "and" clause. Wire-style writers put the point first.
+3. **Throat-clearing openers** - "In today's fast-paced world..." The first two sentences carry no information.
+4. **Fake-profound endings** - "The future isn't coming. It's already here."
+5. **Weasel attribution** - "Experts agree", "Studies show" with no source.
+6. **Synonym cycling** - Renaming the same thing at every appearance to dodge repetition.
 
 Full explainers in `reference/writing.md`.
 

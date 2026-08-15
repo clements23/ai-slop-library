@@ -2,7 +2,14 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.1.2] - 2026-08-15
+
+### Changed
+
+- `README.md`: version line now reads v1.1.1; "The five tells that matter most" section updated to "The six patterns that matter most" (adds the trailing appended insight, matching `reference/writing.md` from 1.1.0); ecosystem index count updated from 40+ to 45 repos/tools.
+
 ## [1.1.1] - 2026-08-15
+
 
 ### Added
 
