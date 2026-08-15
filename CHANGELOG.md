@@ -2,7 +2,16 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.2.2] - 2026-08-15
+
+### Changed
+
+- `data/*.json`, `data/schema.json`: embedded per-file copyright notices removed. Standard open-source practice, matching other pattern libraries (LICENSE at repo root only).
+- `LICENSE`: copyright holder corrected to Clements Emerson Dewanto.
+- `README.md`, `CONTRIBUTING.md`: license sections updated with the corrected name; branding paragraph dropped.
+
 ## [1.2.1] - 2026-08-15
+
 
 ### Changed
 

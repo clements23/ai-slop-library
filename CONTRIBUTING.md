@@ -4,7 +4,7 @@ The library is pattern data plus the tooling that consumes it. Contributions tha
 
 ## Ownership
 
-The library is open source under the MIT License, Copyright (c) 2026 Clements Emerson. Every data file embeds an "AI Slop Library" notice; keep it in place so extracted or copied data stays attributed.
+The library is open source under the MIT License, Copyright (c) 2026 Clements Emerson Dewanto.
 
 ## Adding a pattern
 

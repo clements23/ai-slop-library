@@ -1,5 +1,4 @@
 {
-  "copyright": "AI Slop Library - © 2026 Clements Emerson. MIT License.",
   "$schema": "https://raw.githubusercontent.com/clements23/ai-slop-library/main/data/schema.json",
   "category": "words",
   "description": "Overused words that spike in LLM output. Measured in Nature Human Behaviour (2025) and Science Advances (2025): realm, intricate, showcasing, pivotal surged from 2023; delve rose ~1500% 2022-2024.",
