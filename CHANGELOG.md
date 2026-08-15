@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.1.1] - 2026-08-15
+
+### Added
+
+- `ecosystem.md` - new "Watermark and provenance evasion" section indexing `wiltodelta/remove-ai-watermarks` (~4.7k stars): Python library and CLI for stripping visible and invisible AI watermarks plus provenance metadata (SynthID, C2PA, EXIF, IPTC, XMP) from images and video, Apache 2.0, hosted at raiw.cc.
+- `ecosystem.md` - same section also indexes `guillaumemeyer/watermarks-remover` (~8.4k stars): agent skill + stdlib Python service stripping multi-vendor provenance marks, covering Unicode text hygiene, statistical text-watermark rewrites, and C2PA/EXIF/XMP metadata cleaning across nine file formats, MIT.
+
 ## [1.1.0] - 2026-08-14
 
 Structural detection layer. The library previously documented binary contrast but its linter could not catch it - the substring matcher cannot match formula patterns with placeholders. Found in a live AI Sift Founder's Voice draft.
