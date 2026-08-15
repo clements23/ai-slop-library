@@ -113,6 +113,16 @@ The assistant-register patterns are what distinguish GPT output from Claude's; t
 - **Transition overdose**: A connective at the start of most sentences. Humans let sentences stand alone.
 - **Rule of three everywhere**: The triadic rhythm is AI's default cadence. At most one per section.
 
+## Founder-voice cadence and the publication-plug closer
+
+A founder's LinkedIn voice is judged on three surfaces the linter can measure. The audit that produced these rules looked at a strong-on-substance draft and found it read as a tech-journalist news recap rather than executive opinion. The fix lives in cadence, framing, and the closing line.
+
+**Cadence: stop breaking every sentence into its own paragraph.** The LinkedIn formatting trap is line-broken sentences masquerading as rhythm. "Cursor was the best coding tool. Anthropic and OpenAI own the stack. Cursor rented brainpower. Colossus fixes that." reads as a content template. A seasoned founder voice groups related sentences into two-to-three-sentence mini-paragraphs and mixes one short standalone line with one standard paragraph per section. A post of fifteen visible lines should compress to six-to-eight paragraphs. The detection rule: compare sentence count to paragraph count; every-line-its-own-paragraph is the tell.
+
+**Framing: executive synthesis, not news recap.** A tech journalist reports what happened; a founder tells the reader what to do or how to think about it. The substance in the audited draft was strong (the all-stock dilution math, the interface-plus-compute merger framing, the rented-brainpower thesis) but the framing read as a recap because each sentence summarized a fact rather than issuing a take. Rewrite each fact into a claim with a verb of judgment: "Cursor was the best coding tool" becomes "Cursor had a vulnerability: it was renting brainpower while Anthropic and OpenAI controlled their own stacks." Same fact, founder register.
+
+**Closer: drop the transactional publication plug.** The branded triplet "Full article only on [publication]. We do the reading. You get the decision." reads as a value-extraction pitch rather than domain authority. Three lines that explicitly promise value while naming the brand behind the post. The corrected pattern weaves the publication as a natural authority reference into the narrative, then closes on the reader's takeaway. External links in the main post body are also penalized by LinkedIn's organic-reach algorithm, so move the URL to the first comment and reference it in prose ("Link in the comments below."). The softer closer sounds like: "We analyzed the full breakdown and strategic implications over at The AI Sift. Link in the comments below." Same call to action, no value-extraction register.
+
 ## How to use the data files
 
 The JSON files are plain structured data, consumable by any linter, skill, or detector:

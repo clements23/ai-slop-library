@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.3.0] - 2026-08-15
+
+Founder-voice + publication-plug detection layer. Patterns identified in a live audit of the TAIS SpaceX-Cursor acquisition LinkedIn Founder's Voice draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.
+
+### Added
+
+- `data/slop-phrases.json`: three new phrases - "Full article only on *" (high), "We do the reading" (high), "You get the decision" (high). New family `publication-plug`. The three lines of the transactional LinkedIn closer are now flagged independently so line breaks do not defeat detection. 71 to 74 phrases.
+- `data/slop-structures.json`: "Single-sentence-per-line fragmentation" (medium). New family `formatting-fragmentation`. The LinkedIn-bro formatting trap where every sentence is its own paragraph. Detection requires a paragraph-to-sentence ratio check, documented as the tell. 28 to 29 structures.
+
+### Changed
+
+- `reference/writing.md`: new section on founder-voice cadence and the publication-plug closer, drawing directly from the live audit. Explains why every-line-its-own-paragraph reads as template output, and why a transactional closer ("Full article only on X. We do the reading. You get the decision.") reads as a value-extraction pitch rather than domain authority. Prescribes the softer closer pattern (link to comments, woven authority reference) used in the corrected draft.
+
+### Rationale
+
+The audited Founder's Voice draft was strong on insight (the all-stock dilution math, the interface-plus-compute merger framing, the rented-brainpower thesis) but the surface failed three founder-voice tests: it read as a tech-journalist news recap rather than executive opinion; every sentence was its own line (the LinkedIn formatting trap); and it closed with a transactional publication plug. A seasoned founder voice groups sentences into mini-paragraphs with varied cadence, frames the takeaway as a call to think or act, and ends on the reader's takeaway rather than a branded promise. The library now encodes both the cadence tell and the closer tell.
+
 ## [1.2.2] - 2026-08-15
 
 ### Changed

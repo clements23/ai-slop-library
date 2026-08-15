@@ -225,6 +225,15 @@
       "tell": "AI overuses em dashes because they are the easiest way to insert an aside. Multiple per paragraph is a tell.",
       "fix": "Replace most em dashes with commas, parentheses, or separate sentences.",
       "severity": "high"
+    },
+    {
+      "name": "Single-sentence-per-line fragmentation",
+      "pattern": "Every sentence rendered as its own standalone paragraph, with no grouped mini-paragraphs",
+      "example": "Cursor was the best coding tool.\n\nAnthropic and OpenAI own the stack.\n\nCursor rented brainpower.\n\nColossus fixes that.",
+      "tell": "This is the LinkedIn formatting trap: line-broken sentences masquerading as rhythm. High-signal founders write with varied cadence - a short punchy statement, then a standard two-to-three-sentence paragraph, then a single beat. Every-line-its-own-paragraph reads as either machine output or a content template. Detection requires comparing sentence count to paragraph count in the post body.",
+      "fix": "Group related sentences into two-to-three-sentence mini-paragraphs. Mix one short standalone line with one standard paragraph per section. A post of fifteen lines should compress to six-to-eight visible paragraphs.",
+      "severity": "medium",
+      "family": "formatting-fragmentation"
     }
   ]
 }

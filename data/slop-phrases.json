@@ -498,6 +498,27 @@
       "fix": "Cut.",
       "severity": "low",
       "family": "fake-profound"
+    },
+    {
+      "phrase": "Full article only on *",
+      "example": "Full article only on The AI Sift.",
+      "fix": "Drop the exclusivity framing. Integrate the publication as a natural authority reference woven into the narrative, or end with a domain-authority closer that does not read as a value-extraction pitch (e.g., 'We analyzed the full breakdown over at [publication].').",
+      "severity": "high",
+      "family": "publication-plug"
+    },
+    {
+      "phrase": "We do the reading",
+      "example": "We do the reading. You get the decision.",
+      "fix": "Cut the transactional closer. Let the article body earn the reader's trust. If a closer is needed, write one that names the value the reader got from the post itself, not the publication behind it.",
+      "severity": "high",
+      "family": "publication-plug"
+    },
+    {
+      "phrase": "You get the decision",
+      "example": "Full article only on The AI Sift. We do the reading. You get the decision.",
+      "fix": "Cut the transactional closer. A decision belongs at the end of the article body, not as a branded promise in the LinkedIn closer. End on the insight the reader just received.",
+      "severity": "high",
+      "family": "publication-plug"
     }
   ]
 }
