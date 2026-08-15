@@ -2,7 +2,18 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.2.1] - 2026-08-15
+
+### Changed
+
+- `LICENSE`: back to MIT (Copyright (c) 2026 Clements Emerson). The library is open source.
+- `data/*.json`: embedded notices updated to "AI Slop Library - (c) 2026 Clements Emerson. MIT License." - the name stays with the data no matter how it is copied.
+- `README.md`: "License and trademark" section now states MIT and that everything in the repository is AI Slop Library.
+- `CONTRIBUTING.md`: Ownership section reworded for MIT.
+- `data/schema.json`: copyright property description updated.
+
 ## [1.2.0] - 2026-08-15
+
 
 ### Changed
 

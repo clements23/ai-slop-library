@@ -4,7 +4,7 @@ The library is pattern data plus the tooling that consumes it. Contributions tha
 
 ## Ownership
 
-The library is proprietary, all rights reserved, and owned by Clements Emerson. By contributing, you assign all rights in your contribution to Clements Emerson and agree that the contribution becomes part of the proprietary library. The embedded copyright notices in the data files may not be removed or altered.
+The library is open source under the MIT License, Copyright (c) 2026 Clements Emerson. Every data file embeds an "AI Slop Library" notice; keep it in place so extracted or copied data stays attributed.
 
 ## Adding a pattern
 

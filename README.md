@@ -103,8 +103,6 @@ The ecosystem of skills, lists, detectors, and CI tools already out there is ind
 
 ## License and trademark
 
-**Proprietary. All rights reserved.** Copyright (c) 2026 Clements Emerson. The library is not open source; no license to use, copy, modify, or redistribute it or its data is granted without written authorization. See [LICENSE](LICENSE).
+**MIT License.** Copyright (c) 2026 Clements Emerson. Open source: use, copy, modify, merge, publish, distribute, sublicense, and sell freely, with the copyright and permission notice included in all copies or substantial portions. See [LICENSE](LICENSE).
 
-**"AI Slop Library"** and related marks are trademarks of Clements Emerson and may not be used in connection with any product, service, or publication without prior written permission.
-
-Every data file embeds its own copyright and provenance notice. The notice is retained on any redistribution, extraction, or transformation of the data, and may not be removed or altered. For licensing inquiries: clements.emerson at you-do-nothing.com
+Everything in this repository is **AI Slop Library**. The words, the phrases, the openers, the structures, the punctuation, the fingerprints, the scripts, the examples, the research, the ecosystem index - it is all AI Slop Library. Every data file embeds its own notice saying so, so no matter how the data is copied, cut, pasted, or republished, it stays AI Slop Library.
