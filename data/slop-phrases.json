@@ -45,6 +45,27 @@
       "family": "binary-contrast"
     },
     {
+      "phrase": "That is not *. That is *",
+      "example": "That is not hype. That is a procurement decision validated by real performance data.",
+      "fix": "State the positive alone: 'The data tells a procurement story, not a hype story.' Or rewrite without the binary contrast entirely.",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "It's not about *. It's about *",
+      "example": "It's not about the tool. It's about the system.",
+      "fix": "State the positive alone: 'The system decides outcomes.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
+      "phrase": "This is not *. This is *",
+      "example": "This is not a partnership. This is an acquisition.",
+      "fix": "Name what it is directly: 'This is an acquisition dressed as a partnership.'",
+      "severity": "critical",
+      "family": "binary-contrast"
+    },
+    {
       "phrase": "The future isn't coming. It's already here.",
       "example": "The future of work isn't coming. It's already here.",
       "fix": "Give a concrete signal of change instead of a fortune-cookie line.",
