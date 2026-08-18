@@ -4,9 +4,9 @@
   "structures": [
     {
       "name": "Binary contrast",
-      "pattern": "\"It's not X. It's Y.\" / \"X is not Y. It is Z.\" / \"Not X, but Y\" / \"X, not Y\"",
-      "example": "The boom is priced on capex, not cash flow. The gap is not labor arbitrage. It is a trillion-parameter model.",
-      "tell": "AI reaches for the X-not-Y construction constantly because it produces the illusion of insight with zero content. It is the single most documented AI tell in detection studies. The declarative form ('X is not Y. It is Z.') is a contract-era tell on top of the classic negative-then-positive.",
+      "pattern": "\"It's not X. It's Y.\" / \"X is not Y. It is Z.\" / \"Not X, but Y\" / \"X, not Y\" / \"That is not X. That is Y.\" / \"That's not X. That is Y.\"",
+      "example": "The boom is priced on capex, not cash flow. The gap is not labor arbitrage. It is a trillion-parameter model. That is not hype. That is a procurement decision validated by real performance data.",
+      "tell": "AI reaches for the X-not-Y construction constantly because it produces the illusion of insight with zero content. It is the single most documented AI tell in detection studies. The declarative form ('X is not Y. It is Z.') is a contract-era tell on top of the classic negative-then-positive. The 'That is not X. That is Y.' variant is equally AI and must be caught.",
       "fix": "State the positive alone. If the negation matters, split it into its own sentence and name the actor: 'Cash flow will decide who survives.'",
       "severity": "critical"
     },
