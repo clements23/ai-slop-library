@@ -519,6 +519,20 @@
       "fix": "Cut the transactional closer. A decision belongs at the end of the article body, not as a branded promise in the LinkedIn closer. End on the insight the reader just received.",
       "severity": "high",
       "family": "publication-plug"
+    },
+    {
+      "phrase": "most people will skip",
+      "example": "The NVIDIA part matters more than the funding number, and most people will skip over it.",
+      "fix": "Cut the reader-behavior prediction. You do not know what most people will do. State the point directly: 'The NVIDIA part matters more than the funding number.' The analysis earns attention on its own; it does not need a framing device claiming others will miss it.",
+      "severity": "high",
+      "family": "universal-sweep"
+    },
+    {
+      "phrase": "most people will miss",
+      "example": "Most people will miss the second-order effect here.",
+      "fix": "Cut. Same pattern as 'most people will skip'. State the insight without claiming others will fail to see it.",
+      "severity": "high",
+      "family": "universal-sweep"
     }
   ]
 }
