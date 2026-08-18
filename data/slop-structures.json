@@ -232,8 +232,17 @@
       "example": "Cursor was the best coding tool.\n\nAnthropic and OpenAI own the stack.\n\nCursor rented brainpower.\n\nColossus fixes that.",
       "tell": "This is the LinkedIn formatting trap: line-broken sentences masquerading as rhythm. High-signal founders write with varied cadence - a short punchy statement, then a standard two-to-three-sentence paragraph, then a single beat. Every-line-its-own-paragraph reads as either machine output or a content template. Detection requires comparing sentence count to paragraph count in the post body.",
       "fix": "Group related sentences into two-to-three-sentence mini-paragraphs. Mix one short standalone line with one standard paragraph per section. A post of fifteen lines should compress to six-to-eight visible paragraphs.",
-      "severity": "medium",
+      "severity": "high",
       "family": "formatting-fragmentation"
+    },
+    {
+      "name": "Staccato sentence stacking",
+      "pattern": "Three or more short declarative sentences (under 12 words each) in a row within the same paragraph, connected only by periods",
+      "example": "NVIDIA hired Groq's founder. NVIDIA licensed Groq's technology. And now NVIDIA is investing in the company that remains.",
+      "tell": "AI defaults to short subject-verb-object sentences because they are statistically safe. Humans writing naturally connect related ideas with commas, conjunctions, and dependent clauses. Three or more consecutive short sentences with identical structure (especially repeating the same subject like 'NVIDIA') is a machine rhythm tell. Real analysis flows; it does not index-card.",
+      "fix": "Merge related sentences using commas, conjunctions (and, but, because, while), or dependent clauses. 'NVIDIA hired Groq's founder, licensed its technology, and is now investing in the shell that remains.' The reader should feel the ideas connecting, not stacked.",
+      "severity": "high",
+      "family": "fragmentation"
     }
   ]
 }
