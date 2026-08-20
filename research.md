@@ -76,6 +76,29 @@ GPT carries the chat-assistant register: the compliance and service-script behav
 
 Sources: GPTZero/Turnitin/Winston AI detection documentation, university detection guides (Maynooth), RTE's detection reporting, and community pattern lists. The assistant-register patterns distinguish GPT from Claude, whose fingerprint is the balanced-analyst register.
 
+## Platform enforcement and brand strategy (2026)
+
+### LinkedIn's AI slop crackdown
+LinkedIn (2026) introduced a "seems like AI slop" button and its 360Brew detection model actively deprioritizes content flagged as generic AI output. LinkedIn defined AI slop as "low-effort, AI-generated content that may sound polished on the surface but lacks any real unique perspective or substance." Posts flagged suffer reduced reach. LinkedIn does not ban AI use but requires posts to "represent your voice and your perspectives." Source: LinkedIn News (2026), Wall Street Journal (2026).
+
+### Forbes: leaders who share lived experience build trust
+Carmine Gallo, Forbes (August 2026). Analyzed how leaders like Jeff Bezos (cattle ranch summers) and Jensen Huang (Denny's dishwasher) use stories of unique lived experiences to build trust that AI cannot replicate. The neuroscientific finding: the human brain looks for things that are new and novel, and favors concrete ideas over abstract ones. Generic advice ("Great leaders stay humble") is abstract and forgettable; Huang's story of washing dishes at Denny's is concrete and paints a visual. Stories transform abstract ideas into concrete, memorable, actionable lessons.
+
+### Foundera: voice flattening is measurable
+Foundera (2026). Documented "register mode collapse" in LLMs: when asked for "professional" content, models default to the median register. A 2024 ScienceDirect study found "using generative AI for social media content creation diminishes perceived brand authenticity significantly." Trust in founder content on LinkedIn dropped from 60% (2023) to 26% (2026). The Edelman-LinkedIn 2025 B2B report found distinctive founder voice drives 156% higher ROI on social content and 71% higher perceived effectiveness. Foundera codified six measurable dimensions of founder voice: vocabulary signature, sentence rhythm, register, topic gravity, contrarian moves, linguistic ticks.
+
+### Digital Assassin: AI as editor, not ghostwriter
+Digital Assassin / Rob Lawson (June 2026). Three anti-slop strategies for brands: (1) founder-led content with real humans front and center, (2) use AI as an editor, not a ghostwriter (start with raw human thinking, use AI to structure and tighten), (3) build a brand voice document before touching any AI tool. Google's E-E-A-T framework rewards Experience, Expertise, Authoritativeness, Trustworthiness. Generic AI slop scores poorly on all four. 73% of consumers can immediately identify AI-generated marketing content.
+
+### SlopDetector: twelve measurable thresholds
+SlopDetector (July 2026). Published reproducible thresholds for twelve signs of AI writing across five dimensions: vocabulary, cliche, structure, diversity, substance. Key thresholds: em dash density above 20 per 1,000 words (2 per 100) is a signal; burstiness (stdev/mean of sentence lengths) below 0.4 flags AI; more than 3 flagged style words per 500 words is a real signal; more than half of paragraphs failing the restatement test indicates substance-poor text. Convergence of 3-4 failing signs is the fingerprint, not any single sign.
+
+### AI Publisher: detection framework 2026
+AI Publisher (July 2026). Three-tier detection framework: Level 1 (linguistic statistical metrics: perplexity, burstiness, stylometric features), Level 2 (behavioral signals: posting velocity, temporal clustering, stylistic consistency over time), Level 3 (linguistic patterns and verbal tics: statistical density of flagged phrases). Key finding: "Anecdotes in the first person, named locations, specific dates, strongly held opinions, disagreements with popular positions, informal language, and regional idiom all register as positive quality signals within Google's E-E-A-T framework."
+
+### aicheckr.io: twelve before-and-after fixes
+aicheckr.io (2026). Twelve concrete AI slop patterns with before/after rewrites: em dash abuse, tapestry vocabulary, generic macro-intro, hedging overload, "it's not just X, it's Y" formula, listicle filler, rule-of-three stacking, conclusion boilerplate, transition chains, fake specificity, audience hedge, restating the question. The pattern behind all twelve: "the slop version could have been written without knowing anything." The human fixes are not stylistically fancier, they are specific.
+
 ## What the research agrees on
 
 1. **Slop is measurable, not subjective.** The word-level and construction-level tells replicate across corpora (papers, abstracts, social posts).

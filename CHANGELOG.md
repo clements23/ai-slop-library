@@ -2,6 +2,27 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.6.0] - 2026-08-20
+
+Litotes detection layer + anti-slop research for Founder's Voice. Patterns identified from live TAIS draft audits, LinkedIn's 2026 AI slop crackdown, and research across Forbes, Foundera, SlopDetector, aicheckr.io, and AI Publisher's 2026 detection framework. The user directive "do not do litotes" drove the core addition; the broader research enhanced the writing system with measurable anti-slop techniques for founder-voice content.
+
+### Added
+
+- `data/slop-structures.json`: four new structures - "Litotes (negation hedging)" (high, negation-hedging family), "Hedging qualifier chains" (high, hedging-stack family), "Restating the question as the answer" (high, empty-answer family), "Listicle filler" (high, empty-list family). 29 to 33 structures.
+- `data/slop-phrases.json`: 17 new phrases across three families:
+  - Litotes (10 phrases): "not uncommon", "not insignificant", "not without merit", "far from trivial", "far from simple", "by no means", "not unlike", "not entirely wrong", "none too", "not a small feat"
+  - Hedging-stack (3 phrases): "might potentially possibly" (critical), "could potentially help in certain contexts", "results may vary depending on"
+  - Throat-clearing (2 phrases): "It's no secret that", "There's no denying that"
+  - Faux-insight (2 phrases): "Here's what [source] missed", "The real question is"
+  74 to 91 phrases.
+- `reference/writing.md`: new "Defeating AI slop: what the research shows" section covering: the specificity principle, the deletion test, founder-voice anti-slop (six measurable dimensions from Foundera), the voice-preservation workflow, LinkedIn's algorithmic enforcement, and Google's E-E-A-T rewards for human specificity. Also added patterns 7-9 (litotes, hedging qualifier chains, restating the question as the answer) to the "patterns that matter most" section.
+- `research.md`: new "Platform enforcement and brand strategy (2026)" section with six new sources: LinkedIn's AI slop crackdown, Forbes/Gallo on lived-experience storytelling, Foundera on voice flattening and the six dimensions of founder voice, Digital Assassin on AI-as-editor strategy, SlopDetector's twelve measurable thresholds, AI Publisher's three-tier detection framework, and aicheckr.io's twelve before-and-after fixes.
+- `ecosystem.md`: new "Humanizers and voice tools" section (Foundera, The Founder Voice, sergebulaev/linkedin-skills) and new "Web-based slop checkers" section (SlopDetector, aicheckr.io).
+
+### Rationale
+
+The user's directive "do not do litotes" identified a gap: the library documented binary contrast ("X is not Y") but missed litotes, a distinct negation-hedging pattern where AI understates through double negatives ("not uncommon", "not insignificant") to sound measured while committing to nothing. The broader research into how brands and founders defeat AI slop in 2026 revealed that the most effective anti-slop techniques are not stylistic but structural: specificity (concrete numbers, names, dates), substance (the deletion test), and voice preservation (the six measurable dimensions). LinkedIn's algorithmic enforcement makes this a distribution advantage, not just an editorial one.
+
 ## [1.3.0] - 2026-08-15
 
 Founder-voice + publication-plug detection layer. Patterns identified in a live audit of the TAIS SpaceX-Cursor acquisition LinkedIn Founder's Voice draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.

@@ -35,6 +35,14 @@ Curated index of the existing AI-slop repositories and tools, researched August 
 | [ai-that-works/deslop](https://github.com/ai-that-works/deslop) | ~20 | CLI that rewrites documents to sound less AI. |
 | [Xe/slop](https://github.com/Xe/slop) | ~6 | AI slop utilities. |
 
+## Humanizers and voice tools
+
+| Tool | What it is |
+|---|---|
+| [Foundera](https://www.foundera.co/) | Founder-voice preservation platform. 5-step hybrid edit workflow, voice profile extraction from unscripted speech, 6 measurable dimensions of founder voice. Research-backed. |
+| [The Founder Voice](https://www.thefoundervoice.com/) | AI-powered personal branding tool that generates social content matching a founder's authentic voice. |
+| [sergebulaev/linkedin-skills](https://github.com/sergebulaev/linkedin-skills) | Three-tier humanizer pipeline (Forensic/Strict/Aesthetic) for LinkedIn posts. Integrated into TAIS format guide v2.5.0. |
+
 ## Detectors (classifiers and scanners)
 
 | Repo | Stars | What it is |
@@ -47,6 +55,13 @@ Curated index of the existing AI-slop repositories and tools, researched August 
 | [styrene-lab/lipstyk](https://github.com/styrene-lab/lipstyk) | ~11 | Machine-generated code pattern detection across Rust, TS/JS, Python, HTML. |
 | [Euraika-Labs/ai-slopcheck](https://github.com/Euraika-Labs/ai-slopcheck) | ~0 | Deterministic scanner, 72 rules, pip installable. |
 | [yuvrajangadsingh/vibecheck](https://github.com/yuvrajangadsingh/vibecheck) | ~22 | "ESLint for AI slop": AI code smells in JS/TS and Python. |
+
+## Web-based slop checkers
+
+| Tool | What it is |
+|---|---|
+| [SlopDetector](https://slopdetector.org/) | Free, 100% local browser-based slop checker. Scores five dimensions: vocabulary, cliche, structure, diversity, substance. Published reproducible thresholds for twelve signs of AI writing (July 2026). |
+| [aicheckr.io](https://www.aicheckr.io/) | Free AI checker + humanizer. Sentence-level highlighting of slop patterns. Twelve documented before/after fixes. |
 
 ## CI and GitHub automation
 
