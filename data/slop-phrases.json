@@ -554,6 +554,132 @@
       "fix": "Cut. Same pattern as 'most people will skip'. State the insight without claiming others will fail to see it.",
       "severity": "high",
       "family": "universal-sweep"
+    },
+    {
+      "phrase": "not uncommon",
+      "example": "It is not uncommon for teams to struggle with this.",
+      "fix": "State directly: 'Teams often struggle with this' or 'Most teams struggle with this.'",
+      "severity": "high",
+      "family": "litotes"
+    },
+    {
+      "phrase": "not insignificant",
+      "example": "The results are not insignificant.",
+      "fix": "State directly: 'The results are significant' or 'The results matter.'",
+      "severity": "high",
+      "family": "litotes"
+    },
+    {
+      "phrase": "not without merit",
+      "example": "The argument is not without merit.",
+      "fix": "State directly: 'The argument has merit' or 'The argument holds.'",
+      "severity": "high",
+      "family": "litotes"
+    },
+    {
+      "phrase": "far from trivial",
+      "example": "The implementation challenge is far from trivial.",
+      "fix": "State directly: 'The implementation is hard' or name the specific difficulty.",
+      "severity": "high",
+      "family": "litotes"
+    },
+    {
+      "phrase": "far from simple",
+      "example": "The regulatory landscape is far from simple.",
+      "fix": "State directly: 'The regulatory landscape is complex' or name the specific complication.",
+      "severity": "medium",
+      "family": "litotes"
+    },
+    {
+      "phrase": "by no means",
+      "example": "This is by no means a solved problem.",
+      "fix": "State directly: 'This is unsolved' or 'Nobody has solved this yet.'",
+      "severity": "high",
+      "family": "litotes"
+    },
+    {
+      "phrase": "not unlike",
+      "example": "The situation is not unlike what we saw in 2020.",
+      "fix": "State directly: 'The situation resembles 2020' or 'This mirrors what happened in 2020.'",
+      "severity": "medium",
+      "family": "litotes"
+    },
+    {
+      "phrase": "not entirely wrong",
+      "example": "That assessment is not entirely wrong.",
+      "fix": "Commit: 'That assessment is mostly right' or 'That assessment is correct on X but wrong on Y.'",
+      "severity": "medium",
+      "family": "litotes"
+    },
+    {
+      "phrase": "none too",
+      "example": "The market was none too pleased with the earnings.",
+      "fix": "State directly: 'The market rejected the earnings' or 'The earnings disappointed.'",
+      "severity": "medium",
+      "family": "litotes"
+    },
+    {
+      "phrase": "not a small feat",
+      "example": "Scaling to 10 million users is not a small feat.",
+      "fix": "State directly: 'Scaling to 10 million users is hard' or name what made it hard.",
+      "severity": "medium",
+      "family": "litotes"
+    },
+    {
+      "phrase": "It's no secret that",
+      "example": "It's no secret that AI is transforming industries.",
+      "fix": "Cut. State the claim. If it's no secret, you don't need to announce that.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "There's no denying that",
+      "example": "There's no denying that remote work is here to stay.",
+      "fix": "Cut. State the claim directly.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "might potentially possibly",
+      "example": "This might potentially possibly help improve outcomes.",
+      "fix": "One hedge is enough. Choose: 'This might help' or 'This helps.'",
+      "severity": "critical",
+      "family": "hedging-stack"
+    },
+    {
+      "phrase": "could potentially help in certain contexts",
+      "example": "This could potentially help in certain contexts.",
+      "fix": "Name the context: 'This helps teams under 20 people' or drop the claim.",
+      "severity": "high",
+      "family": "hedging-stack"
+    },
+    {
+      "phrase": "results may vary depending on",
+      "example": "Results may vary depending on various factors.",
+      "fix": "Name the factors or cut. 'Results depend on team size and data quality.'",
+      "severity": "high",
+      "family": "hedging-stack"
+    },
+    {
+      "phrase": "I'm not going to lie",
+      "example": "I'm not going to lie, this is a game-changer.",
+      "fix": "Cut. The honesty preface implies you normally lie. State the claim.",
+      "severity": "medium",
+      "family": "throat-clearing"
+    },
+    {
+      "phrase": "Here's what [source] missed",
+      "example": "Here's what Bloomberg missed about the deal.",
+      "fix": "Make the point directly. Attribute the observation to yourself, not to what coverage missed.",
+      "severity": "medium",
+      "family": "faux-insight"
+    },
+    {
+      "phrase": "The real question is",
+      "example": "The real question is whether this model scales.",
+      "fix": "State the point. 'Whether this model scales decides the outcome.'",
+      "severity": "medium",
+      "family": "faux-insight"
     }
   ]
 }

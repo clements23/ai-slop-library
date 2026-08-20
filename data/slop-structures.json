@@ -236,6 +236,42 @@
       "family": "formatting-fragmentation"
     },
     {
+      "name": "Litotes (negation hedging)",
+      "pattern": "Understatement through double negative or negated opposite: 'not uncommon', 'not insignificant', 'not without merit', 'far from trivial', 'by no means'",
+      "example": "The results are not insignificant. It is not uncommon for teams to underperform in this area. The challenge is far from trivial.",
+      "tell": "AI reaches for litotes to sound measured while committing to nothing. Instead of saying 'the results matter' or 'teams often underperform', it wraps the claim in a double negative that hedges through understatement. Humans who mean something say it. 'Not uncommon' means 'common' but sounds less committal. This is distinct from binary contrast (which sets up X vs Y): litotes negates the opposite of what it means, producing a sentence that is technically true but semantically evasive. One instance is a style choice; two or more in a passage is a hedge pattern.",
+      "fix": "State the positive directly. 'Not insignificant' becomes 'significant'. 'Not uncommon' becomes 'common' or 'frequent'. 'Far from trivial' becomes 'hard' or name the specific difficulty. 'By no means' becomes a direct assertion or a specific constraint.",
+      "severity": "high",
+      "family": "negation-hedging"
+    },
+    {
+      "name": "Hedging qualifier chains",
+      "pattern": "Three or more hedges stacked in a single sentence: 'might potentially possibly', 'could potentially help in certain contexts', 'may potentially represent a meaningful shift'",
+      "example": "This approach might potentially help some teams improve productivity in certain contexts, though results may vary depending on various factors.",
+      "tell": "AI stacks qualifiers because each hedge reduces the probability of being wrong. Three hedges in one sentence produce a claim so diluted it carries no information. The reader finishes the sentence unable to determine whether the writer believes the claim or not. One hedge is careful writing. Three is evasion.",
+      "fix": "Commit to the claim or drop it. If you believe it, say it. If you're unsure, name the specific condition that decides it: 'This works for teams under ten. Past that, the standup format collapses.'",
+      "severity": "high",
+      "family": "hedging-stack"
+    },
+    {
+      "name": "Restating the question as the answer",
+      "pattern": "A question is asked, and the 'answer' explains why the question matters instead of providing an answer",
+      "example": "How much does it cost? Pricing is an important consideration when choosing any tool. Costs can vary based on your needs, usage, and the features you require.",
+      "tell": "AI generates answer-shaped text that contains zero actual information. The response restates the question in declarative form, adds context about why the question is important, and finishes without ever naming a number, a range, or a decision criterion. This is especially common in FAQ sections and answer-box content.",
+      "fix": "Answer the question in the first sentence. 'It costs $12/month billed annually, or $18 month-to-month.' If you cannot name a specific number, name the factors that decide it and give a range.",
+      "severity": "high",
+      "family": "empty-answer"
+    },
+    {
+      "name": "Listicle filler",
+      "pattern": "Bullet points or numbered items that restate the heading in different words without adding information",
+      "example": "Benefits of drinking water: 1) Hydration is essential for your body. 2) Staying hydrated supports overall wellness. 3) Water helps maintain your body's hydration levels.",
+      "tell": "AI generates list items that are grammatically distinct but informationally identical. Each bullet rephrases the same empty claim. A human who knows the topic adds a new fact per bullet. AI adds a new sentence per bullet.",
+      "fix": "Each list item must add one concrete fact the reader did not have before. If you cannot write a distinct fact for each item, write fewer items.",
+      "severity": "high",
+      "family": "empty-list"
+    },
+    {
       "name": "Staccato sentence stacking",
       "pattern": "Three or more short declarative sentences (under 12 words each) in a row within the same paragraph, connected only by periods",
       "example": "NVIDIA hired Groq's founder. NVIDIA licensed Groq's technology. And now NVIDIA is investing in the company that remains.",
