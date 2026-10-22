@@ -250,7 +250,7 @@
     {
       "phrase": "X is the new Y",
       "example": "Data is the new oil.",
-      "fix": "Clich\u00e9 formula. Say what X actually does.",
+      "fix": "Cliché formula. Say what X actually does.",
       "severity": "medium",
       "family": "cliche-formula"
     },
@@ -362,7 +362,7 @@
     {
       "phrase": "Easier said than done",
       "example": "Easier said than done, but essential.",
-      "fix": "Cut the clich\u00e9; give the first step.",
+      "fix": "Cut the cliché; give the first step.",
       "severity": "low",
       "family": "cliche-formula"
     },
@@ -680,6 +680,188 @@
       "fix": "State the point. 'Whether this model scales decides the outcome.'",
       "severity": "medium",
       "family": "faux-insight"
+    },
+    {
+      "phrase": "You're absolutely right",
+      "example": "You're absolutely right! Adding to your point...",
+      "fix": "Respond to the substance. If the agreement is real, one clause of it earns its place; drop the pre-agreement padding.",
+      "severity": "high",
+      "family": "sycophancy"
+    },
+    {
+      "phrase": "Great point",
+      "example": "Great point, Sarah. What many miss is...",
+      "fix": "Cut the compliment; engage the point itself.",
+      "severity": "medium",
+      "family": "sycophancy"
+    },
+    {
+      "phrase": "Let that sink in",
+      "example": "We cut the price by 70%. Let that sink in.",
+      "fix": "Delete the pause. The fact already landed, or it never will.",
+      "severity": "high",
+      "family": "emphasis-crutch"
+    },
+    {
+      "phrase": "Full stop",
+      "example": "This changes everything. Full stop.",
+      "fix": "Delete. The period already ended the sentence.",
+      "severity": "medium",
+      "family": "emphasis-crutch"
+    },
+    {
+      "phrase": "Make no mistake",
+      "example": "Make no mistake: this is a turning point.",
+      "fix": "Cut the warning and state the claim.",
+      "severity": "medium",
+      "family": "emphasis-crutch"
+    },
+    {
+      "phrase": "The implications are significant",
+      "example": "The implications are significant for every team in the space.",
+      "fix": "Name the implication: 'Two of the five vendors will drop usage-based pricing this year.'",
+      "severity": "high",
+      "family": "vague-declarative"
+    },
+    {
+      "phrase": "The stakes are high",
+      "example": "The stakes are high for incumbents.",
+      "fix": "State the stake: 'The incumbents lose $2B in switching costs if this ships.'",
+      "severity": "high",
+      "family": "vague-declarative"
+    },
+    {
+      "phrase": "The reasons are structural",
+      "example": "Deals slip for reasons that are structural, not personal.",
+      "fix": "Name the structure: 'Deals slip because procurement reviews run past the quarter close.'",
+      "severity": "medium",
+      "family": "vague-declarative"
+    },
+    {
+      "phrase": "This is what X actually looks like",
+      "example": "This is what leadership actually looks like.",
+      "fix": "Show the scene or cut the announcement. Describing something as significant is not evidence.",
+      "severity": "medium",
+      "family": "vague-declarative"
+    },
+    {
+      "phrase": "I'm thrilled to announce",
+      "example": "I'm thrilled to announce I've joined Acme as VP of Sales!",
+      "fix": "State the news in one line, then the reason you took the role.",
+      "severity": "high",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "I don't usually post this",
+      "example": "I don't usually post this, but today I'm proud to share...",
+      "fix": "Post it or don't. The disclaimer is the hook; the content rarely needs one.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "Unpopular opinion:",
+      "example": "Unpopular opinion: cold email still works.",
+      "fix": "State the opinion. If it is genuinely unpopular, the disagreement proves it; the label pre-loads sympathy.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "lessons I learned from",
+      "example": "Here are 7 lessons I learned from scaling to $10M.",
+      "fix": "Teach the two lessons that changed your decisions, with the moments they changed them.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "P.S. Repost if",
+      "example": "P.S. Repost if this helped your team!",
+      "fix": "Delete. Engagement-bait closers are exactly what LinkedIn's slop classifier flags.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "This might be controversial",
+      "example": "This might be controversial, but most dashboards are vanity projects.",
+      "fix": "State the take without the warning label.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "Everything you need to know",
+      "example": "Everything you need to know about the EU AI Act, in one post.",
+      "fix": "Name the three things you cover and what the reader can do with them.",
+      "severity": "medium",
+      "family": "hollow-promise"
+    },
+    {
+      "phrase": "The ultimate guide to",
+      "example": "The ultimate guide to prompt engineering.",
+      "fix": "State the scope: who the guide is for, and what it skips.",
+      "severity": "medium",
+      "family": "hollow-promise"
+    },
+    {
+      "phrase": "Stay ahead of the curve",
+      "example": "Our platform helps you stay ahead of the curve.",
+      "fix": "Name the advantage: 'You hear about pricing changes the week they ship.'",
+      "severity": "medium",
+      "family": "hollow-promise"
+    },
+    {
+      "phrase": "We're committed to delivering value",
+      "example": "We're committed to delivering value to our customers every day.",
+      "fix": "The portability test: this sentence fits any company, so it says nothing. Name the value: 'We answer support tickets in under 10 minutes, 24/7.'",
+      "severity": "high",
+      "family": "portable-platitude"
+    },
+    {
+      "phrase": "Plot twist:",
+      "example": "Plot twist: the tool nobody benchmarked beat them all.",
+      "fix": "Cut the stage direction and report the twist.",
+      "severity": "medium",
+      "family": "meta-commentary"
+    },
+    {
+      "phrase": "But that's another post",
+      "example": "That deserves its own analysis, but that's another post.",
+      "fix": "Delete the deferral. Either make the point now or drop it.",
+      "severity": "medium",
+      "family": "meta-commentary"
+    },
+    {
+      "phrase": "The rest of this essay",
+      "example": "The rest of this essay explains why the metric misleads.",
+      "fix": "Let the essay move. Announcing its own structure is a tell.",
+      "severity": "low",
+      "family": "meta-commentary"
+    },
+    {
+      "phrase": "That last point matters more than it sounds",
+      "example": "That last point matters more than it sounds. Most teams never recover from it.",
+      "fix": "Delete the interpretive aside. State the consequence instead.",
+      "severity": "medium",
+      "family": "meta-commentary"
+    },
+    {
+      "phrase": "Serves as",
+      "example": "The dashboard serves as a central hub for the whole team.",
+      "fix": "Use 'is': 'The dashboard is the central hub.' Fake-strong verbs (serves as, functions as, acts as) inflate a linking verb.",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "Plays a role in",
+      "example": "Consistency plays a role in retention.",
+      "fix": "Quantify or cut: 'Consistency explains about 20% of the retention variance here.'",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "Featured in leading publications",
+      "example": "Our founder has been featured in leading publications worldwide.",
+      "fix": "Name one publication and one piece, or drop the claim. Canned notability is decoration without a citation.",
+      "severity": "medium",
+      "family": "weasel-attribution"
     }
   ]
 }

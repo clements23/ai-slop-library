@@ -477,6 +477,46 @@
       "word": "important caveats to consider",
       "severity": "high",
       "note": "Claude scope-acknowledgement tell. State the caveat or cut it."
+    },
+    {
+      "word": "beacon",
+      "severity": "medium",
+      "note": "'A beacon of' / 'beacon of hope' praise-decoration. Flat for a decade, then surges in generated inspirational prose."
+    },
+    {
+      "word": "enhance",
+      "severity": "high",
+      "note": "'Enhance your workflow' promotional default. Humans say improve, or name the improvement."
+    },
+    {
+      "word": "embark",
+      "severity": "medium",
+      "note": "'Embark on your journey'. The journey-verb that flags generated marketing copy; 'journey' is already flagged."
+    },
+    {
+      "word": "ever-evolving",
+      "severity": "medium",
+      "note": "Hyphenated filler adjective for 'changing'. Near-zero use in human prose outside cliched copy."
+    },
+    {
+      "word": "meticulous",
+      "severity": "medium",
+      "note": "'Meticulously crafted' product-description tic. Humans say careful, or name what was checked."
+    },
+    {
+      "word": "paramount",
+      "severity": "medium",
+      "note": "'Of paramount importance' importance-puffery adjective. Say why it matters instead."
+    },
+    {
+      "word": "resonate",
+      "severity": "medium",
+      "note": "'Resonates with your audience' marketing abstraction, often beside 'aligns with' and 'speaks to' in the same sentence."
+    },
+    {
+      "word": "streamline",
+      "severity": "high",
+      "note": "'Streamline your workflow' SaaS-headline default, surging post-2023. Name the steps removed."
     }
   ]
 }

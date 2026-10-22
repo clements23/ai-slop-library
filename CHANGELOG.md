@@ -2,6 +2,40 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.7.0] - 2026-10-22
+
+Ecosystem refresh plus the chatbot-residue, substance, and social-formula layers. Patterns and repos drawn from the most popular anti-slop sources as of October 2026: the stop-slop skill (18.2k stars), FeedHive's 120-pattern machine-readable dataset (trending on release, October 2026), Peter Yang's no-ai-slop (12.7k stars, refreshed count), and the AIPromptIndex 19-pattern guide. Every new entry was diffed against the existing data first; nothing added duplicates an existing pattern.
+
+### Added
+
+- `data/slop-phrases.json`: 26 new phrases across nine families:
+  - Sycophancy (2): "You're absolutely right" (high), "Great point"
+  - Emphasis-crutch (3): "Let that sink in" (high), "Full stop", "Make no mistake"
+  - Vague-declarative (4): "The implications are significant" (high), "The stakes are high" (high), "The reasons are structural", "This is what X actually looks like"
+  - Social-formula (6): "I'm thrilled to announce" (high), "I don't usually post this", "Unpopular opinion:", "lessons I learned from", "P.S. Repost if", "This might be controversial"
+  - Hollow-promise (3): "Everything you need to know", "The ultimate guide to", "Stay ahead of the curve"
+  - Portable-platitude (1): "We're committed to delivering value" (high), documented with the portability test
+  - Meta-commentary (4): "Plot twist:", "But that's another post", "The rest of this essay", "That last point matters more than it sounds"
+  - Filler (2): "Serves as", "Plays a role in"
+  - Weasel-attribution (1): "Featured in leading publications" (canned notability)
+  97 to 123 phrases.
+- `data/slop-words.json`: 8 words from the latest popular lists: beacon, enhance (high), embark, ever-evolving, meticulous, paramount, resonate, streamline (high). 95 to 103 words.
+- `data/slop-openers.json`: 5 openers: "You might be wondering" (high), "The obvious question is" (high), "What if I told you", "Think about it:", "Spoiler:". 83 to 88 openers.
+- `data/slop-structures.json`: 5 structures - "Negative listing" (high, negative-listing), "False agency" (high, false-agency), "Self-answered question" (medium, empty-answer), "Micro-heading stacking" (medium, formatting-fragmentation), "Catalog dump" (medium, empty-list). 36 to 41 structures.
+- `data/slop-punctuation.json`: 6 formatting tics - "Citation debris" (high: oaicite, turn0search0, [1], contentReference), "Placeholder tokens" (high: [Your Name], XX%), "Thread marker" (medium), "Unicode style blocks" (medium), "Smart-quote and character mix" (low), "Table for two facts" (low). 15 to 21 entries.
+- `reference/writing.md`: patterns 10-14 added to "the patterns that matter most": negative listing, false agency, vague declaratives, chatbot residue, and the social-formula cluster. The specificity principle section gained the portability test.
+- `research.md`: three new community field guide entries: stop-slop (eight core rules, five-dimension rubric, the false-agency and vague-declarative contributions), FeedHive's dataset (the chatbot-residue and substance categories), and the AIPromptIndex 19-pattern guide (minimum effective edit, negative listing).
+- `examples/sloppy.txt`: two paragraphs exercising the new families (sycophancy, emphasis-crutch, vague-declarative, negative listing, false agency, self-answered question, social-formula, hollow-promise, portable-platitude, chatbot residue). The fixture now trips 50 distinct tells; clean.txt verified clean against every new pattern.
+
+### Changed
+
+- `ecosystem.md`: full October 2026 refresh, 45 to 61 indexed repos/tools. New entries: hardikpandya/stop-slop (~18.2k), dmmulroy/anti-slop (~5.6k Oxlint rules), Trystan-SA/claude-design-system-prompt (~2k), ItsssssJack/SlopMonster (~1.2k), Yu-369/VibeCurb (~986), Tejashmakwana/motionmaxxing (~966, first popular anti-slop tool aimed at video), alchaincyf/huashu-md-html (~923), alvi-se/ai-ublock-blacklist (~707), AThevon/genjutsu (~629), codeswithroh/tastemaker (~484), FeedHive/ai-slop-detector (~81). Star counts refreshed across every section; notable movers: miqdadbadjuber/anti-slop ~200 to ~6.8k, guillaumemeyer/watermarks-remover ~8.4k to ~24.6k, petergyang/no-ai-slop ~5k to ~12.7k, Nutlope/hallmark ~25k to ~30.6k, Override92/AiSList ~150 to ~355. Design section renamed "Design, UI, and motion slop"; content blockers section gains search-result filtering.
+- `README.md`: counts updated (103 words, 123 phrases, 88 openers, 41 structures, 61 ecosystem entries), version line to v1.7.0.
+
+### Rationale
+
+The August 2026 ecosystem snapshot aged quickly. stop-slop overtook no-ai-slop as the most-starred writing skill, miqdadbadjuber/anti-slop grew roughly thirtyfold, and FeedHive shipped the first trending machine-readable slop dataset organized around two categories the ecosystem had not named before: chatbot residue (citation debris, placeholder tokens, sycophancy) and substance (the portability test, canned notability, hollow promises, made-up specifics). Diffing those 120 patterns and stop-slop's rule set against the existing 97 phrases and 36 structures showed 46 apparent gaps; manual review separated genuine new concepts from renames of covered patterns (for example, FeedHive's "Not X, but Y" is the existing binary-contrast family and "broetry" is the existing single-sentence-per-line fragmentation structure). The 40 genuinely new entries above are what survived that review. The social-formula cluster encodes what LinkedIn's slop classifier is documented to catch, which makes it a distribution concern, not just an editorial one.
+
 ## [1.6.0] - 2026-08-20
 
 Litotes detection layer + anti-slop research for Founder's Voice. Patterns identified from live TAIS draft audits, LinkedIn's 2026 AI slop crackdown, and research across Forbes, Foundera, SlopDetector, aicheckr.io, and AI Publisher's 2026 detection framework. The user directive "do not do litotes" drove the core addition; the broader research enhanced the writing system with measurable anti-slop techniques for founder-voice content.
