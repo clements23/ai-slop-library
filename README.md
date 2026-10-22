@@ -1,5 +1,9 @@
 # AI Slop Library
 
+[![validate](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml/badge.svg)](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![version](https://img.shields.io/badge/version-1.7.0-orange.svg)](CHANGELOG.md)
+
 A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
 
 **Current stable version: v1.7.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
@@ -50,7 +54,7 @@ cat draft.txt | python3 scripts/slopcheck.py -
 
 Exit code 1 means tells found, 0 means clean - usable in pre-commit hooks and CI. See `python3 scripts/slopcheck.py --help`.
 
-Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) so tools can decide whether to warn or block. Phrase entries carry a `family` field (binary-contrast, throat-clearing, weasel-attribution, etc.) so tools can group and explain hits.
+Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) so tools can decide whether to warn or block. Phrase entries carry a `family` field (binary-contrast, throat-clearing, weasel-attribution, sycophancy, social-formula, etc.) so tools can group and explain hits.
 
 ```json
 {
@@ -62,6 +66,19 @@ Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) 
 }
 ```
 
+## What the data covers
+
+| Layer | File | Entries | Catches |
+|---|---|---|---|
+| Words | `slop-words.json` | 103 | delve, streamline, resonate, ever-evolving, ... |
+| Phrases | `slop-phrases.json` | 123 | binary contrasts, sycophancy, vague declaratives, social formula, ... |
+| Openers | `slop-openers.json` | 88 | throat-clearing openers, "You might be wondering", ... |
+| Structures | `slop-structures.json` | 41 | negative listing, false agency, catalog dumps, ... |
+| Punctuation and formatting | `slop-punctuation.json` | 21 | em dashes, citation debris, placeholder tokens, thread markers, ... |
+| Model fingerprints | `claude-watermarks.json`, `gpt-watermarks.json` | 7 + 12 | the Claude balanced-analyst register, the GPT assistant register |
+
+The phrase layer is organized into two dozen families. The oldest are binary-contrast, throat-clearing, and weasel-attribution. The October 2026 update added the families the ecosystem had not named before: sycophancy ("You're absolutely right"), emphasis-crutch ("Let that sink in"), vague-declarative ("The implications are significant"), false agency ("the data tells us"), social-formula ("I'm thrilled to announce"), hollow-promise ("the ultimate guide to"), portable-platitude ("We're committed to delivering value"), meta-commentary ("Plot twist:"), and chatbot residue (citation debris like `oaicite`, placeholder tokens like `[Your Name]`).
+
 ## The six patterns that matter most
 
 1. **Binary contrast** - "It's not X. It's Y." The most documented single construction in detection research. Four banned faces: contracted, declarative ("X is not Y. It is Z."), concession, negation tail (", not Y").
@@ -71,31 +88,27 @@ Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) 
 5. **Weasel attribution** - "Experts agree", "Studies show" with no source.
 6. **Synonym cycling** - Renaming the same thing at every appearance to dodge repetition.
 
-Full explainers in `reference/writing.md`.
+Full explainers for these and eight more in `reference/writing.md`.
 
 ## Evidence
 
 The tells are measured, not vibes: "realm", "intricate", "showcasing", "pivotal" were flat for a decade then surged post-2023 (Nature Human Behaviour 2025); "delve" rose ~1,500% in biomedical abstracts (Science Advances 2025); EQ-Bench scores models on slop constructions. Citations in `research.md`.
 
-## Claude watermark layer
-
-`data/claude-watermarks.json` documents both layers of Claude detection: the invisible technical watermark Anthropic embeds in Claude output (confirmed in Anthropic's support documentation), and the seven writing-fingerprint patterns detectors are calibrated to find: first-person avoidance, systematic scope acknowledgement, balanced counterargument inclusion, triadic list compulsion, conclusion recycling, paragraph architecture regularity, and the Claude vocabulary cluster. De-slopping the fingerprint does not remove the technical watermark; the layers are independent.
-
-## How to use it
-
-- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`. `scripts/slopcheck.py` is the reference implementation.
-- **Agent skills**: point a de-slop skill at `data/slop-phrases.json` + `data/slop-structures.json` for its pattern list.
-- **Detectors**: combine word and structure frequencies as features (with the caveat that detectors false-positive on human text - use as lint, not accusation).
-- **Writers**: read `reference/writing.md`, then run your own text against the data with `scripts/slopcheck.py`.
-
 ## Model fingerprints
 
 Beyond the general layers, the library documents the detectable registers of specific model families:
 
-- `data/claude-watermarks.json` - the invisible technical watermark Anthropic embeds in Claude output (confirmed, not removable by rewriting) plus seven fingerprint patterns: first-person avoidance, scope acknowledgement, balanced counterarguments, triadic lists, conclusion recycling, paragraph regularity, vocabulary cluster.
+- `data/claude-watermarks.json` - two independent layers. The invisible technical watermark Anthropic embeds in Claude output (confirmed in Anthropic's support documentation; not removable by rewriting) plus seven writing-fingerprint patterns detectors are calibrated to find: first-person avoidance, systematic scope acknowledgement, balanced counterargument inclusion, triadic list compulsion, conclusion recycling, paragraph architecture regularity, and the Claude vocabulary cluster.
 - `data/gpt-watermarks.json` - the GPT assistant register: identity leaks ("As an AI language model"), compliance openers, service closers, possibility-hedge stacks, listicle defaults, promotional vocabulary cluster.
 
 Fingerprints are statistical: the cluster is the signal, not single instances.
+
+## How to use it
+
+- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`. `scripts/slopcheck.py` is the reference implementation.
+- **Agent skills**: point a de-slop skill at `data/slop-phrases.json` + `data/slop-structures.json` for its pattern list. The raw JSON is fetchable from `raw.githubusercontent.com` at any tag.
+- **Detectors**: combine word and structure frequencies as features (with the caveat that detectors false-positive on human text - use as lint, not accusation).
+- **Writers**: read `reference/writing.md`, then run your own text against the data with `scripts/slopcheck.py`.
 
 ## Related
 
