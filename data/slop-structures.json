@@ -279,6 +279,69 @@
       "fix": "Merge related sentences using commas, conjunctions (and, but, because, while), or dependent clauses. 'NVIDIA hired Groq's founder, licensed its technology, and is now investing in the shell that remains.' The reader should feel the ideas connecting, not stacked.",
       "severity": "high",
       "family": "fragmentation"
+    },
+    {
+      "name": "Strawman contrast pivot",
+      "pattern": "\"Everyone is focused on X. I keep thinking about Y.\" / \"Everyone is talking about X. I'm thinking about Y.\" / \"The headlines are about X. What I can't stop thinking about is Y.\" / \"Everyone fixates on X. I keep coming back to Y.\"",
+      "example": "Everyone is focused on the valuation. I keep thinking about the listing route. Everyone is talking about the revenue. I keep coming back to the chip effort.",
+      "tell": "AI constructs a fake audience ('everyone') to set up a strawman, then pivots to the writer's supposedly deeper insight. The pattern always follows the same shape: what others think (wrong/superficial) vs what I think (deeper/real). Real writers state their insight directly without manufacturing a contrast against an imaginary consensus. The 'I keep thinking about' / 'I keep coming back to' phrasing is the AI's default first-person insertion for this pattern.",
+      "fix": "State your insight directly. 'The STAR Market listing choice matters more than the valuation number.' No need to first describe what everyone else is thinking.",
+      "severity": "high",
+      "family": "contrast-pivot"
+    },
+    {
+      "name": "Parallel conditional stacking",
+      "pattern": "Two or more \"If X, Y.\" sentences stacked back to back in the same paragraph",
+      "example": "If the chip effort stalls, the model story weakens. If back-half revenue slows, the valuation looks thin.",
+      "tell": "AI stacks parallel conditionals because each one is individually safe to generate. Two or more in a row creates a metronomic rhythm that reads as list-generation, not thinking. Real writers connect related conditions or pick the more important one.",
+      "fix": "Merge into one sentence: 'A chip stall or revenue slowdown would both strain the $74 billion valuation.' Or pick the more important condition and state it alone.",
+      "severity": "medium",
+      "family": "parallel-stacking"
+    },
+    {
+      "name": "Negative listing",
+      "pattern": "\"Not a X. Not a Y. A Z.\" / \"It wasn't X. It wasn't Y. It was Z.\"",
+      "example": "Not a tool. Not a platform. A movement.",
+      "tell": "Binary contrast's louder cousin: the rhetorical striptease builds runway by negating near-misses before revealing the thing. The reveal only feels big because of the runway, which is manufactured drama, not information.",
+      "fix": "State Z directly: 'A movement.' If the near-misses matter, make them a real comparison with criteria.",
+      "severity": "high",
+      "family": "negative-listing"
+    },
+    {
+      "name": "False agency",
+      "pattern": "Inanimate things performing human actions: 'the data tells us', 'the decision emerges', 'the market rewards', 'the culture shifts', 'a complaint becomes a fix'",
+      "example": "The data tells us the market rewards speed, and the culture shifts toward shipping.",
+      "tell": "An LLM favorite because it avoids naming the actor. Data sits there until someone reads it; decisions do not emerge; markets do not reward, buyers pay. Every false-agency sentence hides a person who did something.",
+      "fix": "Name the human, or use 'you': 'Two analysts read the data and cut the review to one day.'",
+      "severity": "high",
+      "family": "false-agency"
+    },
+    {
+      "name": "Self-answered question",
+      "pattern": "\"Does this work? Absolutely.\" / \"Is it worth it? Unquestionably.\" / \"Can you? Yes.\"",
+      "example": "Does the free tier convert? Absolutely.",
+      "tell": "A rhetorical question the text immediately answers with an adverb of certainty. The Q&A format simulates evidence while providing none; the answer carries no data, only agreement with itself.",
+      "fix": "Answer with the evidence, or cut the question: 'The free tier converts at 4.2%.'",
+      "severity": "medium",
+      "family": "empty-answer"
+    },
+    {
+      "name": "Micro-heading stacking",
+      "pattern": "A heading over one or two sentences, repeated down the page (LinkedIn and newsletter format)",
+      "example": "## Why it matters\nOne line. ## What to do\nOne line. ## The bottom line\nOne line.",
+      "tell": "Formatting where prose should be. When every two-sentence unit needs its own heading, the headings are doing the emphasis the writing cannot. Common in AI-generated LinkedIn carousels and newsletter sections.",
+      "fix": "Merge the fragments into paragraphs with real transitions. Keep headings for sections of three or more paragraphs.",
+      "severity": "medium",
+      "family": "formatting-fragmentation"
+    },
+    {
+      "name": "Catalog dump",
+      "pattern": "A comma-separated inventory of nouns in one breath, with no analysis of any item",
+      "example": "Teams use it for sales, marketing, support, ops, finance, hiring, legal and product.",
+      "tell": "Breadth substituted for substance. The list reads as comprehensive while committing to nothing about any item on it; coverage phrasing in list form.",
+      "fix": "Cut to the two items you can say something specific about.",
+      "severity": "medium",
+      "family": "empty-list"
     }
   ]
 }

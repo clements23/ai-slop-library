@@ -416,6 +416,31 @@
       "opener": "In the grand scheme of things,",
       "severity": "low",
       "fix": "Cut."
+    },
+    {
+      "opener": "You might be wondering",
+      "severity": "high",
+      "fix": "Answer directly. Staging the reader's curiosity is throat-clearing."
+    },
+    {
+      "opener": "The obvious question is",
+      "severity": "high",
+      "fix": "Ask the real question or answer it; 'obvious' does the announcing."
+    },
+    {
+      "opener": "What if I told you",
+      "severity": "medium",
+      "fix": "State the proposition without the hypothetical drumroll."
+    },
+    {
+      "opener": "Think about it:",
+      "severity": "medium",
+      "fix": "Cut. The reader was already thinking."
+    },
+    {
+      "opener": "Spoiler:",
+      "severity": "low",
+      "fix": "Cut the label; report the outcome."
     }
   ]
 }

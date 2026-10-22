@@ -36,10 +36,19 @@ The Wikipedia editor project that reviews suspected AI-generated content and mai
 Social-post corpus analysis that fed several community detection lists. Contributed the social-media register tells (emoji structure, hashtag stacks, exclamation escalation).
 
 ### Peter Yang's No AI Slop (petergyang/no-ai-slop)
-20+ pattern list including binary contrasts, throat-clearing openers, faux-insight setups, colon reveals, dramatic fragments, synonym cycling, and fake-profound endings. 5k stars.
+20+ pattern list including binary contrasts, throat-clearing openers, faux-insight setups, colon reveals, dramatic fragments, synonym cycling, and fake-profound endings. ~12.7k stars by October 2026.
 
 ### Kill AI Slop (yetone/kill-ai-slop)
 Field guide to the visual and copy tics of AI-generated products, shipped as an agent skill.
+
+### Stop Slop (hardikpandya/stop-slop)
+18k stars, the most-starred writing skill in the ecosystem. Distills de-slopping into eight core rules: cut filler phrases and all adverbs, break formulaic structures (binary contrast, negative listing, dramatic fragmentation, rhetorical setups, false agency), enforce active voice with a named human subject, be specific (no vague declaratives like "the reasons are structural", no lazy extremes), put the reader in the room ("you" beats "people"), vary rhythm (two items beat three, no em dashes), trust readers (skip softening and justification), and cut anything that sounds like a pull-quote. Adds a five-dimension rubric (directness, rhythm, trust, authenticity, density, scored 1-10) with a revise-below-35/50 threshold. Two contributions this library adopted directly: the false-agency family ("the data tells us", "the decision emerges", "the culture shifts" all hide a person who did something) and the vague-declarative family (sentences that announce importance without naming the specific thing).
+
+### FeedHive AI Slop Detector (FeedHive/ai-slop-detector)
+Released October 2026 and trending immediately. 120 patterns published as machine-readable `patterns.json` across nine categories: vocabulary, stock phrases, sentence patterns, structure and rhythm, imagery and metaphor, substance, formatting and punctuation, chatbot residue, and social media/LinkedIn. Two categories are structurally new to the ecosystem's pattern data: "chatbot residue" (citation debris like `oaicite` and `turn0search0`, unreplaced placeholder tokens, sycophantic openers copied from chat contexts) and "substance" (the portability test: a sentence that could move unchanged to another company says nothing; made-up specifics; canned notability like "featured in leading publications"; hollow promises like "the ultimate guide"). This library's October 2026 additions draw directly from both categories.
+
+### AIPromptIndex: 19 patterns (July 2026)
+A rendering of Peter Yang's no-ai-slop taxonomy with before/after examples, organized into word-level, structural, rhythm, and ending tells. Notable framing: the pattern behind every instance is that "the slop version could have been written without knowing anything", and the recommended edit pass is the minimum effective edit (protect what sounds like the writer, cut word tells mechanically, fix structures, rewrite the ending, read aloud). Also documents negative listing ("Not a tool. Not a platform. A movement.") as binary contrast's louder cousin, a structure this library now catalogs.
 
 ## The Claude watermark
 

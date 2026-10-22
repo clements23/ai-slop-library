@@ -2,7 +2,7 @@
 
 A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
 
-**Current stable version: v1.6.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
+**Current stable version: v1.7.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
 
 The data layer is plain JSON. Any linter, agent skill, or detector can load it. The reference layer explains the tells. The research layer cites the evidence.
 
@@ -11,10 +11,10 @@ The data layer is plain JSON. Any linter, agent skill, or detector can load it. 
 ```
 data/
   schema.json           JSON schema for all data files
-  slop-words.json       95 overused words, severity-rated
-  slop-phrases.json     91 multi-word constructions with examples and fixes
-  slop-openers.json     83 sentence openers with fixes
-  slop-structures.json  33 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-words.json       103 overused words, severity-rated
+  slop-phrases.json     123 multi-word constructions with examples and fixes
+  slop-openers.json     88 sentence openers with fixes
+  slop-structures.json  41 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
   claude-watermarks.json  the Claude detection layer: technical watermark + 7 fingerprint patterns
   gpt-watermarks.json     the GPT detection layer: 12 assistant-register fingerprint patterns
@@ -28,7 +28,7 @@ reference/
   visual.md            the visual/design tells (purple gradients, blob heroes, ...)
   code.md              the code tells (empty functions, fake docs, ...)
 research.md            the evidence base (Nature, Science Advances, arXiv, ...)
-ecosystem.md           curated index of the AI-slop ecosystem (45 repos/tools)
+ecosystem.md           curated index of the AI-slop ecosystem (61 repos/tools)
 ```
 
 ## Quick start

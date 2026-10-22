@@ -107,6 +107,48 @@
       "tell": "AI stuffs asides into parentheses to keep a single flowing sentence.",
       "fix": "Split the aside into its own sentence.",
       "severity": "medium"
+    },
+    {
+      "mark": "Citation debris",
+      "pattern": "Leftover model-output markers: '[1]', '[Source]', 'oaicite', 'turn0search0', 'contentReference'",
+      "tell": "Copy-pasted straight from chat output without cleanup. These strings appear only in LLM citation UIs and rendered chat transcripts; their presence in published text is near-conclusive evidence of unedited model output.",
+      "fix": "Delete the markers and either cite properly or drop the claim.",
+      "severity": "high"
+    },
+    {
+      "mark": "Placeholder tokens",
+      "pattern": "Unreplaced template slots: '[Your Name]', '[Company]', 'XX%', '[insert statistic]'",
+      "tell": "A draft published before the template was filled. Common when generated content ships straight to a CMS or email tool.",
+      "fix": "Fill every slot, or cut the sentence that needed it.",
+      "severity": "high"
+    },
+    {
+      "mark": "Thread marker",
+      "pattern": "'A thread emoji' or '1/', '2/', '3/' on content that is not actually a thread",
+      "tell": "The thread costume: a single post formatted with thread markers for gravity. LinkedIn's slop classifiers key on it.",
+      "fix": "Post a real thread, or delete the markers.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Unicode style blocks",
+      "pattern": "Bold, script, or fullwidth Unicode alphabets across whole lines",
+      "tell": "Unicode bold and script alphabets pasted from special-character tools, mostly in LinkedIn posts. Normal text never uses them; they exist to hijack the feed preview.",
+      "fix": "Use plain text; let the words carry the emphasis.",
+      "severity": "medium"
+    },
+    {
+      "mark": "Smart-quote and character mix",
+      "pattern": "Curly quotes, non-breaking spaces, or exotic dashes mixed with plain ASCII in the same paragraph",
+      "tell": "Mixed Unicode tells of copy-paste assembly from AI chat interfaces and docs. Clean human drafts are typographically consistent; machine-assembled text is not.",
+      "fix": "Normalize the document to one character set before publishing.",
+      "severity": "low"
+    },
+    {
+      "mark": "Table for two facts",
+      "pattern": "A data table used where one or two sentences would carry the information",
+      "tell": "Formatting substituted for writing, common in AI-generated LinkedIn and blog posts. The table shape signals rigor while holding almost no content.",
+      "fix": "Write the sentence. Keep tables for genuinely tabular data (three or more rows of comparison).",
+      "severity": "low"
     }
   ]
 }
