@@ -110,7 +110,7 @@
     },
     {
       "mark": "Citation debris",
-      "pattern": "Leftover model-output markers: '[1]', '[Source]', 'oaicite', 'turn0search0', 'contentReference'",
+      "pattern": "Leftover model-output markers: '[1]', '[Source]', 'oaicite', 'oai_citation', 'turn0search0', 'contentReference', Claude-style '【1†...】' citation spans",
       "tell": "Copy-pasted straight from chat output without cleanup. These strings appear only in LLM citation UIs and rendered chat transcripts; their presence in published text is near-conclusive evidence of unedited model output.",
       "fix": "Delete the markers and either cite properly or drop the claim.",
       "severity": "high"
@@ -149,6 +149,20 @@
       "tell": "Formatting substituted for writing, common in AI-generated LinkedIn and blog posts. The table shape signals rigor while holding almost no content.",
       "fix": "Write the sentence. Keep tables for genuinely tabular data (three or more rows of comparison).",
       "severity": "low"
+    },
+    {
+      "mark": "Invisible character residue",
+      "pattern": "Zero-width spaces, bidi controls, word joiners, or exotic pasted spaces embedded in the text",
+      "tell": "Non-rendering characters (ZWSP, LRM/RLM, word joiner, BOM) and pasted non-breaking spaces survive copy-paste from chat interfaces and special-character tools. They are invisible in most editors but change search, layout, and copy behavior. Documented as content artifacts by EnhancePost's 254-rule list (September 2026); Unicode text hygiene is a standard capability of the watermark-removal tools in the ecosystem index.",
+      "fix": "Strip non-ASCII invisibles and normalize spaces to plain ASCII before publishing.",
+      "severity": "high"
+    },
+    {
+      "mark": "Chat URL tracking residue",
+      "pattern": "Pasted links still carrying chat-app query parameters (utm_source=chatgpt.com, utm_source=gemini.google.com, and similar)",
+      "tell": "Links copied out of a chat assistant keep their tracking parameters. A chat utm_source in a published URL is direct evidence the link was pasted from model output rather than typed or sourced by hand.",
+      "fix": "Remove the recognized chat utm_source parameters and keep the rest of the URL, its encoding, and its fragment intact.",
+      "severity": "medium"
     }
   ]
 }

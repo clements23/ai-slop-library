@@ -342,6 +342,33 @@
       "fix": "Cut to the two items you can say something specific about.",
       "severity": "medium",
       "family": "empty-list"
+    },
+    {
+      "name": "Seamslop (metaphor over-anchoring)",
+      "pattern": "One word or metaphor reused as structural connective tissue across an entire passage",
+      "example": "Buddhism treats the self as a seam rather than a solid thing. Suffering is what happens when we mistake the seam for a seamless whole. Meditation is learning to notice the seam directly, not the surface it creates.",
+      "tell": "Named by Matt Pocock (August 2026) after Claude Opus 5 reused 'seam' correctly and usefully four times in one explanation. Every sentence is defensible alone; the paragraph reads as a stuck record. This is the mirror image of synonym cycling: synonyms cycled for one thing on one side, one word ridden past its usefulness on the other. Banning the word does not fix it, because the habit resurfaces around the next metaphor.",
+      "fix": "Cut the third and fourth appearances outright rather than synonym-swapping them. One metaphor earns one use per explanation.",
+      "severity": "high",
+      "family": "seamslop"
+    },
+    {
+      "name": "Colorful verb inflation",
+      "pattern": "A dramatic or colorful verb where a plain one would do, plus systematically softer word choices",
+      "example": "The proposal drew 100 votes. The company forged a partnership and unveiled the roadmap.",
+      "tell": "Named by Paul Graham (August 2026): a proposal does not 'draw' votes, it gets them; companies 'make' deals, they do not 'forge' them. Replies to the same thread documented the softer variant: models reach for a rounder synonym before the plain or blunt one, an RLHF agreeableness artifact that shows up in word choice instead of sentence structure. One vivid verb is style; a piece where every verb is upgraded is a signal.",
+      "fix": "Downgrade to the plain verb unless the color is doing real work: 'got 100 votes', 'made the deal', 'showed the roadmap'.",
+      "severity": "medium",
+      "family": "verb-inflation"
+    },
+    {
+      "name": "Summary-then-restate skeleton",
+      "pattern": "Open by restating the question, close by restating the answer in different words",
+      "example": "When it comes to understanding customer churn, there are several key factors to consider. ... In summary, churn is shaped by these several key factors.",
+      "tell": "The paired skeleton of AI explanatory writing: the first paragraph re-describes what the piece is about to describe, and the last paragraph re-describes what it just described. Human writers, especially experts, start with the point and stop when the argument is done. Documented as sign 8 of explainx.ai's reader checklist (August 2026); the closing half overlaps the conclusion-recycling fingerprint in claude-watermarks.json, but the open-close pairing is the detectable unit.",
+      "fix": "Open with the claim or the number. Close on the decision, the next step, or nothing at all.",
+      "severity": "high",
+      "family": "summary-restate"
     }
   ]
 }

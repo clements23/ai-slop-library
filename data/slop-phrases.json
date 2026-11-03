@@ -862,6 +862,167 @@
       "fix": "Name one publication and one piece, or drop the claim. Canned notability is decoration without a citation.",
       "severity": "medium",
       "family": "weasel-attribution"
+    },
+    {
+      "phrase": "load-bearing",
+      "example": "That is deliberate and load-bearing rather than tidy.",
+      "fix": "Name what bears the load or cut the metaphor: 'That step is required; skipping it breaks the build.'",
+      "severity": "high",
+      "family": "claudism"
+    },
+    {
+      "phrase": "worth stating plainly",
+      "example": "It's worth stating plainly: the migration is not optional.",
+      "fix": "Cut the preamble and state the claim: 'The migration is not optional.'",
+      "severity": "medium",
+      "family": "claudism"
+    },
+    {
+      "phrase": "carry the argument",
+      "example": "These numbers carry the argument on their own.",
+      "fix": "State what the numbers show instead of praising their rhetorical job: 'The numbers show churn fell 18% after the fix.'",
+      "severity": "medium",
+      "family": "claudism"
+    },
+    {
+      "phrase": "and the trap is",
+      "example": "Teams adopt the framework quickly, and the trap is that it hides the cost model.",
+      "fix": "Cut the stage direction and state the trap directly: 'The framework hides the cost model.'",
+      "severity": "medium",
+      "family": "claudism"
+    },
+    {
+      "phrase": "Unlock the full potential",
+      "example": "Our platform unlocks the full potential of your team.",
+      "fix": "Name the capability: 'Your team gets one inbox for every client request.'",
+      "severity": "high",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "A testament to the power of",
+      "example": "The launch is a testament to the power of community.",
+      "fix": "Report the fact: '4,000 users imported their data on day one.'",
+      "severity": "high",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "Turn challenges into opportunities",
+      "example": "We turn challenges into opportunities.",
+      "fix": "Name one challenge and what you did with it: 'The outage forced us to finish the failover, which shipped last month.'",
+      "severity": "medium",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "Drive meaningful impact",
+      "example": "Our tools help you drive meaningful impact.",
+      "fix": "State the outcome with a number or cut the sentence.",
+      "severity": "medium",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "More important than ever",
+      "example": "Security is more important than ever.",
+      "fix": "State what changed: 'Two of the five vendors now require SOC 2 before contract.'",
+      "severity": "high",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "Navigate the complexities",
+      "example": "We help you navigate the complexities of compliance.",
+      "fix": "Name the complexity: 'We handle the SOC 2 evidence collection.'",
+      "severity": "medium",
+      "family": "marketing-template"
+    },
+    {
+      "phrase": "Read that again",
+      "example": "We cut the price by 70%. Read that again.",
+      "fix": "Delete the command. The number already landed, or it never will.",
+      "severity": "high",
+      "family": "emphasis-crutch"
+    },
+    {
+      "phrase": "It cannot be overstated",
+      "example": "It cannot be overstated how important retention is.",
+      "fix": "State the retention number and what it does to revenue.",
+      "severity": "high",
+      "family": "emphasis-crutch"
+    },
+    {
+      "phrase": "Great question",
+      "example": "Great question! The short answer is yes.",
+      "fix": "Cut the compliment and answer the question.",
+      "severity": "medium",
+      "family": "sycophancy"
+    },
+    {
+      "phrase": "Humbled and honored",
+      "example": "Humbled and honored to accept this award alongside such a talented group.",
+      "fix": "Say what you did and what comes next; the gratitude label is optional.",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "Excited to share",
+      "example": "Excited to share that we just shipped our biggest update yet.",
+      "fix": "Ship the news in one line: 'We shipped bulk export today.'",
+      "severity": "medium",
+      "family": "social-formula"
+    },
+    {
+      "phrase": "Here's the kicker",
+      "example": "Here's the kicker: the free tier converts better than paid.",
+      "fix": "Put the payoff first: 'The free tier converts better than paid.'",
+      "severity": "medium",
+      "family": "colon-reveal"
+    },
+    {
+      "phrase": "Has the ability to",
+      "example": "The platform has the ability to export in bulk.",
+      "fix": "Use 'can': 'The platform can export in bulk.'",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "A large number of",
+      "example": "A large number of teams reported the same issue.",
+      "fix": "Use 'many', or name the number: '412 teams reported the same issue.'",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "Make a decision on",
+      "example": "We need to make a decision on the pricing change.",
+      "fix": "Use the verb: 'We need to decide on the pricing change.'",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "In close proximity to",
+      "example": "The warehouse is in close proximity to the port.",
+      "fix": "Use 'near'.",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "On a regular basis",
+      "example": "We review the numbers on a regular basis.",
+      "fix": "Use 'regularly', or name the cadence: 'We review the numbers every Monday.'",
+      "severity": "low",
+      "family": "filler"
+    },
+    {
+      "phrase": "For all intents and purposes",
+      "example": "For all intents and purposes, the migration is complete.",
+      "fix": "Say what is true: 'The migration is complete for all 14 services.'",
+      "severity": "medium",
+      "family": "filler"
+    },
+    {
+      "phrase": "The fact of the matter is",
+      "example": "The fact of the matter is, most teams never look at this metric.",
+      "fix": "Cut the frame and state the fact.",
+      "severity": "medium",
+      "family": "throat-clearing"
     }
   ]
 }

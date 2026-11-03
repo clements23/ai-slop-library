@@ -1,6 +1,6 @@
 {
   "category": "claude-watermarks",
-  "description": "The Claude detection layer: the invisible technical watermark Anthropic embeds in Claude output, and the five writing-fingerprint patterns detectors are calibrated to find. Confirmed by Anthropic support documentation (2026) and detection research.",
+  "description": "The Claude detection layer: the invisible technical watermark Anthropic embeds in Claude output, and the eight writing-fingerprint patterns detectors are calibrated to find. Confirmed by Anthropic support documentation (2026) and detection research.",
   "technical_watermark": {
     "what": "Anthropic embeds an invisible statistical mark in Claude-generated text. It is detectable by systems, not visible to readers.",
     "status": "confirmed",
@@ -66,12 +66,21 @@
     {
       "name": "Claude vocabulary cluster",
       "pattern": "High-frequency Claude indicator words",
-      "example": "delve, nuanced, multifaceted, underscore, encompasses, key takeaway, pivotal, realm, vibrant, tapestry, it's important to note, in conclusion",
+      "example": "delve, nuanced, multifaceted, underscore, encompasses, key takeaway, pivotal, realm, vibrant, tapestry, load-bearing, worth stating plainly, full stop, it's important to note, in conclusion",
       "tell": "Claude's preferred terms appear at frequencies dramatically above human writing. Detectors trained on Claude output weight these heavily. A single instance is nothing; six per thousand words is a signal.",
       "fix": "Replace with concrete, register-appropriate alternatives. 'Nuanced' becomes the actual distinction; 'encompasses' becomes 'covers' or the thing itself.",
       "severity": "high",
       "family": "vocabulary"
+    },
+    {
+      "name": "Turn-of-phrase optimization",
+      "pattern": "Punchy, quotable prose that builds to a turn of phrase: dramatic fragments, metaphors asserted without load, colon and semicolon pauses",
+      "example": "That is deliberate and load-bearing rather than tidy. Not a detail. A design decision. It's worth stating plainly: the migration is not optional.",
+      "tell": "The Claude Opus 5 register, catalogued after a 1,778-point Hacker News thread and an r/ClaudeAI documentation thread (August 2026): 'load-bearing' applied to anything structurally important, 'worth stating plainly' preambles, sentence-fragment drama, and mid-sentence pauses where a human would write 'and' or 'but'. Community inference, not an Anthropic statement: reinforcement learning rewarded dense, quotable prose, so the model optimizes for the turn of phrase whether or not the sentence earned it. This is a rhythm and register signal rather than a word-list signal; it survives vocabulary bans, and the named phrases are only its grep-able surface.",
+      "fix": "State the claim directly. Do not build to a turn of phrase, write complete sentences instead of fragments for drama, and name the specific tics in a style instruction rather than asking for 'better writing'.",
+      "severity": "high",
+      "family": "register"
     }
   ],
-  "notes": "These fingerprint patterns describe Claude across Opus, Sonnet, and Haiku tiers. The fingerprint is statistical: presence of one pattern is not evidence; the cluster is the signal."
+  "notes": "These fingerprint patterns describe Claude across Opus, Sonnet, and Haiku tiers. The fingerprint is statistical: presence of one pattern is not evidence; the cluster is the signal. The turn-of-phrase register (pattern 8) is sourced from the explainx.ai Claudism inventory (August 2026), compiled from the Hacker News Opus 5 thread and r/ClaudeAI; the reinforcement-learning account is community inference, not a company statement."
 }

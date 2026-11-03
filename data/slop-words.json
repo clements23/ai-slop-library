@@ -517,6 +517,71 @@
       "word": "streamline",
       "severity": "high",
       "note": "'Streamline your workflow' SaaS-headline default, surging post-2023. Name the steps removed."
+    },
+    {
+      "word": "nestled",
+      "severity": "high",
+      "note": "Brochure register: 'Nestled in the heart of...'. Real-estate and travel-listing praise with no observation attached. Source: EnhancePost 254-rule list (2026)."
+    },
+    {
+      "word": "picturesque",
+      "severity": "medium",
+      "note": "Brochure register. Praise without a stated observation; name what you actually saw."
+    },
+    {
+      "word": "idyllic",
+      "severity": "medium",
+      "note": "Brochure register. Same failure: decoration standing in for description."
+    },
+    {
+      "word": "breathtaking",
+      "severity": "medium",
+      "note": "Brochure register. The inflated praise adjective of generated listings."
+    },
+    {
+      "word": "unveil",
+      "severity": "high",
+      "note": "Press-release verb for 'show' or 'announce'. 'Unveiled the roadmap' is the default generated headline."
+    },
+    {
+      "word": "unleash",
+      "severity": "medium",
+      "note": "'Unleash your potential' marketing verb. Say what the product does."
+    },
+    {
+      "word": "supercharge",
+      "severity": "medium",
+      "note": "'Supercharge your workflow' SaaS-headline verb with no measurable claim behind it."
+    },
+    {
+      "word": "amplify",
+      "severity": "medium",
+      "note": "'Amplify your reach' marketing abstraction. Name the channel and the number."
+    },
+    {
+      "word": "boasts",
+      "severity": "medium",
+      "note": "False agency in one word: the product does not boast, the page does. State the feature."
+    },
+    {
+      "word": "treasure trove",
+      "severity": "medium",
+      "note": "'A treasure trove of insights' faux-poetic abundance. List the two insights."
+    },
+    {
+      "word": "cornerstone",
+      "severity": "medium",
+      "note": "'A cornerstone of our strategy' importance puffery. Say what it holds up."
+    },
+    {
+      "word": "unparalleled",
+      "severity": "high",
+      "note": "Claims rank without evidence. See world-class; same failure, fancier word."
+    },
+    {
+      "word": "invaluable",
+      "severity": "medium",
+      "note": "Inflated value claim that means 'valuable'. Say what it saved: 'It cut the audit from three days to four hours.'"
     }
   ]
 }
