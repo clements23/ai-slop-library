@@ -145,6 +145,32 @@ Example: "I'm thrilled to announce I've joined Acme! I don't usually post this, 
 
 Fix: State the news, the take, or the two lessons that actually changed a decision, without the emotional stage direction.
 
+### 15. Seamslop (one metaphor ridden past its usefulness)
+
+Named by Matt Pocock in August 2026 after Claude Opus 5 used the word "seam" correctly, usefully, and exhaustingly four times in one explanation of Buddhism. Every sentence was defensible on its own; the paragraph read as a stuck record.
+
+Seamslop is the mirror image of pattern 6. Synonym cycling renames the same thing at every appearance to dodge repetition; seamslop rides one apt word or metaphor as structural connective tissue across the whole passage. Both fail the same underlying test: a human writer catches themselves reaching for the same clever turn twice and stops. Banning the specific word does not fix it, because the habit resurfaces around the next metaphor.
+
+Fix: cut the third and fourth appearances outright rather than synonym-swapping them. One metaphor earns one use per explanation.
+
+### 16. Colorful verb inflation
+
+Named by Paul Graham in August 2026: a proposal does not "draw" 100 votes, it gets them; companies do not "forge" partnerships, they make them; executives do not "unveil" roadmaps, they show them. Replies to the same thread documented the softer variant: models reach for a rounder synonym before the plain or blunt one, an RLHF agreeableness artifact showing up in word choice instead of sentence structure.
+
+One vivid verb is style. A piece where every verb is upgraded, and every blunt word softened, is a signal. This sits at the verb level where the buzzword lists (pattern 10 in most reader checklists) sit at the noun level.
+
+Fix: downgrade to the plain verb unless the color is doing real work. "Got 100 votes", "made the deal", "showed the roadmap".
+
+### 17. Summary-then-restate skeleton
+
+The paired skeleton of AI explanatory writing: open by restating the question, close by restating the answer.
+
+Example: "When it comes to understanding customer churn, there are several key factors to consider. ... In summary, churn is shaped by these several key factors."
+
+The first paragraph re-describes what the piece is about to describe; the last paragraph re-describes what it just described. Human writers, especially experts, start with the point and stop when the argument is done. The closing half overlaps the conclusion-recycling fingerprint in the Claude layer, but the open-close pairing is the detectable unit.
+
+Fix: open with the claim or the number. Close on the decision, the next step, or nothing at all.
+
 ## Defeating AI slop: what the research shows
 
 ### The specificity principle
@@ -158,6 +184,10 @@ The operational version is the portability test (FeedHive, 2026): take any sente
 ### The deletion test
 
 The most reliable structural test for slop. Read each paragraph and ask: can I name one concrete fact it gave me? If more than half the paragraphs fail, the text is substance-poor. The SlopDetector 2026 threshold study formalized this: "after a paragraph, can you restate one concrete fact? AI text is engineered to sound informative while committing to nothing."
+
+### The density problem: why AI text got harder to read
+
+Clark, Martin, and Mahowald (arXiv:2610.29162, October 2026) measured what readers had been feeling: nine frontier models use more hard-to-process constructions than human writing, including inanimate subjects with animate verbs ("the framework wants to"), low-frequency n-grams, stacked noun chains, long syntactic dependencies, and reduced object-relative clauses without "that". Their hypothesis, flagged as such: human language is optimized for successful communication, while AI text is increasingly optimized for math, code, and reasoning, where there is pressure for information density rather than communication. The practical fix on the reader's side is the same as everywhere else in this guide: name the audience, ask for short sentences with explicit "that", and edit before you ship.
 
 ### Founder-voice anti-slop: the six dimensions
 
@@ -198,7 +228,7 @@ Claude-specific tells live in `data/claude-watermarks.json`. Two independent lay
 
 **The technical watermark.** Anthropic embeds an invisible statistical mark in Claude output. It is detectable by systems and cannot be removed by rewriting the fingerprint. Absence of a mark does not prove human authorship.
 
-**The writing fingerprint.** Seven patterns detectors are calibrated to find:
+**The writing fingerprint.** Eight patterns detectors are calibrated to find:
 
 1. **First-person avoidance** - "One might argue", "It could be suggested" in place of "I", even when the genre invites a personal voice. A personal essay with zero first-person pronouns flags detectors.
 2. **Systematic scope acknowledgement** - "While this is not an exhaustive treatment..." at the close of every analytical section. Human writers acknowledge limits only when the argument needs defending.
@@ -206,7 +236,8 @@ Claude-specific tells live in `data/claude-watermarks.json`. Two independent lay
 4. **Triadic list compulsion** - "There are three key factors to consider" on reflex. An RLHF artifact.
 5. **Conclusion recycling** - restate, summarize, gesture at implications, always in that order. Human conclusions are messier.
 6. **Paragraph architecture regularity** - uniform topic-sentence-support-transition shape in every paragraph.
-7. **Claude vocabulary cluster** - nuanced, multifaceted, encompasses, underscore, key takeaway, pivotal, realm, vibrant, tapestry.
+7. **Claude vocabulary cluster** - nuanced, multifaceted, encompasses, underscore, key takeaway, pivotal, realm, vibrant, tapestry, load-bearing, worth stating plainly.
+8. **Turn-of-phrase optimization** - the Opus 5 register catalogued in August 2026: punchy quotable prose that builds to a turn of phrase, "load-bearing" metaphors asserted without load, sentence-fragment drama ("Not a detail. A design decision."), and dramatic colon or semicolon pauses. Community inference is that reinforcement learning rewarded dense, quotable prose, so the model optimizes for the turn of phrase whether or not the sentence earned it. This one is a rhythm and register signal: it survives vocabulary bans, and the named phrases are only its grep-able surface.
 
 The fingerprint is statistical: one instance is not evidence; the cluster is the signal.
 

@@ -441,6 +441,26 @@
       "opener": "Spoiler:",
       "severity": "low",
       "fix": "Cut the label; report the outcome."
+    },
+    {
+      "opener": "Did you know",
+      "severity": "medium",
+      "fix": "State the fact. The quiz framing is engagement bait."
+    },
+    {
+      "opener": "In an era of",
+      "severity": "high",
+      "fix": "Cut the era frame; start with the situation."
+    },
+    {
+      "opener": "In the ever-evolving",
+      "severity": "high",
+      "fix": "Cut. 'Ever-evolving' announces change without naming any."
+    },
+    {
+      "opener": "Let's explore",
+      "severity": "medium",
+      "fix": "Start with the content."
     }
   ]
 }

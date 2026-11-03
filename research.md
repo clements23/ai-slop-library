@@ -24,6 +24,26 @@ Public leaderboard scoring language models on slop words, "not x, but y" constru
 Antislop (2025), arXiv:2510.15061, accepted at ICLR 2026.
 Documents thousands of slop phrases and proposes a sampling-time suppression method. The phrase list itself is public and is one of the largest collected datasets of slop constructions.
 
+### Why is AI-generated language so hard to understand?
+Clark, Martin, and Mahowald (2026), arXiv:2610.29162, submitted October 21, 2026.
+Nine frontier and near-frontier models measured against human writing across chat, code, and essays: all nine use more inanimate subjects with animate verbs and more low-frequency n-grams than humans, and most use longer syntactic dependencies, stacked noun chains, and reduced object relatives without "that". A round-trip paraphrase control rules out generic rewriting as the cause. The authors' hypothesis, flagged as such: human language is optimized for communication while AI text is increasingly optimized for math, code, and reasoning, where RL with verifiable rewards pressures information density over clarity. A small-model GRPO experiment with a length penalty reproduces the shift as a proof of concept, not a demonstration about frontier pipelines. Notably, Claude Opus 5.5 scored better than Opus 5 on 19 of 21 comparisons, which the authors read as evidence the problem is reducible.
+
+### An endless stream of AI slop (the software commons)
+Baltes et al. (2026), arXiv:2603.27249 and arXiv:2604.16754.
+1,154 Reddit and Hacker News posts where developers explicitly invoke "AI slop". Frames generated code, pull requests, documentation, and bug reports as a tragedy of the commons: individual productivity gains externalize review costs onto maintainers and reviewers. The first empirical literature on slop as a labor cost rather than a style problem.
+
+### AI Slop and the Information Ecosystem (Columbia IGP)
+Columbia University Institute for Global Politics (June 2026), proceedings of a March 2026 convening.
+A systematic overview of the phenomenon plus a proposed research agenda for assessing its significance. The convening brings academic and practitioner perspectives together; useful as the institutional framing of slop beyond the style-tell literature.
+
+### State of AI Slop 2026 (antislop.online)
+antislop.online research report (published March 21, 2026, updated through September 2026).
+Compiles and extends the public data on scale: 74% of new web pages published in 2025 contained at least some AI-generated material and 2.5% were 100% AI, per Ahrefs analysis of 900,000 fresh pages (classified with Originality.ai, so the blend category is uncertain); 475,000+ social mentions of "AI slop" across X, Instagram, TikTok, and Threads in a 30-day period (Visibrain, December 2025); the 200+ site "AutoBait" content-farm network (DoubleVerify, March 2026), detected through infrastructure signals rather than content analysis; and three dictionaries independently naming "slop" their 2025 Word of the Year. Category-level estimates put AI-heavy pages highest in product reviews (41%) and SEO how-to content (38%), lowest in technical documentation (6%).
+
+### AI slop in music streaming
+arXiv:2606.18052 (2026).
+An empirical analysis of AI-generated music flooding streaming platforms: mass quantities of mediocre tracks produced to generate revenue, often misattributed as human-authored. Evidence that the slop economy extends past text into every medium where generation cost collapsed.
+
 ## Community field guides
 
 ### Wikipedia: Signs of AI writing
@@ -49,6 +69,18 @@ Released October 2026 and trending immediately. 120 patterns published as machin
 
 ### AIPromptIndex: 19 patterns (July 2026)
 A rendering of Peter Yang's no-ai-slop taxonomy with before/after examples, organized into word-level, structural, rhythm, and ending tells. Notable framing: the pattern behind every instance is that "the slop version could have been written without knowing anything", and the recommended edit pass is the minimum effective edit (protect what sounds like the writer, cut word tells mechanically, fix structures, rewrite the ending, read aloud). Also documents negative listing ("Not a tool. Not a platform. A movement.") as binary contrast's louder cousin, a structure this library now catalogs.
+
+### Seamslop (Matt Pocock, August 2026)
+Coined in an August 15, 2026 post after Pocock asked Claude Opus 5's /teach skill to explain Buddhism and got back an explanation that was correct, useful, and built on the word "seam" four times in one paragraph. Seamslop names AI writing that reuses one clever word or metaphor relentlessly as structural connective tissue. The defining reply in the thread: the problem "cannot be addressed at grammar/word level", because the failure is paragraph-level composition optimized for the individual sentence, not for how the whole thing reads back. Cataloged in this library as the seamslop structure, the mirror image of synonym cycling.
+
+### The Claudisms: Claude Opus 5's load-bearing register (August 2026)
+explainx.ai's Claudism inventory (August 11, 2026), compiled from a 1,778-point Hacker News thread and an r/ClaudeAI documentation thread. The flagship is "load-bearing" applied to anything the model considers structurally important ("That is deliberate and load-bearing rather than tidy", written about a build step). The stable list: "worth stating plainly", "carry the argument", "full stop", "and the trap is", "The X matters more than Y", punchy fragments ("Not a detail. A design decision."), and colon or semicolon pauses replacing "but" and "because". Community inference: reinforcement learning rewarded dense, quotable prose, so the model optimizes for the turn of phrase. Practical finding: generic "write better" instructions do nothing; naming the specific tics (with "punchy" as the operative word to ban) works. This library encodes the phrases as the claudism family and the register as the eighth Claude fingerprint.
+
+### The reader checklist and the eleventh tell (explainx.ai, August 2026)
+explainx.ai's Top 10 Signs of AI-Generated Text (August 18, 2026): em dash density, word and phrase repetition, rule-of-three everywhere, stacked "it's not just X, it's Y", hedge stacking, suspiciously even rhythm, zero typos zero voice, summary-then-restate structure, vague-specific mismatch, and buzzword clustering, with the honest caveat that every one false-positives on human writers. A day later Paul Graham added an eleventh tell at the verb level: colorful verb inflation ("drew" 100 votes instead of "got" them, "forged" a partnership, "unveiled" a roadmap), plus the softer-rounder-word variant documented in the replies. Two of these are now structures in this library (summary-then-restate, colorful verb inflation).
+
+### EnhancePost: 254 review rules (September 2026)
+A deterministic browser reference cataloging writing patterns as regex review rules across named categories: marketing templates ("unlock the full potential", "turn challenges into opportunities", "more important than ever"), brochure register (nestled, picturesque, idyllic, breathtaking, "in the heart of"), business jargon, transition crutches, hyphenated cliches, filler grammar ("has the ability to", "on a regular basis"), content artifacts (placeholder slots, leaked citation tokens, zero-width characters, chat utm_source parameters), and tell phrases. The framing is conservative by design: "a match is a prompt to review a sentence, it does not identify an author". This library's November 2026 additions draw on its marketing-template, brochure-register, filler-grammar, and content-artifact categories.
 
 ## The Claude watermark
 
@@ -108,6 +140,9 @@ AI Publisher (July 2026). Three-tier detection framework: Level 1 (linguistic st
 ### aicheckr.io: twelve before-and-after fixes
 aicheckr.io (2026). Twelve concrete AI slop patterns with before/after rewrites: em dash abuse, tapestry vocabulary, generic macro-intro, hedging overload, "it's not just X, it's Y" formula, listicle filler, rule-of-three stacking, conclusion boilerplate, transition chains, fake specificity, audience hedge, restating the question. The pattern behind all twelve: "the slop version could have been written without knowing anything." The human fixes are not stylistically fancier, they are specific.
 
+### Wikipedia's measured flag rate (Pangram via IEEE Spectrum)
+IEEE Spectrum interview with WikiProject AI Cleanup founder Ellia Lebleu (October 21, 2026). Pangram flagged roughly 20% of new articles and drafts as AI-generated in late 2025 and roughly 15 to 16% in early 2026, with no false positives on pre-ChatGPT text, so the figures are treated as a conservative lower bound; the drop's cause is unresolved (better rule awareness, or newer models the detector catches less often). Two operational findings matter for this library: the tell shifted from fabricated citations to real sources whose content does not support the sentence attached to them (retrieval-augmented generation fixed the fake-source problem, so claim-versus-source checking is now the center of the work), and no single signal is enough: rule of three and "not X, but Y" are each weak alone but meaningful in combination, with volume as the third flag. Wikimedia's Paste Check flags text pasted directly from chatbots, which is the same chatbot-residue surface this library's punctuation layer documents.
+
 ## What the research agrees on
 
 1. **Slop is measurable, not subjective.** The word-level and construction-level tells replicate across corpora (papers, abstracts, social posts).
@@ -120,3 +155,4 @@ aicheckr.io (2026). Twelve concrete AI slop patterns with before/after rewrites:
 - Which tells survive as models are fine-tuned against them? (The slop arms race.)
 - Per-language fingerprints beyond English are under-researched; community lists (Korean byeong-yeoktu, Russian kantselyarit, Chinese gongwen qiang) are ahead of academia.
 - Do visual tells have the same measurement base as writing tells? The visual list in `reference/visual.md` is community-derived, not yet corpus-measured.
+- Is the density problem (arXiv:2610.29162) reversible? Opus 5.5 scored better than Opus 5 on 19 of 21 readability comparisons, so if communication becomes a reward target, the rhythm and syntax tells may age faster than the vocabulary ones.

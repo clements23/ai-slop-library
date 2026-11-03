@@ -2,6 +2,40 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.8.0] - 2026-11-03
+
+Model-register and density update. Patterns drawn from the freshest shared knowledge as of November 2026: the explainx.ai Claudism inventory and reader checklist (August 2026), Matt Pocock's seamslop (August 2026), Paul Graham's colorful-verb tell (August 2026), EnhancePost's 254-rule reference (September 2026), the Clark/Martin/Mahowald readability paper (arXiv:2610.29162, October 2026), and the antislop.online State of AI Slop 2026 report. Every new entry was diffed against the existing data first; nothing added duplicates an existing pattern.
+
+### Added
+
+- `data/slop-phrases.json`: 23 new phrases across eight families:
+  - Claudism (4): "load-bearing" (high), "worth stating plainly", "carry the argument", "and the trap is" (the Claude Opus 5 register)
+  - Marketing-template (6): "Unlock the full potential" (high), "A testament to the power of" (high), "More important than ever" (high), "Turn challenges into opportunities", "Drive meaningful impact", "Navigate the complexities"
+  - Emphasis-crutch (2): "Read that again" (high), "It cannot be overstated" (high)
+  - Social-formula (2): "Humbled and honored", "Excited to share"
+  - Sycophancy (1): "Great question"
+  - Colon-reveal (1): "Here's the kicker"
+  - Filler (6, the EnhancePost filler-grammar category): "Has the ability to", "Make a decision on", "For all intents and purposes", "A large number of", "In close proximity to", "On a regular basis"
+  - Throat-clearing (1): "The fact of the matter is"
+  123 to 146 phrases.
+- `data/slop-words.json`: 13 words. Brochure register (5): nestled (high), picturesque, idyllic, breathtaking, plus promotional verbs and puffery: unveil (high), unparalleled (high), unleash, supercharge, amplify, boasts, treasure trove, cornerstone, invaluable. 103 to 116 words.
+- `data/slop-openers.json`: 4 openers - "Did you know", "In an era of" (high), "In the ever-evolving" (high), "Let's explore". 88 to 92 openers.
+- `data/slop-structures.json`: 3 structures - "Seamslop (metaphor over-anchoring)" (high, seamslop), "Colorful verb inflation" (medium, verb-inflation), "Summary-then-restate skeleton" (high, summary-restate). 41 to 44 structures.
+- `data/slop-punctuation.json`: 2 formatting tics - "Invisible character residue" (high: ZWSP, bidi controls, word joiners, pasted exotic spaces) and "Chat URL tracking residue" (medium: utm_source=chatgpt.com and siblings). "Citation debris" extended with `oai_citation` and Claude-style `【1†...】` spans. 21 to 23 entries.
+- `data/claude-watermarks.json`: eighth fingerprint pattern "Turn-of-phrase optimization" (high, register): the Opus 5 load-bearing register, sourced from the explainx.ai Claudism inventory (August 2026), with the reinforcement-learning account flagged as community inference. Claude vocabulary cluster extended with load-bearing, worth stating plainly, full stop. 7 to 8 fingerprint patterns. File description corrected from five to eight patterns.
+- `reference/writing.md`: patterns 15-17 added to "the patterns that matter most": seamslop (the mirror image of synonym cycling), colorful verb inflation, and the summary-then-restate skeleton. New "The density problem" research section (arXiv:2610.29162). Claude layer section now lists eight fingerprint patterns.
+- `research.md`: five new academic entries (Clark/Martin/Mahowald on AI text difficulty, Baltes et al. on slop in the software commons, the Columbia IGP convening report, the State of AI Slop 2026 scale report, AI slop in music streaming), four new community field guide entries (seamslop, the Claudisms, the explainx reader checklist and Paul Graham's eleventh tell, EnhancePost's 254 rules), and the Wikipedia/Pangram measured flag rate in the platform enforcement section. New open question on whether the density problem is reversible.
+- `examples/sloppy.txt`: four paragraphs exercising the new families (claudism, marketing-template, brochure register, filler grammar, emphasis-crutch, social-formula, summary-then-restate, chat URL residue).
+
+### Changed
+
+- `ecosystem.md`: full November 2026 refresh, 61 to 70 indexed repos/tools, all star counts re-fetched from the GitHub API (2026-11-03). New entries: blader/humanizer (~64.2k), leonxlnx/taste-skill (~109.1k), seyedehsanhadi/sloptrim (~413), berelevant-ai/slopless (~338), NulightJens/humanizer-stack (~378), Anbeeld/WRITING.md (~387), zachahn/vomit (~202), eric-tramel/slop-guard (~167), misbahsy/anti-ai-slop (~103). Notable movers: Nutlope/hallmark ~30.6k to ~46.4k, guillaumemeyer/watermarks-remover ~24.6k to ~26.1k, miqdadbadjuber/anti-slop ~6.8k to ~8.1k, stop-slop ~18.2k to ~18.6k, no-ai-slop ~12.7k to ~13.1k. Humanizers section gained a stars column so tables stay sorted descending.
+- `README.md`: counts updated (116 words, 146 phrases, 92 openers, 44 structures, 23 punctuation, 8 Claude fingerprints, 70 ecosystem entries), version line to v1.8.0, families paragraph gains the two November families, evidence paragraph gains the readability paper.
+
+### Rationale
+
+The August and October 2026 knowledge aged in a specific direction: from generic word lists toward model-specific registers and measurable text properties. Three sources drove this release. The Claudism inventory showed that a single model's tics are now named, catalogued, and promptable against ("load-bearing" on a build step), which means the fingerprint layer needed an eighth pattern that is a register signal rather than a word-list signal, one that survives vocabulary bans. Seamslop named a failure mode the library had half-covered: synonym cycling documents AI renaming the same thing, but the opposite behavior, riding one apt metaphor across a whole passage, had no entry, and banning the word does not fix the generative habit. Finally, EnhancePost's 254-rule reference supplied the categories the library lacked wholesale: marketing templates, brochure register, filler grammar, and chat-residue formatting. Diffing its list against the existing 123 phrases showed most of its tell phrases were renames of covered patterns ("it's worth noting" is throat-clearing, "seamlessly integrate" is the existing seamless word); the 23 that survived are constructions with no existing entry. The readability paper (arXiv:2610.29162) is the first corpus evidence that AI slop includes syntax, not just vocabulary, which is why density now appears in the reference guide's research section and the README's evidence line.
+
 ## [1.7.0] - 2026-10-22
 
 Ecosystem refresh plus the chatbot-residue, substance, and social-formula layers. Patterns and repos drawn from the most popular anti-slop sources as of October 2026: the stop-slop skill (18.2k stars), FeedHive's 120-pattern machine-readable dataset (trending on release, October 2026), Peter Yang's no-ai-slop (12.7k stars, refreshed count), and the AIPromptIndex 19-pattern guide. Every new entry was diffed against the existing data first; nothing added duplicates an existing pattern.
