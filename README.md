@@ -2,11 +2,11 @@
 
 [![validate](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml/badge.svg)](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![version](https://img.shields.io/badge/version-1.8.0-orange.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.9.0-orange.svg)](CHANGELOG.md)
 
 A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
 
-**Current stable version: v1.8.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
+**Current stable version: v1.9.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
 
 The data layer is plain JSON. Any linter, agent skill, or detector can load it. The reference layer explains the tells. The research layer cites the evidence.
 
@@ -18,7 +18,7 @@ data/
   slop-words.json       116 overused words, severity-rated
   slop-phrases.json     146 multi-word constructions with examples and fixes
   slop-openers.json     92 sentence openers with fixes
-  slop-structures.json  44 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-structures.json  46 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
   claude-watermarks.json  the Claude detection layer: technical watermark + 8 fingerprint patterns
   gpt-watermarks.json     the GPT detection layer: 12 assistant-register fingerprint patterns
@@ -32,7 +32,7 @@ reference/
   visual.md            the visual/design tells (purple gradients, blob heroes, ...)
   code.md              the code tells (empty functions, fake docs, ...)
 research.md            the evidence base (Nature, Science Advances, arXiv, ...)
-ecosystem.md           curated index of the AI-slop ecosystem (70 repos/tools)
+ecosystem.md           detector-tooling field notes
 ```
 
 ## Quick start
@@ -73,7 +73,7 @@ Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) 
 | Words | `slop-words.json` | 116 | delve, streamline, resonate, nestled, unveil, ... |
 | Phrases | `slop-phrases.json` | 146 | binary contrasts, sycophancy, claudisms, marketing templates, social formula, ... |
 | Openers | `slop-openers.json` | 92 | throat-clearing openers, "You might be wondering", "Did you know", ... |
-| Structures | `slop-structures.json` | 44 | negative listing, false agency, seamslop, verb inflation, catalog dumps, ... |
+| Structures | `slop-structures.json` | 46 | negative listing, false agency, seamslop, verb inflation, catalog dumps, ... |
 | Punctuation and formatting | `slop-punctuation.json` | 23 | em dashes, citation debris, placeholder tokens, invisible characters, ... |
 | Model fingerprints | `claude-watermarks.json`, `gpt-watermarks.json` | 8 + 12 | the Claude balanced-analyst register (plus the Opus 5 turn-of-phrase register), the GPT assistant register |
 
@@ -112,7 +112,7 @@ Fingerprints are statistical: the cluster is the signal, not single instances.
 
 ## Related
 
-The ecosystem of skills, lists, detectors, and CI tools already out there is indexed in `ecosystem.md`. This library is the pattern-data layer underneath all of them: structured, standalone, machine-readable.
+This library is a standalone pattern-data layer: structured, self-contained, and machine-readable. It does not index or maintain a directory of third-party projects.
 
 ## License
 

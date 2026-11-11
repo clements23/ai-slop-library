@@ -44,6 +44,18 @@ Compiles and extends the public data on scale: 74% of new web pages published in
 arXiv:2606.18052 (2026).
 An empirical analysis of AI-generated music flooding streaming platforms: mass quantities of mediocre tracks produced to generate revenue, often misattributed as human-authored. Evidence that the slop economy extends past text into every medium where generation cost collapsed.
 
+### Burstiness: the sentence-length variance signal
+one detector's methodology note, with published thresholds popularized by an open threshold study (July 2026).
+Burstiness is the standard deviation of sentence lengths divided by their mean. a commercial detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; the threshold study flags anything under 0.4 in ordinary prose and publishes the formula so it can be computed by hand. Measured on a test corpus with naive segmentation, a a human-written wire control scored 0.391, essentially the same as the AI-100% test articles (0.381 and 0.366): the ratio alone does not convict. The discriminating difference was absolute length, control mean 26.6 words per sentence with a 43-word max versus 13.7 and 27. Their own caveat applies: no single number convicts, and technical or legal text is legitimately uniform.
+
+### Excess style vocabulary in 15 million abstracts
+Kobak, González-Márquez, Horvát, and Lause (2024), arXiv:2406.07016.
+Peer-reviewed analysis of PubMed abstracts 2010-2024: the post-ChatGPT vocabulary spike is almost entirely style words, with "delves" at roughly 25x its pre-ChatGPT frequency and "showcasing"/"underscores" about nine-fold, plus a conservative estimate of at least 10% of 2024 abstracts being LLM-assisted. Underpins the study's threshold of roughly three flagged style words per 500 words, clustered. The paper also documents the tell drifting: after "delve" was called out publicly, its rate in new papers dropped, which is why word lists rot and construction-level patterns age better.
+
+### The em dash as a keystroke, not a thought
+Freeburg, "The Last Fingerprint: How Markdown Training Shapes LLM Prose" (2026), arXiv:2603.27006.
+Controlled measurement: GPT-4.1 produces 10.62 em dashes per 1,000 words against a matched human baseline of 3.23. the study's synthesis of 700,000+ words of published human prose puts real writers at 3.7 to 10 per 1,000 (Twain's Huckleberry Finn at 10.13) and only starts scoring above 20 per 1,000. Presence therefore proves nothing in either direction, and a dash-free test style is not by itself an AI signal. OpenAI's Sam Altman has publicly acknowledged telling ChatGPT to stop using em dashes, which is why the mark now cuts both ways: detectors that score density ignore its absence, while detectors trained on humanizer output may not.
+
 ## Community field guides
 
 ### Wikipedia: Signs of AI writing
@@ -81,6 +93,10 @@ explainx.ai's Top 10 Signs of AI-Generated Text (August 18, 2026): em dash densi
 
 ### EnhancePost: 254 review rules (September 2026)
 A deterministic browser reference cataloging writing patterns as regex review rules across named categories: marketing templates ("unlock the full potential", "turn challenges into opportunities", "more important than ever"), brochure register (nestled, picturesque, idyllic, breathtaking, "in the heart of"), business jargon, transition crutches, hyphenated cliches, filler grammar ("has the ability to", "on a regular basis"), content artifacts (placeholder slots, leaked citation tokens, zero-width characters, chat utm_source parameters), and tell phrases. The framing is conservative by design: "a match is a prompt to review a sentence, it does not identify an author". This library's November 2026 additions draw on its marketing-template, brochure-register, filler-grammar, and content-artifact categories.
+
+### an open study's twelve reproducible thresholds
+an open threshold study (July 2026).
+Twelve signs of AI writing, each with a hand-computable number: style words above roughly three per 500 clustered, two or more empty openers per 500, more than one polished rule-of-three per 200, more than half of paragraphs opening with formal transitions, em dashes above 20 per 1,000, and burstiness under 0.4. The framing matters more than the list: no single number convicts, three or four signs converging in the same passage is the fingerprint, and the substance or deletion test is the most reliable sign of all. Their em dash and burstiness thresholds are the two we measure against a test corpus (see Academic research), and their "we measure the writing, not the writer" stance is the reason this library rates patterns rather than authors.
 
 ## The Claude watermark
 
@@ -156,3 +172,4 @@ An independent interview with WikiProject AI Cleanup founder Ellia Lebleu (Octob
 - Per-language fingerprints beyond English are under-researched; community lists (Korean byeong-yeoktu, Russian kantselyarit, Chinese gongwen qiang) are ahead of academia.
 - Do visual tells have the same measurement base as writing tells? The visual list in `reference/visual.md` is community-derived, not yet corpus-measured.
 - Is the density problem (arXiv:2610.29162) reversible? Opus 5.5 scored better than Opus 5 on 19 of 21 readability comparisons, so if communication becomes a reward target, the rhythm and syntax tells may age faster than the vocabulary ones.
+- Can the two remaining detection differences (em-dash absence, long-sentence density) be separated without reversing policy rules? Two-instrument tests through 2026-11-10 exhausted every rule-compatible lever on one article lineage; the canonical log and the four decision options live in the the validation record. Or are those two proxies for a deeper register difference that no house rule touches?

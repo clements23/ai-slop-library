@@ -171,6 +171,26 @@ The first paragraph re-describes what the piece is about to describe; the last p
 
 Fix: open with the claim or the number. Close on the decision, the next step, or nothing at all.
 
+### 18. Spec-sheet declarative
+
+Impersonal fact runs: schedule, spec, and milestone prose delivered as standalone flat declaratives, with no actor doing the work and no consequence attached.
+
+Example: "Milestones are contractual under the Fluor agreement, with defined dates and performance protections. Completions begin in late 2027 and continue through the second quarter of 2028."
+
+one detector's flagged-sentence diagnostics singled out exactly this run as high AI impact inside an a validation article (November 2026) while leaving its lede and its direct quotes unflagged, which localizes the signal: not the vocabulary, not the sourcing, but facts delivered as a data dump. Confirmed as a localized signal inside a failing document, not tested in isolation.
+
+Fix: give each fact an actor and a consequence. "TeraWulf expects the first buildings ready in late 2027, and the rest follow through the second quarter of 2028. It wrote those dates into the Fluor contract, and they aren't suggestions."
+
+### 19. Low sentence-length variance (metronome rhythm)
+
+Every sentence lands in a narrow mid-length band (roughly 10-20 words), each a complete balanced clause: no fragments, no 30-45 word sprawls. Human writing is bumpy; this is a metronome.
+
+Example: "TeraWulf secured credit support from Google on Nov. 4 for about $19 billion of Anthropic leases in Kentucky, and Fluor signed a contract the same day to build three data center buildings at the site. Debt financing for the Justified Data Campus in Hawesville, Kentucky, now has Google behind it."
+
+The measurable form is burstiness: the standard deviation of sentence lengths divided by their mean. a commercial detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; an open threshold study flags anything under 0.4 in ordinary prose and publishes the formula so you can compute it in a spreadsheet (July 2026). Measure it honestly: with naive segmentation on a test corpus, the a test article scored 0.381, the length-escalated candidate 0.366, and the a human-written wire control 0.391, so the ratio alone did not separate pass from fail. What did separate them was absolute length: control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 with a 27-word max. That is why the style guide allows wire anchors of 25-45 words and why two of them did not move the score: the missing ingredient is long-sentence density, not a couple of exceptions. Keep the study's own caveats in view: technical, legal, and translated text is legitimately uniform, and no single number convicts.
+
+Fix: break the band deliberately. Let one sentence run to 30-45 words (a wire anchor), drop another to 4-8, and measure both numbers before publishing: burstiness (target above 0.4, ideally 0.6+) and mean sentence length (wire prose sits in the mid-20s). Do not restore first person or em dashes to chase variance; those are separate policy-set axes.
+
 ## Defeating AI slop: what the research shows
 
 ### The specificity principle
@@ -222,6 +242,27 @@ The implication for writers: defeating AI slop is not just editorial quality. It
 
 Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) explicitly rewards the same signals that defeat slop. AI Publisher's 2026 detection framework found: "Anecdotes in the first person, named locations, specific dates, strongly held opinions, disagreements with popular positions, informal language, and regional idiom all register as positive quality signals." Content that passes robust authorship verification and shows human specificity gains ranking advantages. Content that fails is penalized not because it is "AI" but because it lacks expertise, authoritativeness, and trustworthiness.
 
+## What our own detector tests showed (November 2026)
+
+Eleven scans across two instruments (seven on a commercial detector including two runs of a human-wire control, four on a commercial detector), one article lineage, one a test test style under test. Notes retained from the the validation log; this is the distilled version.
+
+**Confirmed:** third person is not a detection trigger. Verbatim wire-service prose scored Human 100% on one detector twice (November 5 and November 10, the instrument revalidated after a four-day credit gap), while every test article variant scored AI 100% on two commercial detectors.
+
+**Exonerated as levers (tested, did not move the score):** structural variation (quote count, paragraph lengths, single-sentence lines), wire anchors (two sentences of 25-45 words), quote density and quote length, a rigid repeated decision line, subhead lines, actor-driven rewrites with contractions and a ragged paragraph, and length escalation to 542 words with added sourced context.
+
+**The two differences from passing wire prose that remain, both policy-set:**
+
+1. **Em-dash absence.** The house bans em dashes everywhere (policy rule, confidence 1.0). The July benchmark was also dash-free and passed, so absence is not sufficient alone. External data cuts the same way: the study's engine only scores dashes above 20 per 1,000 words and its authors note absence proves nothing, since late-2025 models can be told to drop the mark. Not tested as a lever; low expected value on the published thresholds.
+2. **Long-sentence density.** wire-service prose in the control averaged 26.6 words per sentence with a 43-word maximum; the test style averaged 13.7 with a 27-word maximum under a two-anchor allowance. This is the one measured, untested lever left, and pulling it means relaxing the readability sentence cap, which is a policy decision.
+
+Neither lever can be tested without reversing a policy rule; the four decision options are logged in the the decision record.
+
+**Flagged patterns inside direct quotes:** trim the quote's edge if the flagged word opens it (journalistic practice: "Ultimately, megawatts..." becomes "Megawatts..."). Keep a mid-quote verbatim hit only at low severity and only when the quote is sourced (an "at scale" inside a press-release quote stayed). Never paraphrase inside quote marks; if a critical pattern sits mid-quote, drop the quote.
+
+**Detector tooling, learned the expensive way:** one detector's free "most AI sentences" list localizes the problem (it flagged our spec-sheet run, not the lede or the quotes), its no-login tier allows roughly four scans before a signup wall that consents to marketing email, and its displayed model version varies per scan (5.0b and 3.3b observed), so treat cross-scan deltas with caution. a commercial detector grants credits in batches (observed: initial 16, then +4 mid-session, then +20 after a multi-day gap; the sidebar counter can render stale, so trust the main panel's message), costs 1 credit per 100 words rounded up, and always deserves a fresh human-wire control first after any credit gap.
+
+**Style notes:** wire prose uses contractions (it's, won't, can't); their absence plus a uniform band reads as humanizer output, and Google's own quality guidance treats informal language as a positive signal, so use them naturally (they are readability-friendly). Do not restore first person or em dashes to chase a detector score; both are policy-set axes.
+
 ## The Claude layer
 
 Claude-specific tells live in `data/claude-watermarks.json`. Two independent layers:
@@ -269,7 +310,7 @@ A founder's LinkedIn voice is judged on three surfaces the linter can measure. T
 
 **Framing: executive synthesis, not news recap.** A tech journalist reports what happened; a founder tells the reader what to do or how to think about it. The substance in the audited draft was strong (the all-stock dilution math, the interface-plus-compute merger framing, the rented-brainpower thesis) but the framing read as a recap because each sentence summarized a fact rather than issuing a take. Rewrite each fact into a claim with a verb of judgment: "Cursor was the best coding tool" becomes "Cursor had a vulnerability: it was renting brainpower while Anthropic and OpenAI controlled their own stacks." Same fact, founder register.
 
-**Closer: drop the transactional publication plug.** The branded triplet "Full article only on [publication]. We do the reading. You get the decision." reads as a value-extraction pitch rather than domain authority. Three lines that explicitly promise value while naming the brand behind the post. The corrected pattern weaves the publication as a natural authority reference into the narrative, then closes on the reader's takeaway. External links in the main post body are also penalized by LinkedIn's organic-reach algorithm, so move the URL to the first comment and reference it in prose ("Link in the comments below."). The softer closer sounds like: "We analyzed the full breakdown and strategic implications over at the publication. Link in the comments below." Same call to action, no value-extraction register.
+**Closer: drop the transactional publication plug.** The branded triplet "Full article only on [publication]. We do the reading. You get the decision." reads as a value-extraction pitch rather than domain authority. Three lines that explicitly promise value while naming the brand behind the post. The corrected pattern weaves the publication as a natural authority reference into the narrative, then closes on the reader's takeaway. External links in the main post body are also penalized by LinkedIn's organic-reach algorithm, so move the URL to the first comment and reference it in prose ("Link in the comments below."). The softer closer sounds like: "We analyzed the full breakdown and strategic implications on our publication. Link in the comments below." Same call to action, no value-extraction register.
 
 ## How to use the data files
 
@@ -291,4 +332,4 @@ English-first. The tells documented here are the English-language fingerprint. O
 - Chinese: gongwen qiang (official-document tone)
 - Japanese: AI-smell removal is an active community topic
 
-The awesome-slop ecosystem index in `ecosystem.md` links the per-language tools.
+Per-language tooling is out of scope for this dataset; this library covers English-first writing patterns only.

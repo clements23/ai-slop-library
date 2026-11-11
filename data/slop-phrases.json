@@ -522,8 +522,8 @@
     },
     {
       "phrase": "Full article only on *",
-      "example": "Full article only on the publication.",
-      "fix": "Drop the exclusivity framing. Integrate the publication as a natural authority reference woven into the narrative, or end with a domain-authority closer that does not read as a value-extraction pitch (e.g., 'We analyzed the full breakdown over at [publication].').",
+      "example": "Full article only on [publication].",
+      "fix": "Drop the exclusivity framing. Integrate the publication as a natural authority reference woven into the narrative, or end with a domain-authority closer that does not read as a value-extraction pitch.",
       "severity": "high",
       "family": "publication-plug"
     },
@@ -536,7 +536,7 @@
     },
     {
       "phrase": "You get the decision",
-      "example": "Full article only on the publication. We do the reading. You get the decision.",
+      "example": "Full article only on [publication]. We do the reading. You get the decision.",
       "fix": "Cut the transactional closer. A decision belongs at the end of the article body, not as a branded promise in the LinkedIn closer. End on the insight the reader just received.",
       "severity": "high",
       "family": "publication-plug"

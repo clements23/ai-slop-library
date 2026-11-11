@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.9.0] - 2026-11-11
+
+Detector-validation learnings from an a controlled validation campaign (two commercial detectors, November 5-11, 2026), plus the two new structures their diagnostics produced and the external thresholds that sharpen them.
+
+### Added
+
+- `data/slop-structures.json`: two structures, 44 to 46.
+  - "Spec-sheet declarative" (medium, spec-sheet): impersonal schedule and spec runs with no actor and no consequence. Sourced from one detector's flagged-sentence diagnostics, which singled out exactly this run as high AI impact inside a failing a test article while leaving its lede and quotes unflagged. Fix folds each fact into an actor-driven sentence with a consequence.
+  - "Low sentence-length variance (metronome rhythm)" (medium, sentence-band): every sentence in a narrow 10-20 word band. Carries the measurable form: burstiness (stdev/mean) under 0.4 per one detector's published ranges (human 0.6-1.2, model 0.2-0.4), plus our own control numbers: a test article 0.381, length-escalated candidate 0.366, a human-written wire control 0.391, so the ratio alone did not convict in the test corpus; the discriminating difference was absolute length (control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 and 27). Status recorded as correlated-not-causal: two wire anchors did not flip the score.
+- `reference/writing.md`: patterns 18 (spec-sheet declarative) and 19 (low sentence-length variance) appended to "the patterns that matter most"; new section "What our own detector tests showed (November 2026)" with the confirmed/exonerated/remaining breakdown, the flagged-pattern-inside-quotes handling rule (trim quote edges, never paraphrase inside quote marks), the contractions style note, and the detector-credit operational notes.
+- `research.md`: three new academic entries: the burstiness methodology with our own control measurement (a commercial detector via the threshold study), Kobak et al. on style-vocabulary excess (arXiv:2406.07016), and Freeburg on em dash density (arXiv:2603.27006, showing absence is not a tell for threshold detectors); one new community entry, the study's twelve reproducible thresholds; and an open question on whether the two policy-set differences can be separated without reversing rules.
+- `ecosystem.md`: new "Detector tooling field notes (2026-11)" section with a commercial detector credit batching and stale-counter behavior, and one detector's no-login wall, model-version variance, and flagged-sentence diagnostics.
+
+### Changed
+
+- `README.md`: version line, badge, and structure count updated to v1.9.0 and 46.
+- `VERSION`: 1.8.0 to 1.9.0.
+
+### Rationale
+
+The campaign answered the question the library could not answer from other people's lists: which of our own house rules interact with detection. The answer came from controls, not vibes. Third person, structural variation, quote density, quote length, the decision line, subheads, actor texture, and length were each tested and excluded, leaving two differences from passing wire prose, both policy-set (the em dash ban and the readability sentence cap). External data now sharpens both: the study's em dash threshold only fires above 20 per 1,000 words (absence is not a tell for that engine), and its burstiness threshold, measured against a test corpus, failed to separate the failing test articles from the passing control (0.381 and 0.366 versus 0.391) while absolute sentence length did (mean 13.7 versus 26.6). The two new structures encode what the detectors actually flagged in the test text, with causal status stated honestly in each tell so a future session does not mistake a correlation for a lock. The reference section and field notes store the operational knowledge (credit batching, signup walls, model variance, quote-edge trimming) that cost this campaign most of its iteration time to discover.
+
+---
+
 ## [1.8.0] - 2026-11-03
 
 Model-register and density update. Patterns drawn from the freshest shared knowledge as of November 2026: the explainx.ai Claudism inventory and reader checklist (August 2026), Matt Pocock's seamslop (August 2026), Paul Graham's colorful-verb tell (August 2026), EnhancePost's 254-rule reference (September 2026), the Clark/Martin/Mahowald readability paper (arXiv:2610.29162, October 2026), and the antislop.online State of AI Slop 2026 report. Every new entry was diffed against the existing data first; nothing added duplicates an existing pattern.
@@ -72,7 +96,7 @@ The August 2026 ecosystem snapshot aged quickly. stop-slop overtook no-ai-slop a
 
 ## [1.6.0] - 2026-08-20
 
-Litotes detection layer + anti-slop research for founder-voice content. Patterns identified from live a publication draft audits, LinkedIn's 2026 AI slop crackdown, and research across Forbes, Foundera, an open threshold study, aicheckr.io, and AI Publisher's 2026 detection framework. A style directive "do not do litotes" drove the core addition; the broader research enhanced the writing system with measurable anti-slop techniques for founder-voice content.
+Litotes detection layer + anti-slop research for founder-voice content. Patterns identified from draft audits, LinkedIn's 2026 AI slop crackdown, and research across Forbes, Foundera, an open threshold study, aicheckr.io, and AI Publisher's 2026 detection framework. A style directive "do not do litotes" drove the core addition; the broader research enhanced the writing system with measurable anti-slop techniques for founder-voice content.
 
 ### Added
 
@@ -93,7 +117,7 @@ A style directive "do not do litotes" identified a gap: the library documented b
 
 ## [1.3.0] - 2026-08-15
 
-Founder-voice + publication-plug detection layer. Patterns identified in a live audit of the a publication an acquisition LinkedIn founder-voice content draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.
+Founder-voice + publication-plug detection layer. Patterns identified in a live audit of an internal founder-voice content draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.
 
 ### Added
 

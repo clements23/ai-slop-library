@@ -19,15 +19,11 @@ The library is open source under the MIT License, Copyright (c) 2026 Clements Em
 
 ## Harvesting from other lists
 
-Popular community lists (hardikpandya/stop-slop, FeedHive/ai-slop-detector, petergyang/no-ai-slop, Wikipedia's Signs of AI writing) are indexed in `ecosystem.md`. Harvesting from them is encouraged, with the same rule as everywhere else: diff first, take the concept, write the entry in this library's format with its own example and fix, and cite the source in `research.md`. Do not copy another repository's list verbatim.
+Do not index or promote competitor GitHub repositories in this project. If you draw on community knowledge, diff first, take the concept, write the entry in this library's format with its own example and fix, and cite published research in `research.md` rather than linking competitor repos. Do not copy another repository's list verbatim.
 
-## Updating the ecosystem index
+## Updating ecosystem notes
 
-`ecosystem.md` tracks the surrounding repos and tools. When adding or refreshing an entry:
-
-- Take star counts from the GitHub API (`api.github.com/repos/<owner>/<repo>`), not from memory, and note the retrieval date in the file header.
-- Sort each table by stars, descending.
-- New categories are welcome when a section's tools stop fitting (the August 2026 "Humanizers and voice tools" section and the October 2026 motion-slop additions both started this way).
+`ecosystem.md` is intentionally minimal and self-contained. It does not maintain a directory of other projects. It only carries this library's own detector-tooling field notes.
 
 ## Adding a model fingerprint
 
