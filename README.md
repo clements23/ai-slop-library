@@ -2,11 +2,11 @@
 
 [![validate](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml/badge.svg)](https://github.com/clements23/ai-slop-library/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![version](https://img.shields.io/badge/version-1.9.0-orange.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-1.10.0-orange.svg)](CHANGELOG.md)
 
 A machine-readable library of AI slop patterns: the words, phrases, sentence openers, structural tells, and punctuation tics that mark text as machine-generated - with examples and fixes for each.
 
-**Current stable version: v1.9.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
+**Current stable version: v1.10.0** (see [releases](https://github.com/clements23/ai-slop-library/releases) and [CHANGELOG.md](CHANGELOG.md))
 
 The data layer is plain JSON. Any linter, agent skill, or detector can load it. The reference layer explains the tells. The research layer cites the evidence.
 
@@ -18,12 +18,13 @@ data/
   slop-words.json       116 overused words, severity-rated
   slop-phrases.json     146 multi-word constructions with examples and fixes
   slop-openers.json     92 sentence openers with fixes
-  slop-structures.json  46 rhetorical shapes (binary contrast, rule of three, ...)
+  slop-structures.json  48 rhetorical shapes (binary contrast, rule of three, ...)
   slop-punctuation.json punctuation and formatting tics (em dash, colons, ...)
   claude-watermarks.json  the Claude detection layer: technical watermark + 8 fingerprint patterns
   gpt-watermarks.json     the GPT detection layer: 12 assistant-register fingerprint patterns
 scripts/
   slopcheck.py          zero-dependency CLI linter (Python 3 stdlib only)
+  detectorcheck.py      rhythm and medium-floor detector gate (burstiness, paragraph shape, contractions)
 examples/
   sloppy.txt            a text packed with tells (fixture for testing)
   clean.txt             the same content de-slopped (fixture for testing)
@@ -50,9 +51,13 @@ python3 scripts/slopcheck.py --json draft.txt
 
 # scan stdin
 cat draft.txt | python3 scripts/slopcheck.py -
+
+# detector pass: rhythm, paragraph shape, contractions, medium-floor structures
+python3 scripts/detectorcheck.py draft.txt
+python3 scripts/detectorcheck.py --strict draft.txt
 ```
 
-Exit code 1 means tells found, 0 means clean - usable in pre-commit hooks and CI. See `python3 scripts/slopcheck.py --help`.
+Exit code 1 means tells found, 0 means clean - usable in pre-commit hooks and CI. See `python3 scripts/slopcheck.py --help`. `detectorcheck.py` exits 1 on a failed rhythm check, and with `--strict` it also fails on warnings.
 
 Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) so tools can decide whether to warn or block. Phrase entries carry a `family` field (binary-contrast, throat-clearing, weasel-attribution, sycophancy, social-formula, etc.) so tools can group and explain hits.
 
@@ -73,7 +78,7 @@ Every entry carries a `severity` field (`critical` / `high` / `medium` / `low`) 
 | Words | `slop-words.json` | 116 | delve, streamline, resonate, nestled, unveil, ... |
 | Phrases | `slop-phrases.json` | 146 | binary contrasts, sycophancy, claudisms, marketing templates, social formula, ... |
 | Openers | `slop-openers.json` | 92 | throat-clearing openers, "You might be wondering", "Did you know", ... |
-| Structures | `slop-structures.json` | 46 | negative listing, false agency, seamslop, verb inflation, catalog dumps, ... |
+| Structures | `slop-structures.json` | 48 | negative listing, false agency, seamslop, verb inflation, catalog dumps, paragraph metronome, contraction deficit, ... |
 | Punctuation and formatting | `slop-punctuation.json` | 23 | em dashes, citation debris, placeholder tokens, invisible characters, ... |
 | Model fingerprints | `claude-watermarks.json`, `gpt-watermarks.json` | 8 + 12 | the Claude balanced-analyst register (plus the Opus 5 turn-of-phrase register), the GPT assistant register |
 
@@ -105,10 +110,10 @@ Fingerprints are statistical: the cluster is the signal, not single instances.
 
 ## How to use it
 
-- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`. `scripts/slopcheck.py` is the reference implementation.
+- **Linters / CI**: load `data/*.json`, build a flag list from `severity >= "high"`, scan text, suggest the `fix`. `scripts/slopcheck.py` is the reference implementation. Use `scripts/detectorcheck.py` for the second gate: it runs the same data at the medium floor and measures burstiness, paragraph shape, and contraction density.
 - **Agent skills**: point a de-slop skill at `data/slop-phrases.json` + `data/slop-structures.json` for its pattern list. The raw JSON is fetchable from `raw.githubusercontent.com` at any tag.
 - **Detectors**: combine word and structure frequencies as features (with the caveat that detectors false-positive on human text - use as lint, not accusation).
-- **Writers**: read `reference/writing.md`, then run your own text against the data with `scripts/slopcheck.py`.
+- **Writers**: read `reference/writing.md`, then run your own text against the data with `scripts/slopcheck.py` and `scripts/detectorcheck.py`.
 
 ## Related
 

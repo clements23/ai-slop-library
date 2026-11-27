@@ -45,8 +45,8 @@ arXiv:2606.18052 (2026).
 An empirical analysis of AI-generated music flooding streaming platforms: mass quantities of mediocre tracks produced to generate revenue, often misattributed as human-authored. Evidence that the slop economy extends past text into every medium where generation cost collapsed.
 
 ### Burstiness: the sentence-length variance signal
-one detector's methodology note, with published thresholds popularized by an open threshold study (July 2026).
-Burstiness is the standard deviation of sentence lengths divided by their mean. a commercial detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; the threshold study flags anything under 0.4 in ordinary prose and publishes the formula so it can be computed by hand. Measured on a test corpus with naive segmentation, a a human-written wire control scored 0.391, essentially the same as the AI-100% test articles (0.381 and 0.366): the ratio alone does not convict. The discriminating difference was absolute length, control mean 26.6 words per sentence with a 43-word max versus 13.7 and 27. Their own caveat applies: no single number convicts, and technical or legal text is legitimately uniform.
+Published detector methodology notes, with thresholds popularized by an open threshold study (July 2026).
+Burstiness is the standard deviation of sentence lengths divided by their mean. One detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; the threshold study flags anything under 0.4 in ordinary prose and publishes the formula so it can be computed by hand. Measured on a test corpus with naive segmentation, a human-written wire control scored 0.391, essentially the same as the AI-100% test articles (0.381 and 0.366): the ratio alone does not convict. The discriminating difference was absolute length, control mean 26.6 words per sentence with a 43-word max versus 13.7 and 27. Their own caveat applies: no single number convicts, and technical or legal text is legitimately uniform.
 
 ### Excess style vocabulary in 15 million abstracts
 Kobak, González-Márquez, Horvát, and Lause (2024), arXiv:2406.07016.
@@ -54,7 +54,7 @@ Peer-reviewed analysis of PubMed abstracts 2010-2024: the post-ChatGPT vocabular
 
 ### The em dash as a keystroke, not a thought
 Freeburg, "The Last Fingerprint: How Markdown Training Shapes LLM Prose" (2026), arXiv:2603.27006.
-Controlled measurement: GPT-4.1 produces 10.62 em dashes per 1,000 words against a matched human baseline of 3.23. the study's synthesis of 700,000+ words of published human prose puts real writers at 3.7 to 10 per 1,000 (Twain's Huckleberry Finn at 10.13) and only starts scoring above 20 per 1,000. Presence therefore proves nothing in either direction, and a dash-free test style is not by itself an AI signal. OpenAI's Sam Altman has publicly acknowledged telling ChatGPT to stop using em dashes, which is why the mark now cuts both ways: detectors that score density ignore its absence, while detectors trained on humanizer output may not.
+Controlled measurement: GPT-4.1 produces 10.62 em dashes per 1,000 words against a matched human baseline of 3.23. The study's synthesis of 700,000+ words of published human prose puts real writers at 3.7 to 10 per 1,000 (Twain's Huckleberry Finn at 10.13) and only starts scoring above 20 per 1,000. Presence therefore proves nothing in either direction, and a dash-free test style is not by itself an AI signal. OpenAI's Sam Altman has publicly acknowledged telling ChatGPT to stop using em dashes, which is why the mark now cuts both ways: detectors that score density ignore its absence, while detectors trained on humanizer output may not.
 
 ## Community field guides
 
@@ -94,15 +94,15 @@ explainx.ai's Top 10 Signs of AI-Generated Text (August 18, 2026): em dash densi
 ### EnhancePost: 254 review rules (September 2026)
 A deterministic browser reference cataloging writing patterns as regex review rules across named categories: marketing templates ("unlock the full potential", "turn challenges into opportunities", "more important than ever"), brochure register (nestled, picturesque, idyllic, breathtaking, "in the heart of"), business jargon, transition crutches, hyphenated cliches, filler grammar ("has the ability to", "on a regular basis"), content artifacts (placeholder slots, leaked citation tokens, zero-width characters, chat utm_source parameters), and tell phrases. The framing is conservative by design: "a match is a prompt to review a sentence, it does not identify an author". This library's November 2026 additions draw on its marketing-template, brochure-register, filler-grammar, and content-artifact categories.
 
-### an open study's twelve reproducible thresholds
-an open threshold study (July 2026).
-Twelve signs of AI writing, each with a hand-computable number: style words above roughly three per 500 clustered, two or more empty openers per 500, more than one polished rule-of-three per 200, more than half of paragraphs opening with formal transitions, em dashes above 20 per 1,000, and burstiness under 0.4. The framing matters more than the list: no single number convicts, three or four signs converging in the same passage is the fingerprint, and the substance or deletion test is the most reliable sign of all. Their em dash and burstiness thresholds are the two we measure against a test corpus (see Academic research), and their "we measure the writing, not the writer" stance is the reason this library rates patterns rather than authors.
+### Twelve reproducible thresholds
+An open threshold study (July 2026).
+Twelve signs of AI writing, each with a hand-computable number: style words above roughly three per 500 clustered, two or more empty openers per 500, more than one polished rule-of-three per 200, more than half of paragraphs opening with formal transitions, em dashes above 20 per 1,000, and burstiness under 0.4. The framing matters more than the list: no single number convicts, three or four signs converging in the same passage is the fingerprint, and the substance or deletion test is the most reliable sign of all. Their em dash and burstiness thresholds are the two this library measures against a test corpus (see Academic research), and their "we measure the writing, not the writer" stance is the reason this library rates patterns rather than authors.
 
 ## The Claude watermark
 
 Anthropic confirmed that Claude models embed an invisible statistical mark in generated text (support.claude.com, "How Claude marks AI-generated content", 2026). It is detectable by systems, invisible to readers, and was introduced in response to EU AI Act obligations. A detected mark is evidence content was processed by Claude but is not fully conclusive; absence of a mark does not prove human authorship. Nature covered the rollout in "Can Anthropic's invisible watermarks curb 'AI slop'?" (Nature, 2026).
 
-Independent of the technical watermark, Claude carries a writing fingerprint that detectors (a commercial detector, another detector vendor, another detector vendor) are specifically calibrated to find, documented in `data/claude-watermarks.json`:
+Independent of the technical watermark, Claude carries a writing fingerprint that detectors are specifically calibrated to find, documented in `data/claude-watermarks.json`:
 
 1. **First-person avoidance** - "One might argue", "It could be suggested" in place of "I".
 2. **Systematic scope acknowledgement** - limitation disclaimers appearing at fixed structural positions, a Constitutional AI training artifact.
@@ -131,7 +131,7 @@ GPT carries the chat-assistant register: the compliance and service-script behav
 11. **Bold-and-emoji formatting** - marketing-page formatting inside chat replies.
 12. **Possibility hedge stack** - "may potentially possibly help."
 
-Sources: a commercial detector/another detector vendor/another detector vendor detection documentation, university detection guides (Maynooth), RTE's detection reporting, and community pattern lists. The assistant-register patterns distinguish GPT from Claude, whose fingerprint is the balanced-analyst register.
+Sources: commercial detector documentation, university detection guides (Maynooth), RTE's detection reporting, and community pattern lists. The assistant-register patterns distinguish GPT from Claude, whose fingerprint is the balanced-analyst register.
 
 ## Platform enforcement and brand strategy (2026)
 
@@ -147,8 +147,8 @@ Foundera (2026). Documented "register mode collapse" in LLMs: when asked for "pr
 ### Digital Assassin: AI as editor, not ghostwriter
 Digital Assassin / Rob Lawson (June 2026). Three anti-slop strategies for brands: (1) founder-led content with real humans front and center, (2) use AI as an editor, not a ghostwriter (start with raw human thinking, use AI to structure and tighten), (3) build a brand voice document before touching any AI tool. Google's E-E-A-T framework rewards Experience, Expertise, Authoritativeness, Trustworthiness. Generic AI slop scores poorly on all four. 73% of consumers can immediately identify AI-generated marketing content.
 
-### an open threshold study: twelve measurable thresholds
-an open threshold study (July 2026). Published reproducible thresholds for twelve signs of AI writing across five dimensions: vocabulary, cliche, structure, diversity, substance. Key thresholds: em dash density above 20 per 1,000 words (2 per 100) is a signal; burstiness (stdev/mean of sentence lengths) below 0.4 flags AI; more than 3 flagged style words per 500 words is a real signal; more than half of paragraphs failing the restatement test indicates substance-poor text. Convergence of 3-4 failing signs is the fingerprint, not any single sign.
+### Twelve measurable thresholds
+An open threshold study (July 2026). Published reproducible thresholds for twelve signs of AI writing across five dimensions: vocabulary, cliche, structure, diversity, substance. Key thresholds: em dash density above 20 per 1,000 words (2 per 100) is a signal; burstiness (stdev/mean of sentence lengths) below 0.4 flags AI; more than 3 flagged style words per 500 words is a real signal; more than half of paragraphs failing the restatement test indicates substance-poor text. Convergence of 3-4 failing signs is the fingerprint, not any single sign.
 
 ### AI Publisher: detection framework 2026
 AI Publisher (July 2026). Three-tier detection framework: Level 1 (linguistic statistical metrics: perplexity, burstiness, stylometric features), Level 2 (behavioral signals: posting velocity, temporal clustering, stylistic consistency over time), Level 3 (linguistic patterns and verbal tics: statistical density of flagged phrases). Key finding: "Anecdotes in the first person, named locations, specific dates, strongly held opinions, disagreements with popular positions, informal language, and regional idiom all register as positive quality signals within Google's E-E-A-T framework."
@@ -156,8 +156,8 @@ AI Publisher (July 2026). Three-tier detection framework: Level 1 (linguistic st
 ### aicheckr.io: twelve before-and-after fixes
 aicheckr.io (2026). Twelve concrete AI slop patterns with before/after rewrites: em dash abuse, tapestry vocabulary, generic macro-intro, hedging overload, "it's not just X, it's Y" formula, listicle filler, rule-of-three stacking, conclusion boilerplate, transition chains, fake specificity, audience hedge, restating the question. The pattern behind all twelve: "the slop version could have been written without knowing anything." The human fixes are not stylistically fancier, they are specific.
 
-### Wikipedia's measured flag rate (a commercial detector via an independent report)
-An independent interview with WikiProject AI Cleanup founder Ellia Lebleu (October 21, 2026). a commercial detector flagged roughly 20% of new articles and drafts as AI-generated in late 2025 and roughly 15 to 16% in early 2026, with no false positives on pre-ChatGPT text, so the figures are treated as a conservative lower bound; the drop's cause is unresolved (better rule awareness, or newer models the detector catches less often). Two operational findings matter for this library: the tell shifted from fabricated citations to real sources whose content does not support the sentence attached to them (retrieval-augmented generation fixed the fake-source problem, so claim-versus-source checking is now the center of the work), and no single signal is enough: rule of three and "not X, but Y" are each weak alone but meaningful in combination, with volume as the third flag. Wikimedia's Paste Check flags text pasted directly from chatbots, which is the same chatbot-residue surface this library's punctuation layer documents.
+### Wikipedia's measured flag rate
+An independent interview with WikiProject AI Cleanup founder Ellia Lebleu (October 21, 2026). One detector flagged roughly 20% of new articles and drafts as AI-generated in late 2025 and roughly 15 to 16% in early 2026, with no false positives on pre-ChatGPT text, so the figures are treated as a conservative lower bound; the drop's cause is unresolved (better rule awareness, or newer models the detector catches less often). Two operational findings matter for this library: the tell shifted from fabricated citations to real sources whose content does not support the sentence attached to them (retrieval-augmented generation fixed the fake-source problem, so claim-versus-source checking is now the center of the work), and no single signal is enough: rule of three and "not X, but Y" are each weak alone but meaningful in combination, with volume as the third flag. Wikimedia's Paste Check flags text pasted directly from chatbots, which is the same chatbot-residue surface this library's punctuation layer documents.
 
 ## What the research agrees on
 

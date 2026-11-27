@@ -177,7 +177,7 @@ Impersonal fact runs: schedule, spec, and milestone prose delivered as standalon
 
 Example: "Milestones are contractual under the Fluor agreement, with defined dates and performance protections. Completions begin in late 2027 and continue through the second quarter of 2028."
 
-one detector's flagged-sentence diagnostics singled out exactly this run as high AI impact inside an a validation article (November 2026) while leaving its lede and its direct quotes unflagged, which localizes the signal: not the vocabulary, not the sourcing, but facts delivered as a data dump. Confirmed as a localized signal inside a failing document, not tested in isolation.
+A detector's flagged-sentence diagnostics singled out exactly this run as high AI impact inside a validation article (November 2026) while leaving its lede and its direct quotes unflagged, which localizes the signal: not the vocabulary, not the sourcing, but facts delivered as a data dump. Confirmed as a localized signal inside a failing document, not tested in isolation.
 
 Fix: give each fact an actor and a consequence. "TeraWulf expects the first buildings ready in late 2027, and the rest follow through the second quarter of 2028. It wrote those dates into the Fluor contract, and they aren't suggestions."
 
@@ -187,9 +187,49 @@ Every sentence lands in a narrow mid-length band (roughly 10-20 words), each a c
 
 Example: "TeraWulf secured credit support from Google on Nov. 4 for about $19 billion of Anthropic leases in Kentucky, and Fluor signed a contract the same day to build three data center buildings at the site. Debt financing for the Justified Data Campus in Hawesville, Kentucky, now has Google behind it."
 
-The measurable form is burstiness: the standard deviation of sentence lengths divided by their mean. a commercial detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; an open threshold study flags anything under 0.4 in ordinary prose and publishes the formula so you can compute it in a spreadsheet (July 2026). Measure it honestly: with naive segmentation on a test corpus, the a test article scored 0.381, the length-escalated candidate 0.366, and the a human-written wire control 0.391, so the ratio alone did not separate pass from fail. What did separate them was absolute length: control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 with a 27-word max. That is why the style guide allows wire anchors of 25-45 words and why two of them did not move the score: the missing ingredient is long-sentence density, not a couple of exceptions. Keep the study's own caveats in view: technical, legal, and translated text is legitimately uniform, and no single number convicts.
+The measurable form is burstiness: the standard deviation of sentence lengths divided by their mean. One detector reports human prose spreading around 0.6-1.2 and model output clustering at 0.2-0.4; an open threshold study flags anything under 0.4 in ordinary prose and publishes the formula so you can compute it in a spreadsheet (July 2026). Measure it honestly: with naive segmentation on a test corpus, a test article scored 0.381, a length-escalated candidate 0.366, and a human-written wire control 0.391, so the ratio alone did not separate pass from fail. What did separate them was absolute length: control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 with a 27-word max. That is why the style guide allows wire anchors of 25-45 words and why two of them did not move the score: the missing ingredient is long-sentence density, not a couple of exceptions. Keep the study's own caveats in view: technical, legal, and translated text is legitimately uniform, and no single number convicts.
 
 Fix: break the band deliberately. Let one sentence run to 30-45 words (a wire anchor), drop another to 4-8, and measure both numbers before publishing: burstiness (target above 0.4, ideally 0.6+) and mean sentence length (wire prose sits in the mid-20s). Do not restore first person or em dashes to chase variance; those are separate policy-set axes.
+
+### 20. Uniform paragraph length (paragraph metronome)
+
+The paragraph-scale twin of the sentence metronome: every body paragraph lands in the same 35-55 word band and holds the same two-to-four sentence shape, so the page has no short beat and no long development.
+
+Example: four paragraphs of roughly 44 words each, every one opening with a claim and closing with a consequence, across a 700-word article.
+
+Measured on the 96-document corpus in November 2026: paragraph burstiness (standard deviation of paragraph lengths divided by their mean) was 0.353 before a high-severity-only rewrite and 0.350 after, against a mean of 44.5 words per paragraph. Human long-form writing usually mixes a 15-word beat with an 80-to-120-word development. Uniform 40-word paragraphs read as a template even when every sentence is varied.
+
+Fix: plan the paragraph rhythm, not just the sentence rhythm. Let one paragraph run 80-120 words and one land near 15-20 words in every 700-word stretch. Target paragraph burstiness above 0.45. Do not pad the short paragraph with filler or split the long one at an arbitrary sentence boundary.
+
+### 21. Contraction deficit
+
+A formal register with zero contractions across several hundred words, so "it is", "does not", "cannot", and "will not" appear where a person would write "it's", "doesn't", "can't", and "won't".
+
+Example: "It is not a strategy problem. The company does not need a new model. It cannot compete on price, and it will not try."
+
+Wire prose uses contractions naturally, and their absence plus a uniform sentence band reads as humanizer output or as a model told to sound formal. Measured on the 96-document corpus: 9.0 contractions per 1,000 words before the rewrite and 9.0 after, unchanged, while a human-written wire control uses them throughout. The signal is the cluster of expanded forms across a whole document, not one deliberate formal sentence.
+
+Fix: use contractions where the voice allows, at least five per 1,000 words in conversational or wire registers. Keep the expanded form when it carries emphasis or when a direct quote uses it. Do not force contractions into legal or quoted text.
+
+## The high-gate illusion (November 2026)
+
+A 96-document rewrite campaign cleared every high and critical slop hit: 96 of 96 passed `slopcheck -s high`. The reader-facing result was better, and the text still scored AI on two commercial detectors. The measurement explains why:
+
+| Metric | Before | After |
+|---|---|---|
+| Mean sentence length | 15.1 | 15.0 |
+| Sentence burstiness | 0.545 | 0.549 |
+| Paragraph burstiness | 0.353 | 0.350 |
+| Contractions per 1,000 words | 9.0 | 9.0 |
+
+The pass removed constructions. It did not move rhythm, paragraph shape, or register. The two tells the library added from its own detector validation, spec-sheet declarative and metronome rhythm, are both medium severity, so a high-only gate cannot see them. That is the high-gate illusion: a clean high-severity report reads as "not AI" when it only means "none of the rules that block a draft fired".
+
+The fix is two gates, not one. Run `slopcheck -s high` for blocking construction errors, then run `detectorcheck.py` for rhythm:
+- It fails on sentence burstiness below 0.40.
+- It warns on mean sentence length below 18, no sentence of 30 or more words, paragraph burstiness below 0.45, and fewer than 5 contractions per 1,000 words.
+- It reports any medium-floor detector-family hits. The band and register tells are document-level, so the metrics enforce them; the hit list catches any that can be matched as text.
+
+Treat both as diagnostics, not a promise. The same validation found that verbatim wire-service prose scored Human 100% while every test-style variant scored AI 100%, so no checklist can guarantee a detector pass. Use the metrics to find the rhythm that survived, then rewrite that, not just the words.
 
 ## Defeating AI slop: what the research shows
 
@@ -242,9 +282,9 @@ The implication for writers: defeating AI slop is not just editorial quality. It
 
 Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) explicitly rewards the same signals that defeat slop. AI Publisher's 2026 detection framework found: "Anecdotes in the first person, named locations, specific dates, strongly held opinions, disagreements with popular positions, informal language, and regional idiom all register as positive quality signals." Content that passes robust authorship verification and shows human specificity gains ranking advantages. Content that fails is penalized not because it is "AI" but because it lacks expertise, authoritativeness, and trustworthiness.
 
-## What our own detector tests showed (November 2026)
+## What a controlled detector test showed (November 2026)
 
-Eleven scans across two instruments (seven on a commercial detector including two runs of a human-wire control, four on a commercial detector), one article lineage, one a test test style under test. Notes retained from the the validation log; this is the distilled version.
+Eleven scans across two instruments, one article lineage, one test style under test. Notes retained from the validation log; this is the distilled version.
 
 **Confirmed:** third person is not a detection trigger. Verbatim wire-service prose scored Human 100% on one detector twice (November 5 and November 10, the instrument revalidated after a four-day credit gap), while every test article variant scored AI 100% on two commercial detectors.
 
@@ -252,14 +292,14 @@ Eleven scans across two instruments (seven on a commercial detector including tw
 
 **The two differences from passing wire prose that remain, both policy-set:**
 
-1. **Em-dash absence.** The house bans em dashes everywhere (policy rule, confidence 1.0). The July benchmark was also dash-free and passed, so absence is not sufficient alone. External data cuts the same way: the study's engine only scores dashes above 20 per 1,000 words and its authors note absence proves nothing, since late-2025 models can be told to drop the mark. Not tested as a lever; low expected value on the published thresholds.
-2. **Long-sentence density.** wire-service prose in the control averaged 26.6 words per sentence with a 43-word maximum; the test style averaged 13.7 with a 27-word maximum under a two-anchor allowance. This is the one measured, untested lever left, and pulling it means relaxing the readability sentence cap, which is a policy decision.
+1. **Em-dash absence.** The test style bans em dashes everywhere (policy rule, confidence 1.0). The July benchmark was also dash-free and passed, so absence is not sufficient alone. External data cuts the same way: the open study's engine only scores dashes above 20 per 1,000 words and its authors note absence proves nothing, since late-2025 models can be told to drop the mark. Not tested as a lever; low expected value on the published thresholds.
+2. **Long-sentence density.** Wire-service prose in the control averaged 26.6 words per sentence with a 43-word maximum; the test style averaged 13.7 with a 27-word maximum under a two-anchor allowance. This is the one measured, untested lever left, and pulling it means relaxing the readability sentence cap, which is a policy decision.
 
-Neither lever can be tested without reversing a policy rule; the four decision options are logged in the the decision record.
+Neither lever can be tested without reversing a policy rule; the four decision options are logged in the decision record.
 
 **Flagged patterns inside direct quotes:** trim the quote's edge if the flagged word opens it (journalistic practice: "Ultimately, megawatts..." becomes "Megawatts..."). Keep a mid-quote verbatim hit only at low severity and only when the quote is sourced (an "at scale" inside a press-release quote stayed). Never paraphrase inside quote marks; if a critical pattern sits mid-quote, drop the quote.
 
-**Detector tooling, learned the expensive way:** one detector's free "most AI sentences" list localizes the problem (it flagged our spec-sheet run, not the lede or the quotes), its no-login tier allows roughly four scans before a signup wall that consents to marketing email, and its displayed model version varies per scan (5.0b and 3.3b observed), so treat cross-scan deltas with caution. a commercial detector grants credits in batches (observed: initial 16, then +4 mid-session, then +20 after a multi-day gap; the sidebar counter can render stale, so trust the main panel's message), costs 1 credit per 100 words rounded up, and always deserves a fresh human-wire control first after any credit gap.
+**Detector tooling notes:** a per-sentence breakdown, when a detector exposes one, is the most useful localizer because it names the passage rather than the whole document. Free tiers vary in credits and often place a signup wall after a few scans. Displayed model versions can change between scans, so treat cross-scan deltas with caution and re-baseline with a fresh human-written control after any gap.
 
 **Style notes:** wire prose uses contractions (it's, won't, can't); their absence plus a uniform band reads as humanizer output, and Google's own quality guidance treats informal language as a positive signal, so use them naturally (they are readability-friendly). Do not restore first person or em dashes to chase a detector score; both are policy-set axes.
 

@@ -374,7 +374,7 @@
       "name": "Spec-sheet declarative",
       "pattern": "Impersonal fact runs: subject plus is/are/begin/depend plus a stacked noun phrase, with no actor doing the work, no quote, and no consequence attached",
       "example": "Milestones are contractual under the Fluor agreement, with defined dates and performance protections. Completions begin in late 2027 and continue through the second quarter of 2028. Investors will watch whether power availability holds to that calendar.",
-      "tell": "one detector's flagged-sentence diagnostics marked exactly this run as high AI impact inside an a validation article (November 2026) while leaving its lede and its direct quotes unflagged, which localizes the signal: not the vocabulary, not the sourcing, but facts delivered as a data dump. Confirmed as a localized signal inside a failing document; not tested in isolation. The same run scored AI 100% on a commercial detector.",
+      "tell": "A detector's flagged-sentence diagnostics marked exactly this run as high AI impact inside a validation article (November 2026) while leaving its lede and its direct quotes unflagged, which localizes the signal: not the vocabulary, not the sourcing, but facts delivered as a data dump. Confirmed as a localized signal inside a failing document; not tested in isolation. The same run scored AI 100% on a commercial detector.",
       "fix": "Give each fact an actor and a consequence: \"TeraWulf expects the first buildings ready in late 2027, and the rest follow through the second quarter of 2028. It wrote those dates into the Fluor contract, and they aren't suggestions.\"",
       "severity": "medium",
       "family": "spec-sheet"
@@ -383,10 +383,28 @@
       "name": "Low sentence-length variance (metronome rhythm)",
       "pattern": "Sentence after sentence landing in a narrow mid-length band (roughly 10-20 words), each a complete balanced clause: no fragments, no 30-45 word sprawls, so the rhythm has no bumps",
       "example": "TeraWulf secured credit support from Google on Nov. 4 for about $19 billion of Anthropic leases in Kentucky, and Fluor signed a contract the same day to build three data center buildings at the site. Debt financing for the Justified Data Campus in Hawesville, Kentucky, now has Google behind it. A model rival now stands behind the debt of a competing lab's data center.",
-      "tell": "The measurable form is burstiness (standard deviation of sentence lengths divided by their mean): a commercial detector reports human prose at 0.6-1.2 and model output at 0.2-0.4, and an open threshold study flags anything under 0.4 in ordinary prose (July 2026). Measured on a test corpus with naive segmentation: a test article 0.381, length-escalated candidate 0.366, and a a human-written wire control at 0.391, so the ratio alone did not separate pass from fail (the study's own caveat: no single number convicts). The discriminating difference was absolute length: control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 with a 27-word max. Correlated with detection across six tests, not isolated as causal: two wire anchors of 25-45 words did not flip the score, so the missing ingredient is long-sentence density, not a couple of exceptions.",
+      "tell": "The measurable form is burstiness (standard deviation of sentence lengths divided by their mean): One detector reports human prose at 0.6-1.2 and model output at 0.2-0.4, and an open threshold study flags anything under 0.4 in ordinary prose (July 2026). Measured on a test corpus with naive segmentation: a test article scored 0.381, a length-escalated candidate 0.366, and a human-written wire control 0.391, so the ratio alone did not separate pass from fail (the study's own caveat: no single number convicts). The discriminating difference was absolute length: control mean 26.6 words per sentence with a 43-word max, versus 13.7 with a 27-word max in the test style. Correlated with detection across six tests, not isolated as causal: two wire anchors of 25-45 words did not flip the score, so the missing ingredient is long-sentence density, not a couple of exceptions. A 96-document surface rewrite in November 2026 that cleared every high and critical slop hit moved mean sentence length only from 15.1 to 15.0 and burstiness from 0.545 to 0.549, confirming that construction-level fixes do not touch this band.",
       "fix": "Break the band deliberately: let one sentence run to 30-45 words (a wire anchor), drop another to 4-8, and measure both numbers before publishing: burstiness (target above 0.4, ideally 0.6+) and mean sentence length (wire prose sits in the mid-20s). Do not restore first person or em dashes to chase variance; those are separate policy-set axes.",
       "severity": "medium",
       "family": "sentence-band"
+    },
+    {
+      "name": "Uniform paragraph length (paragraph metronome)",
+      "pattern": "Every body paragraph lands in the same 35-55 word band and holds the same two-to-four sentence shape, so the page has no short beat and no long development",
+      "example": "Four paragraphs of roughly 44 words each, every one opening with a claim and closing with a consequence, across a 700-word article.",
+      "tell": "The paragraph-scale twin of the sentence metronome. Measured on the same 96-document corpus in November 2026: paragraph burstiness (standard deviation of paragraph lengths divided by their mean) was 0.353 before a high-severity-only rewrite and 0.350 after, against a mean of 44.5 words per paragraph. Human long-form writing usually mixes a 15-word beat with an 80-to-120-word development. Uniform 40-word paragraphs read as a template even when every sentence is varied.",
+      "fix": "Plan the paragraph rhythm, not just the sentence rhythm: let one paragraph run 80-120 words and one land near 15-20 words in every 700-word stretch. Target paragraph burstiness above 0.45. Do not pad the short paragraph with filler or split the long one at an arbitrary sentence boundary.",
+      "severity": "medium",
+      "family": "paragraph-band"
+    },
+    {
+      "name": "Contraction deficit",
+      "pattern": "A formal register with zero contractions across several hundred words, so 'it is', 'does not', 'cannot', and 'will not' appear where a person would write 'it's', 'doesn't', 'can't', and 'won't'",
+      "example": "It is not a strategy problem. The company does not need a new model. It cannot compete on price, and it will not try.",
+      "tell": "Wire prose uses contractions naturally, and their absence plus a uniform sentence band reads as humanizer output or as a model told to sound formal. Measured on the 96-document corpus: 9.0 contractions per 1,000 words before the rewrite and 9.0 after, unchanged, while a human-written wire control uses them throughout. The signal is the cluster of expanded forms across a whole document, not one deliberate formal sentence.",
+      "fix": "Use contractions where the voice allows, at least five per 1,000 words in conversational or wire registers. Keep the expanded form when it carries emphasis or when a direct quote uses it. Do not force contractions into legal or quoted text.",
+      "severity": "medium",
+      "family": "register"
     }
   ]
 }

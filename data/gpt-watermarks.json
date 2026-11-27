@@ -1,6 +1,6 @@
 {
   "category": "gpt-watermarks",
-  "description": "The GPT/ChatGPT detection layer: the assistant-register tells and vocabulary cluster detectors associate with OpenAI models. Documented from detector research (a commercial detector, another detector vendor, another detector vendor), university detection guides, and community pattern lists.",
+  "description": "The GPT/ChatGPT detection layer: the assistant-register tells and vocabulary cluster detectors associate with OpenAI models. Documented from commercial detector research, university detection guides, and community pattern lists.",
   "fingerprint": [
     {
       "name": "Assistant identity leak",

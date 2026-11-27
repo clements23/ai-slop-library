@@ -2,18 +2,42 @@
 
 All notable changes to this project are documented here. The version is kept in sync with the `VERSION` file and the Git tag.
 
+## [1.10.0] - 2026-11-27
+
+The high-gate correction. A 96-document rewrite cleared every high and critical tell and still scored as AI on two commercial detectors. That exposed a gap in how the library was being used: the detector-facing tells added in 1.9.0 are medium severity, so a `-s high` gate cannot see them. This release adds the missing measurement, two more medium-order structures, and the field evidence behind them.
+
+### Added
+
+- `scripts/detectorcheck.py`: the second gate. Measures sentence burstiness, mean and max sentence length, long-sentence density, paragraph burstiness, and contraction density, then runs the full pattern set at the medium floor. Fails on sentence burstiness under 0.40. Warns on mean sentence length under 18, no sentence of 30 or more words, paragraph burstiness under 0.45, and fewer than 5 contractions per 1,000 words. It also reports any medium-floor detector-family hits, though the band and register tells are document-level and are enforced by the metrics rather than by a phrase match. `--strict` turns warnings into failures, `--json` emits machine-readable output. Zero dependencies; reuses `slopcheck.py`.
+- `data/slop-structures.json`: two structures, 46 to 48.
+  - "Uniform paragraph length (paragraph metronome)" (medium, paragraph-band): the paragraph-scale twin of the sentence metronome. Field evidence from the 96-document corpus: paragraph burstiness 0.353 before and 0.350 after a high-severity-only rewrite, mean paragraph length 44.5. Fix targets paragraph burstiness above 0.45 with one long and one short paragraph per 700 words.
+  - "Contraction deficit" (medium, register): a formal register with zero contractions across several hundred words. Field evidence: 9.0 contractions per 1,000 words before and after the rewrite, unchanged, against a human-written wire control that uses them naturally.
+- `reference/writing.md`: patterns 20 and 21 appended to "the patterns that matter most"; new section "The high-gate illusion (November 2026)" with the before and after table and the two-gate workflow; the metronome entry now carries the 96-document measurement.
+
+### Changed
+
+- `README.md`: version line and badge to v1.10.0, structure count 46 to 48, `scripts/detectorcheck.py` added to the tree and quick start, consumer guidance now names both gates.
+- `VERSION`: 1.9.0 to 1.10.0.
+- `.gitignore`: ignores `__pycache__/`.
+
+### Rationale
+
+The 1.9.0 campaign answered which style rules interact with detection. It did not answer what happens when a team applies the high-severity gate and declares the work done. A controlled test measured that outcome across 96 documents: mean sentence length 15.1 to 15.0, sentence burstiness 0.545 to 0.549, paragraph burstiness 0.353 to 0.350, contractions 9.0 to 9.0 per 1,000 words. The construction count fell; the rhythm did not move. A reader notices the removed tells, and a detector sees the same cadence it saw before. Two changes follow. First, the library now ships the measurement as executable code, not advice, so the gap shows up as a failing check. Second, the paragraph and contraction tells are recorded as first-class structures with the corpus numbers behind them, so a future pass cannot mistake "slopcheck clean" for "human on a detector". The honest limit stays in the reference section: verbatim wire-service prose scored Human 100% while every test-style variant scored AI 100%, so the second gate is a diagnostic, not a guarantee.
+
+---
+
 ## [1.9.0] - 2026-11-11
 
-Detector-validation learnings from an a controlled validation campaign (two commercial detectors, November 5-11, 2026), plus the two new structures their diagnostics produced and the external thresholds that sharpen them.
+Detector-validation learnings from a controlled validation campaign (November 2026), plus the two new structures its diagnostics produced and the external thresholds that sharpen them.
 
 ### Added
 
 - `data/slop-structures.json`: two structures, 44 to 46.
-  - "Spec-sheet declarative" (medium, spec-sheet): impersonal schedule and spec runs with no actor and no consequence. Sourced from one detector's flagged-sentence diagnostics, which singled out exactly this run as high AI impact inside a failing a test article while leaving its lede and quotes unflagged. Fix folds each fact into an actor-driven sentence with a consequence.
-  - "Low sentence-length variance (metronome rhythm)" (medium, sentence-band): every sentence in a narrow 10-20 word band. Carries the measurable form: burstiness (stdev/mean) under 0.4 per one detector's published ranges (human 0.6-1.2, model 0.2-0.4), plus our own control numbers: a test article 0.381, length-escalated candidate 0.366, a human-written wire control 0.391, so the ratio alone did not convict in the test corpus; the discriminating difference was absolute length (control mean 26.6 words per sentence with a 43-word max, versus ours at 13.7 and 27). Status recorded as correlated-not-causal: two wire anchors did not flip the score.
-- `reference/writing.md`: patterns 18 (spec-sheet declarative) and 19 (low sentence-length variance) appended to "the patterns that matter most"; new section "What our own detector tests showed (November 2026)" with the confirmed/exonerated/remaining breakdown, the flagged-pattern-inside-quotes handling rule (trim quote edges, never paraphrase inside quote marks), the contractions style note, and the detector-credit operational notes.
-- `research.md`: three new academic entries: the burstiness methodology with our own control measurement (a commercial detector via the threshold study), Kobak et al. on style-vocabulary excess (arXiv:2406.07016), and Freeburg on em dash density (arXiv:2603.27006, showing absence is not a tell for threshold detectors); one new community entry, the study's twelve reproducible thresholds; and an open question on whether the two policy-set differences can be separated without reversing rules.
-- `ecosystem.md`: new "Detector tooling field notes (2026-11)" section with a commercial detector credit batching and stale-counter behavior, and one detector's no-login wall, model-version variance, and flagged-sentence diagnostics.
+  - "Spec-sheet declarative" (medium, spec-sheet): impersonal schedule and spec runs with no actor and no consequence. Sourced from a detector's flagged-sentence diagnostics, which singled out exactly this run as high AI impact inside a failing test article while leaving its lede and quotes unflagged. Fix folds each fact into an actor-driven sentence with a consequence.
+  - "Low sentence-length variance (metronome rhythm)" (medium, sentence-band): every sentence in a narrow 10-20 word band. Carries the measurable form: burstiness (stdev/mean) under 0.4 per published detector ranges (human 0.6-1.2, model 0.2-0.4), plus control numbers: a test article scored 0.381, a length-escalated candidate 0.366, and a human-written wire control 0.391, so the ratio alone did not convict in the test corpus; the discriminating difference was absolute length (control mean 26.6 words per sentence with a 43-word max, versus 13.7 and 27 in the test style). Status recorded as correlated-not-causal: two wire anchors did not flip the score.
+- `reference/writing.md`: patterns 18 (spec-sheet declarative) and 19 (low sentence-length variance) appended to "the patterns that matter most"; new section "What a controlled detector test showed (November 2026)" with the confirmed/exonerated/remaining breakdown, the flagged-pattern-inside-quotes handling rule (trim quote edges, never paraphrase inside quote marks), the contractions style note, and the detector-credit operational notes.
+- `research.md`: three new academic entries: the burstiness methodology with the control measurement, Kobak et al. on style-vocabulary excess (arXiv:2406.07016), and Freeburg on em dash density (arXiv:2603.27006, showing absence is not a tell for threshold detectors); one new community entry, the twelve reproducible thresholds; and an open question on whether the two policy-set differences can be separated without reversing rules.
+- `ecosystem.md`: new "Detector tooling field notes (2026-11)" section with credit batching and stale-counter behavior, no-login walls, model-version variance, and flagged-sentence diagnostics.
 
 ### Changed
 
@@ -22,7 +46,7 @@ Detector-validation learnings from an a controlled validation campaign (two comm
 
 ### Rationale
 
-The campaign answered the question the library could not answer from other people's lists: which of our own house rules interact with detection. The answer came from controls, not vibes. Third person, structural variation, quote density, quote length, the decision line, subheads, actor texture, and length were each tested and excluded, leaving two differences from passing wire prose, both policy-set (the em dash ban and the readability sentence cap). External data now sharpens both: the study's em dash threshold only fires above 20 per 1,000 words (absence is not a tell for that engine), and its burstiness threshold, measured against a test corpus, failed to separate the failing test articles from the passing control (0.381 and 0.366 versus 0.391) while absolute sentence length did (mean 13.7 versus 26.6). The two new structures encode what the detectors actually flagged in the test text, with causal status stated honestly in each tell so a future session does not mistake a correlation for a lock. The reference section and field notes store the operational knowledge (credit batching, signup walls, model variance, quote-edge trimming) that cost this campaign most of its iteration time to discover.
+The campaign answered the question the library could not answer from other people's lists: which style rules interact with detection. The answer came from controls, not vibes. Third person, structural variation, quote density, quote length, the decision line, subheads, actor texture, and length were each tested and excluded, leaving two differences from passing wire prose, both policy-set (the em dash ban and the readability sentence cap). External data now sharpens both: the open study's em dash threshold only fires above 20 per 1,000 words (absence is not a tell for that engine), and its burstiness threshold, measured against a test corpus, failed to separate the failing test articles from the passing control (0.381 and 0.366 versus 0.391) while absolute sentence length did (mean 13.7 versus 26.6). The two new structures encode what the detectors actually flagged in the test text, with causal status stated honestly in each tell so a future session does not mistake a correlation for a lock. The reference section and field notes store the operational knowledge (credit batching, signup walls, model variance, quote-edge trimming) that cost this campaign most of its iteration time to discover.
 
 ---
 
@@ -117,7 +141,7 @@ A style directive "do not do litotes" identified a gap: the library documented b
 
 ## [1.3.0] - 2026-08-15
 
-Founder-voice + publication-plug detection layer. Patterns identified in a live audit of an internal founder-voice content draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.
+Founder-voice + publication-plug detection layer. Patterns identified in a live audit of a founder-voice content draft (2026-08-15). The audit found that the draft was strong in substance and narrative but needed refinement in cadence, authority framing, and the transactional closer. These additions encode the lessons so the linter catches them on the next run.
 
 ### Added
 
